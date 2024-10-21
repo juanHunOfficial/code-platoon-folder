@@ -1,0 +1,11 @@
+#to-do-list-title { 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    text-align: center;
+}
+
+#unordered-list{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    list-style-type: none;
+}
