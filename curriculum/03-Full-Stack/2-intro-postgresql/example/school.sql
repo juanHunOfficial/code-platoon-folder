@@ -12,7 +12,7 @@ CREATE TABLE students(
     id serial PRIMARY KEY,
     first_name VARCHAR (20),
     last_name VARCHAR (20),
-    birthdate VARCHAR,
+    birthdate VARCHAR(15),
     address_id CHAR (1)
 );
 
