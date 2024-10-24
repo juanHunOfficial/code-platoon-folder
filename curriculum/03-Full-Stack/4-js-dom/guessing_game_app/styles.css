@@ -1,0 +1,80 @@
+body{
+    background-color: #CEEC97;
+}
+
+#new-game-btn-container{
+    display: flex;
+}
+
+#new-game-btn{
+    display: inline-block;
+    margin: 30px auto;
+    height: 4vmin;
+    width: 10vmin;
+    border: 1px, solid, black;
+    border-radius: 10px;
+    background-color: #7A28CB;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#new-game-btn:hover{
+    background-color: #7928cbc8;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    
+}
+
+#number{
+    text-align: center;
+    font-size: xx-large;
+}
+
+#guess-number-input{
+    height: 20px;
+    text-align: center;
+    margin: 20 auto;
+    border-radius: 8px;
+}
+
+#guess-number-submit{
+    height: 30px;
+    width: 80px;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+#high-low-meter{
+    display: flex;
+}
+
+#number-container{
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #494368;
+    height: 25vmin;
+    width: 25vmin;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px, solid, black;
+}
+
+#input-field-container{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #F4B393;
+    text-align: center;
+    width: 400px;
+}
+
+#display-guessed-items{
+    display: flex;
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #FC60A8;
+    text-align: center;
+    width: 400px;
+}

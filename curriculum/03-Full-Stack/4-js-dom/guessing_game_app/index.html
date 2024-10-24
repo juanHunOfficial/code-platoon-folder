@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" async defer></script>
+</head>
+<body>
+    <header>
+        <div id="new-game-btn-container">
+            <button id="new-game-btn" onclick="newGameRefresh()">New Game</button>
+        </div>
+    </header>
+    <main>
+        <div id="number-container">
+            <div id="number">
+                guessed current number goes here, this can be a huge box
+            </div>
+        </div>
+        <div id="input-field-container">
+            <form onsubmit="formSubmit(event)">
+                <input id="guess-number-input" type="text" placeholder="Guess a number" name="guess">
+                <input id="guess-number-submit" type="submit">
+            </form>
+            <div id="high-low-meter">
+                below the form there should be the indicator of whether the last guess was too high or low
+            </div>
+        </div>
+        <div id="display-guessed-items">
+            
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
