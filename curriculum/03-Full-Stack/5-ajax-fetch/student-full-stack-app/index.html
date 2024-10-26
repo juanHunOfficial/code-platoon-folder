@@ -9,11 +9,26 @@
 </head>
 <body>
     <header>
-
+        <div id="pricipals-portal-title">
+            <h1>Principal's portal</h1>
+        </div>
+        <navbar id="navbar-top-right">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="http://127.0.0.1:8000/students">Students</a></li>
+                <li><a href="http://127.0.0.1:8000/enrollments">Enrollments</a></li>
+                <li><a href="http://127.0.0.1:8000/addresses">Addresses</a></li>
+                <li><a href="http://127.0.0.1:8000/classes">Classes</a></li>
+            </ul>
+        </navbar>
     </header>
     <main>
+        <form onsubmit="fetchFromFlask(event)">
+            <input type="text" name="entry" id="input-field" placeholder="Where are we pulling data from?">
+            <input type="submit" value="Submit">
+        </form>
         <div>
-            <p id="test-connection"></p>
+            <p id="response-field"></p>
             <button onclick="fetchFromFlask(event)">Runnit</button>
         </div>
     </main>
