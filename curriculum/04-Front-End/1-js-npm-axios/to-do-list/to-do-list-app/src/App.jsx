@@ -1,16 +1,6 @@
 import React, {useState} from "react"
 import './App.css'
 
-// const createEntry = (userInput) => {
-//   let taskList = document.querySelector("#list-of-tasks")
-//   let newTask = document.createElement("li")
-//   newTask.className = "list-items"
-//   newTask.innerText = userInput
-//   taskList.appendChild(newTask)
-//   
-// }
-
-
 
 function App() {
     const [tasks, setTasks] = useState([]);
