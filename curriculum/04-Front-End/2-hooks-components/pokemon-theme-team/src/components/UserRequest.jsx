@@ -1,9 +1,15 @@
 import { useState } from 'react'
 import axios from "axios"
 import "./UserInput.css"
+import Spinner from "./Spinner"
 
 function UserRequest() {
     const [pokemonImgs, setPokemonImgs] = useState([])
+    const [loading, setLoading] = useState(false)
+
+    if(loading){
+        return <Spinner />
+    }
 
     const changeTheState = (index) => {
         setPokemonImgs(pokemonImgs.filter((_, currentIndex) => currentIndex !== index))
@@ -11,6 +17,7 @@ function UserRequest() {
 
     const setTheRestOfTheTeam = async(currentTypes) => {
         let count = 1
+        setLoading(true)
         while (count < 6){
             const randomNumber = Math.floor(Math.random() * 1000 + 1)
             let {data} = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomNumber}`)
@@ -23,7 +30,10 @@ function UserRequest() {
             }
             
         }
+        setLoading(false)
     }
+
+    
 
     const handleClick = async() =>{
         const randomNumber = Math.floor(Math.random() * 1000 + 1)
@@ -45,8 +55,7 @@ function UserRequest() {
 
             <div id='pokemon-imgs-container'>
                 {pokemonImgs.map((pokemon, index) =>
-                    <img src={pokemon} key={index} onClick={() => {changeTheState(index)}}>
-                    </img>
+                    <img src={pokemon} key={index} onClick={() => {changeTheState(index)}} />
                 )}
             </div>
 

@@ -1,0 +1,29 @@
+#title{
+    display: flex;
+    justify-content: center;
+}
+
+#pokemon-imgs-container{
+    display: flex;
+    justify-content: center;
+}
+
+#randomize-btn-container{
+    display: flex;
+    justify-content: center;
+}
+
+.spinner {
+    margin: 20px auto;
+    width: 50px; /* Adjust size as needed */
+    height: 50px;
+    border: 8px solid rgba(0, 0, 0, 0.1); /* Light border */
+    border-top: 8px solid blue; /* Blue color for the top border */
+    border-radius: 50%; /* Makes the div circular */
+    animation: spin 1s linear infinite; /* Animation properties */
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
