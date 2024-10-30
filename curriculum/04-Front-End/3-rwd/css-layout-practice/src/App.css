@@ -1,0 +1,54 @@
+.box{
+  display:inline-block;
+  border: 2px, solid, black;
+  margin: 10px;
+  height: 100px;
+  width: 100px;
+  font-size: 24px;
+  padding: 22px;
+  box-sizing: border-box;
+ 
+}
+
+.container{
+  font-size: 0;
+  height: 120px;
+  width: 500px;
+  overflow: auto;
+}
+
+.float-box{
+  float: left;
+}
+
+.text{
+  clear: left;
+}
+
+#anchor-practice{
+  font-size: 100px;
+}
+
+#anchor-practice:link{
+  color: green;
+}
+
+#anchor-practice:visited{
+  color: yellow;
+}
+#anchor-practice:focus{
+  color: cyan;
+}
+
+#input-practice:checked{
+  height: 200px;
+  width: 200px;
+}
+
+#input-practice:valid{
+  border-color: green;
+}
+
+#input-practice:invalid{
+  border-color: red;
+}
