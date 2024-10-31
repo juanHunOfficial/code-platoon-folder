@@ -101,3 +101,49 @@
 
 }
 
+#education-container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin: 0;
+    top: 44%;
+    left: 51%;
+    height: 10vmin;
+    width: 37vmin;
+    border: 2px solid green;
+}
+
+#education-container-top-row{
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+#education-container-bottom-row{
+    margin: 2px 0;
+    display: flex;
+    align-items: center;
+}
+
+#education-exp-1-img{
+    margin: 0;
+    height: 40px;
+    width: 40px;
+}
+
+
+#education-exp-1{
+    margin: 2px 12px;
+    padding: 0;
+}
+
+#education-exp-2-img{
+    margin: 0;
+    height: 40px;
+    width: 40px;
+}
+
+#education-exp-2{
+    margin: 2px 12px;
+    padding: 0;
+}

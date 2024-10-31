@@ -15,8 +15,14 @@ function ProfileInfo () {
             </div>
 
             <div id="education-container">
-                <h4 id="education-exp-1"><a href="#">Code Platoon</a></h4>
-                <h4 id="education-exp-2"><a href="#">Keiser University</a></h4>
+                <div id="education-container-top-row">
+                    <img id="education-exp-1-img"  src="https://media.licdn.com/dms/image/v2/D4D0BAQEely_V6eLXlg/company-logo_100_100/company-logo_100_100/0/1686776554260/code_platoon_logo?e=1738195200&v=beta&t=IllskA-0HV8P32m6UmMgLsS9VjtK8iPDGh9mkdVUjMU" />
+                    <h4 id="education-exp-1"><a href="#">Code Platoon</a></h4>
+                </div>
+                <div id="education-container-bottom-row" >
+                    <img id="education-exp-2-img" src="https://media.licdn.com/dms/image/v2/D4E0BAQEZlg6mgAJIhw/company-logo_100_100/company-logo_100_100/0/1705426852353/keiser_university_logo?e=1738195200&v=beta&t=yrk_gAQvoh9dZQH9mhGAuZiVSkVvUdBahVk8PWrB5ik" />
+                    <h4 id="education-exp-2"><a href="#">Keiser University</a></h4>
+                </div>
             </div>
 
             <div id="btn-bar-container">
