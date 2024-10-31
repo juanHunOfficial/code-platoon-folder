@@ -107,9 +107,9 @@
     position: absolute;
     margin: 0;
     top: 44%;
-    left: 51%;
+    left: 52%;
     height: 10vmin;
-    width: 37vmin;
+    width: 28vmin;
     border: 2px solid green;
 }
 
@@ -147,3 +147,88 @@
     margin: 2px 12px;
     padding: 0;
 }
+
+#btn-bar-container{
+    display: flex;
+    align-items:center;
+    margin: 0;
+    border: 2px solid orange;
+    height: 5vmin;
+    width: 66vmin;
+    top: 62%;
+    left: 4%;
+    position: absolute;
+}
+
+#open-to-btn{
+    border: none;
+    background-color: rgb(32, 127, 243);
+    color: rgb(232, 229, 229);
+    margin: 0 4px 0 0;
+    height: 30px;
+    width: 90px;
+    border-radius: 16px;
+    font-size: 110%;
+    font-weight: 400;
+}
+
+#add-profile-btn{
+    margin: 0 4px;
+    color: rgb(32, 127, 243);
+    border: 1px solid rgb(32, 127, 243);
+    border-radius: 16px;
+    height: 30px;
+    width: 170px;
+    background-color: transparent;
+    font-size: 110%;
+    font-weight: 400;
+}
+
+#enhance-profile-btn{
+    margin: 0 4px;
+    color: rgb(32, 127, 243);
+    border: 1px solid rgb(32, 127, 243);
+    border-radius: 16px;
+    height: 30px;
+    width: 150px;
+    background-color: transparent;
+    font-size: 110%;
+    font-weight: 400;
+}
+
+#more-button{
+    border: 1px solid rgb(44, 43, 43);
+    background-color: transparent;
+    color: rgb(44, 43, 43);
+    margin: 0 4px 0 0;
+    height: 30px;
+    width: 75px;
+    border-radius: 16px;
+    font-size: 110%;
+    font-weight: 400;
+}
+
+#open-to-work-container{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    width: 310px;
+    position: absolute;
+    border: 2px solid green;
+    top: 71%;
+    left: 4%;
+}
+
+#showcase-services-container{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    width: 310px;
+    position: absolute;
+    border: 2px solid hotpink;
+    top: 71%;
+    left:52%;
+}
+
