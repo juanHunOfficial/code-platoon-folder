@@ -216,8 +216,34 @@
     width: 310px;
     position: absolute;
     border: 2px solid green;
+    border-radius: 12px;
     top: 71%;
     left: 4%;
+    background-color: rgb(180, 213, 240);
+}
+
+.edit-btn-open-to-work-con{
+    position: absolute;
+    top: 2%;
+    right: 1%;
+    background-color: rgb(180, 213, 240);
+    border: none;
+}
+
+.edit-btn-open-to-work-con:hover{
+    background-color: rgb(147, 197, 237);
+}
+
+#open-to-work-text{
+    margin: 16px 0 0 10px;
+}
+
+#requested-positions{
+    margin: 3px 0 0 10px;
+}
+
+#show-details-link{
+    margin: 2px 0 0 10px;
 }
 
 #showcase-services-container{
@@ -230,5 +256,6 @@
     border: 2px solid hotpink;
     top: 71%;
     left:52%;
+    border-radius: 12px;
 }
 

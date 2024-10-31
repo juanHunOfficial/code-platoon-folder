@@ -33,10 +33,10 @@ function ProfileInfo () {
             </div>
             {/* the block below is for open to work button */}
             <div id="open-to-work-container">
-                <button className="edit-btn edit-btn-small"></button>
-                <h4>Open to work</h4>
-                <p>Software Engineer, Software Progr...</p>
-                <p><a href="#">Show details</a></p>
+                <button className="edit-btn edit-btn-open-to-work-con">X</button>
+                <h4 id="open-to-work-text" >Open to work</h4>
+                <p id="requested-positions" >Software Engineer, Software Progr...</p>
+                <p id="show-details-link" ><a href="#">Show details</a></p>
             </div>
 
             <div id="showcase-services-container">
