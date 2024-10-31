@@ -1,0 +1,103 @@
+#profile-header-container{
+    display:flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    border: 5px solid red;
+    border-radius: 18px;
+    height: 70vmin;
+    width: 80vmin;
+    position: relative;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#cover-photo-img{
+    height: 20vmin;
+    width: 82vmin;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.edit-btn{
+    height: 35px;
+    width: 35px;
+    border: 1px solid blue;
+    border-radius: 50%;
+    z-index: 10;
+    background-color: aliceblue;
+}
+
+#profile-photo-img{
+    position: absolute;
+    top: 10%;
+    left: 4%;
+    border: 6px solid white;
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    z-index: 5;
+}
+
+.profile-card-edit-btn{
+    position: absolute;
+    top: 4%;
+    right: 4%;
+}
+
+#name-and-verified-symbol-container{
+    border: 2px solid yellow;
+    height: 4vmin;
+    width: 25vmin;
+    display: flex;
+    justify-content: start;
+    position: absolute;
+    top: 44%;
+    left: 4%;
+    align-items: center;
+}
+#name{
+    font-size: 150%;
+    font-weight: 500;
+    height: 40px;
+    width: 140px;
+    margin-top: 30px;
+}
+#verified-symbol{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin-left: -30px;
+}
+
+#occupation-and-area-info{
+    display:flex;
+    flex-direction: column;
+    position: absolute;
+    top: 49.5%;
+    left: 4%;
+    height: 8vmin;
+    width: 37vmin;
+    border: 2px solid blue;
+}
+
+#job-title{
+    margin: 0;
+    padding: 0;
+    font-size: 125%;
+    font-weight: 100;
+}
+
+#address-line{
+    margin: 2px;
+    padding: 0;
+    font-weight:100;
+}
+
+#connections{
+    margin: 2px;
+    padding: 0;
+
+}
+
