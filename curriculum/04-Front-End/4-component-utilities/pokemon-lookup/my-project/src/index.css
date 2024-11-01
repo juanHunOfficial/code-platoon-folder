@@ -4,16 +4,16 @@
 
 @keyframes shine {
     0% {
-        background-position: -200% -200%;
+        background-position: -100%;
     }
     100%{
-        background-position: 200% 200%;
+        background-position: 100%;
     }
 }
 
 .animate-shine {
-    background-size: 400% 400%;
-    animation: shine 8s infinite linear;
+    background-size: 200%;
+    animation: shine 3s infinite linear;
 }
 
 .holographic-overlay {
@@ -23,8 +23,4 @@
         rgba(255, 255, 255, 0.3),
         rgba(255, 255, 255, 0.1)
     );
-}
-
-.card-background {
-    background: linear-gradient(135deg, rgba(91, 0, 83, 0.721), rgba(0, 242, 255, 0.634));
 }
