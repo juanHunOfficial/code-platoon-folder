@@ -10,44 +10,59 @@ function App() {
   const [fetchedImg, setFetchedImg] = useState(noPokemonBackground)
   const [fetchedTypes, setFetchedTypes] = useState(["none"])
 
-console.log(fetchedTypes)
-
   
-    const pokemonTypeColors = {
-      "fire": '-red-500',
-      "water": '-blue-500',
-      "grass": '-green-500',
-      "electric": '-yellow-500',
-      "normal": '-gray-200',
-      "ice": '-cyan-200',
-      "fighting": '-red-700',
-      "poison": '-purple-600',
-      "ground": '-orange-600',
-      "flying": '-blue-400',
-      "psychic": '-pink-300',
-      "bug": '-green-400',
-      "rock": '-yellow-600',
-      "ghost": '-purple-700',
-      "dragon": '-blue-600',
-      "dark": '-gray-700',
-      "steel": '-gray-300',
-      "fairy": '-pink-400',
+    const fromPokemonTypeColors = {
+      "fire": 'from-red-500',
+      "water": 'from-blue-500',
+      "grass": 'from-green-500',
+      "electric": 'from-yellow-500',
+      "normal": 'from-gray-300',
+      "ice": 'from-cyan-200',
+      "fighting": 'from-red-700',
+      "poison": 'from-purple-600',
+      "ground": 'from-orange-600',
+      "flying": 'from-blue-400',
+      "psychic": 'from-pink-300',
+      "rock": 'from-yellow-600',
+      "ghost": 'from-purple-700',
+      "dragon": 'from-blue-600',
+      "dark": 'from-gray-700',
+      "steel": 'from-gray-300',
+      "fairy": 'from-pink-400',
+      "bug": 'from-green-300',
     };
-    let fromColor = pokemonTypeColors[fetchedTypes[0]]
-    let toColor = pokemonTypeColors[fetchedTypes[2]]
-    fetchedTypes.length === 3 ? (fromColor = 'from'+pokemonTypeColors[fetchedTypes[0]], toColor = 'to'+pokemonTypeColors[fetchedTypes[2]]) :
-    (fromColor = 'from'+pokemonTypeColors[fetchedTypes], toColor = 'to'+pokemonTypeColors[fetchedTypes])
 
-    // if(fromColor === "from-red-500"){
-    //   fromColor = "from-red-500"
-    // }
+    const toPokemonTypeColors = {
+      "fire": 'to-red-500',
+      "water": 'to-blue-500',
+      "grass": 'to-green-500',
+      "electric": 'to-yellow-500',
+      "normal": 'to-gray-300',
+      "ice": 'to-cyan-200',
+      "fighting": 'to-red-700',
+      "poison": 'to-purple-500',
+      "ground": 'to-orange-600',
+      "flying": 'to-blue-400',
+      "psychic": 'to-pink-300',
+      "bug": 'to-green-300',
+      "rock": 'to-yellow-600',
+      "ghost": 'to-purple-800',
+      "dragon": 'to-blue-600',
+      "dark": 'to-gray-700',
+      "steel": 'to-gray-300',
+      "fairy": 'to-pink-400',
+    };
+    let fromColor = ""
+    let toColor = ""
+   
+    Array.isArray(fetchedTypes) ? (fromColor = fromPokemonTypeColors[fetchedTypes[0]], toColor = toPokemonTypeColors[fetchedTypes[2]]) :
+    (fromColor = fromPokemonTypeColors[fetchedTypes], toColor = toPokemonTypeColors[fetchedTypes])
 
-    console.log(fromColor)
-    console.log(toColor)
+    //build a capitalize function that will capitalize the name and build another for the array
     
   return (
     <>
-      <div style={{backgroundColor: fromColor,toColor}} className= {`bg-gradient-to-r ${toColor} ${fromColor} container animate-shine shadow-lg z-0 mx-auto flex mt-32 justify-center items-center border-4 border-black rounded-xl h-96 w-72 relative overflow-hidden `} >
+      <div className= {`bg-gradient-to-r ${toColor} ${fromColor} container animate-shine shadow-lg z-0 mx-auto flex mt-32 justify-center items-center border-4 border-black rounded-xl h-96 w-72 relative overflow-hidden `} >
       <div className='absolute inset-0 holographic-overlay animate-shine from-white/10 to-white/30 pointer-events-none' ></div>
         <PokemonImg fetchedImg={fetchedImg}/>
         <h2 className='absolute text-center font-semibold text-3xl z-30 w-auto top-4'>{fetchedPokemon.name}</h2>
