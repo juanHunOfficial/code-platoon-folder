@@ -1,10 +1,13 @@
+import { useLocation } from 'react-router-dom';
 
+function CharacterInfoPage(){
+    const location = useLocation();
+    const charData = location.state;
 
-function CharacterInfoPage({charData}){
     console.log(charData)
     return(
         <>
-            <h1>YOu made it to the char info page</h1>
+            <h1>You made it to the char info page</h1>
         </>
     )
 }
