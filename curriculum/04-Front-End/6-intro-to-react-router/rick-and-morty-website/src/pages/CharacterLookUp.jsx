@@ -1,19 +1,20 @@
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import axios from "axios"
-import { useState } from "react"
 
-function CharacterLookUp(){
-    const [charData, setCharData] = useState("")
+
+
+function CharacterLookUp({setCharData}){
+    
 
     const handleSubmit = async() => {
         const idToFetch = document.querySelector("#character-look-up-form")
         let {data} = await axios.get(`https://rickandmortyapi.com/api/character/${idToFetch.value}`)
         idToFetch.value = ""
         setCharData(data)
+        // window.history.pushState({}, "", "/character-info")
     }
 
-    console.log(charData)
 
     return(
         <>

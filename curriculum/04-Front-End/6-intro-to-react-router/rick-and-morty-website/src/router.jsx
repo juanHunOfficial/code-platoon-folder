@@ -4,7 +4,9 @@ import HomePage from "./pages/HomePage.jsx"
 import AboutRickPage from "./pages/AboutRickPage.jsx"
 import CharacterLookUp from "./pages/CharacterLookUp.jsx"
 import CharacterInfoPage from "./pages/CharacterInfoPage.jsx"
+import { useState } from "react"
 
+const [charData, setCharData] = useState(" ")
 
 const router = createBrowserRouter([
     {
@@ -21,11 +23,11 @@ const router = createBrowserRouter([
             },
             {
                 path: "character-lookup/",
-                element: <CharacterLookUp />
+                element: <CharacterLookUp setCharData={setCharData} />
             },
             {
                 path: "character-info/",
-                element: <CharacterInfoPage />
+                element: <CharacterInfoPage charData={charData} />
             }
         ]
     }
