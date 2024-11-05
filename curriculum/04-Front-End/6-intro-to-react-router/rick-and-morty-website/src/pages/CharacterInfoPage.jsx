@@ -32,8 +32,12 @@ function CharacterInfoPage(){
         }, 1000)
     }, [])
 
+    
+
+
     return(
         <>
+        
             {loading ? (
                 <div style={{height: "500px", width: "500px", textAlign: "center", margin: "80px auto"}}>
                     <LoadingSpinner style={{height: "500px", width: "500px"}} />

@@ -48,7 +48,7 @@ function HomePage(){
                             <Card.Body>
                                 <Card.Title>{rickInfo[1]}</Card.Title>
                                 <Card.Text>
-                                Variant: {rickInfo[2]}  
+                                    Variant: {rickInfo[2]}  
                                 </Card.Text>
                                 <Button variant="primary" id='rick-btn' onClick={sendToCharacterInfoPage} >Learn More</Button>
                             </Card.Body>
@@ -59,7 +59,7 @@ function HomePage(){
                             <Card.Body>
                                 <Card.Title>{mortyInfo[1]}</Card.Title>
                                 <Card.Text>
-                                Variant: {mortyInfo[2]}  
+                                    Variant: {mortyInfo[2]}  
                                 </Card.Text>
                                 <Button variant="primary" id='morty-btn' onClick={sendToCharacterInfoPage}>Learn More</Button>
                             </Card.Body>
