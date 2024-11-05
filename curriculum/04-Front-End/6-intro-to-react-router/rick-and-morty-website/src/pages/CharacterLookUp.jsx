@@ -6,12 +6,10 @@ function CharacterLookUp(){
     const navigate = useNavigate()
 
     const handleSubmit = () => {
-        const idToFetch = document.querySelector("#character-look-up-form")
-        let urlToPass = `https://rickandmortyapi.com/api/character/${idToFetch.value}`
-        idToFetch.value = ""
-        navigate("/character-info", {state: urlToPass})
+        const id = document.querySelector("#character-look-up-form").value
+        navigate(`/character-info/${id}/`)
+        
     }
-
 
     return(
         <>

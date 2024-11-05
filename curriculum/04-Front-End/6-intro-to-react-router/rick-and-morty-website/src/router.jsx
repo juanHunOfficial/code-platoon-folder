@@ -23,7 +23,7 @@ const router = createBrowserRouter([
                 element: <CharacterLookUp />
             },
             {
-                path: "character-info/",
+                path: "character-info/:id/",
                 element: <CharacterInfoPage />
             }
         ]
