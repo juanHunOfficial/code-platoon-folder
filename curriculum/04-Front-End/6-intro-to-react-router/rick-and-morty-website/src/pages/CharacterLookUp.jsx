@@ -1,16 +1,15 @@
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import axios from "axios"
 import { useNavigate } from 'react-router-dom'
 
 function CharacterLookUp(){
     const navigate = useNavigate()
 
-    const handleSubmit = async() => {
+    const handleSubmit = () => {
         const idToFetch = document.querySelector("#character-look-up-form")
-        let {data} = await axios.get(`https://rickandmortyapi.com/api/character/${idToFetch.value}`)
+        let urlToPass = `https://rickandmortyapi.com/api/character/${idToFetch.value}`
         idToFetch.value = ""
-        navigate("/character-info", {state: data})
+        navigate("/character-info", {state: urlToPass})
     }
 
 

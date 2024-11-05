@@ -39,7 +39,7 @@ function HomePage(){
 
     return(
         <>
-            <h1>Home Page</h1>
+            <h1>Rick and Morty Main Characters</h1>
             <Row xs={2} md={4} className="g-4">
                 <Col>
                     <Card>
