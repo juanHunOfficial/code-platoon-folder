@@ -56,9 +56,8 @@ function App() {
     let toColor = ""
 
     function capitalize(word){
-      word = word.chatAt(0).toUpperCase() + word.slice(1)
+      word = word.charAt(0).toUpperCase() + word.slice(1)
     }
-    console.log(fetchedPokemon.name)
     Array.isArray(fetchedTypes) ? (fromColor = fromPokemonTypeColors[fetchedTypes[0]], toColor = toPokemonTypeColors[fetchedTypes[2]]) :
     (fromColor = fromPokemonTypeColors[fetchedTypes], toColor = toPokemonTypeColors[fetchedTypes])
 
@@ -66,7 +65,7 @@ function App() {
     
   return (
     <>
-      <div className= {`bg-gradient-to-r ${toColor} ${fromColor} container animate-shine shadow-lg z-0 mx-auto flex mt-32 justify-center items-center border-4 border-black rounded-xl h-96 w-72 relative overflow-hidden `} >
+      <div className= {`bg-gradient-to-r  ${toColor} ${fromColor} container animate-shine shadow-lg z-0 mx-auto flex mt-32 justify-center items-center border-4 border-black rounded-xl h-96 w-72 relative overflow-hidden `} >
       <div className='absolute inset-0 holographic-overlay animate-shine from-white/10 to-white/30 pointer-events-none' ></div>
         <PokemonImg fetchedImg={fetchedImg}/>
         <h2 className='absolute text-center font-semibold text-3xl z-30 w-auto top-4'> {fetchedPokemon.name === undefined ? "" : capitalize(fetchedPokemon.name)}</h2>
