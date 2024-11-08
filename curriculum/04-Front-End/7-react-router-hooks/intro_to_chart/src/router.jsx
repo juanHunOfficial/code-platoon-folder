@@ -1,7 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from './App.jsx';
 import HomePage from './pages/HomePage.jsx';
-import AreaChartComponent from './components/AreaChart.jsx';
+import AreaChartComponent from './components/AreaChartEx.jsx';
+import BarChartEx from './components/BarChartEx.jsx';
 
 const router = createBrowserRouter([
     {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
             {
                 path: "/area_chart/",
                 element: <AreaChartComponent />
+            },
+            {
+                path: "/bar_chart/",
+                element: <BarChartEx />
             },
         ]
     }

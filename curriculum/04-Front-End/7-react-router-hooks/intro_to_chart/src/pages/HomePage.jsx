@@ -1,6 +1,5 @@
 import Carousel from 'react-bootstrap/Carousel';
 import areaChartPic from '../assets/area-chart.png'
-import { Link } from 'react-router-dom'
 
 const HomePage = () => {
     return(
