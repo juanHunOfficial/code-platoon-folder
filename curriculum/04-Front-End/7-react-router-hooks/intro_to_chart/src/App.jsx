@@ -64,6 +64,7 @@ function App() {
                 <Nav.Link as={ Link } to="/" >Home</Nav.Link>
                 <Nav.Link as={ Link } to="/area_chart/" >Area Charts Example</Nav.Link>
                 <Nav.Link as={ Link } to="/bar_chart/" >Bar Charts Example</Nav.Link>
+                <Nav.Link as={ Link } to="/line_chart/" >Line Charts Example</Nav.Link>
               </Nav>
             </Navbar.Collapse>
         </Container>
