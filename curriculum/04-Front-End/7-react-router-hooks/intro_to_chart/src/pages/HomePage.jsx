@@ -1,6 +1,7 @@
 import Carousel from 'react-bootstrap/Carousel';
 import areaChartPic from '../assets/area-chart.png';
 import barChartPic from '../assets/bar-chart.png';
+import lineChartPic from '../assets/line-chart.png';
 
 const HomePage = () => {
     return(
@@ -10,7 +11,7 @@ const HomePage = () => {
                 <Carousel data-bs-theme="dark">
                     <Carousel.Item>
                         <img
-                            style={{width: "800px", height: "400px"}}
+                            style={{width: "500px", height: "500px"}}
                             className="d-block w-100"
                             src={areaChartPic}
                             alt="First slide: An Area Chart Picture"
@@ -22,7 +23,7 @@ const HomePage = () => {
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
-                            style={{width: "800px", height: "400px"}}
+                            style={{width: "500px", height: "500px"}}
                             className="d-block w-100"
                             src={barChartPic}
                             alt="Second slide: A Bar Chart Picture"
@@ -34,14 +35,14 @@ const HomePage = () => {
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
-                            style={{width: "800px", height: "400px"}}
+                            style={{width: "500px", height: "500px"}}
                             className="d-block w-100"
-                            src="holder.js/800x400?text=Third slide&bg=e5e5e5"
-                            alt="Third slide"
+                            src={lineChartPic}
+                            alt="Third slide: Line Chart Example"
                         />
                         <Carousel.Caption>
                             <h5>Third slide label</h5>
-                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                            <p>This example is a simple line chart with different stroke sizes.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
