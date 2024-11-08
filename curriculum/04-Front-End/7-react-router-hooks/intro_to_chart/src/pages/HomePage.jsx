@@ -1,5 +1,6 @@
 import Carousel from 'react-bootstrap/Carousel';
-import areaChartPic from '../assets/area-chart.png'
+import areaChartPic from '../assets/area-chart.png';
+import barChartPic from '../assets/bar-chart.png';
 
 const HomePage = () => {
     return(
@@ -12,7 +13,7 @@ const HomePage = () => {
                             style={{width: "800px", height: "400px"}}
                             className="d-block w-100"
                             src={areaChartPic}
-                            alt="First slide"
+                            alt="First slide: An Area Chart Picture"
                         />
                         <Carousel.Caption>
                             <h5>Area Chart Example</h5>
@@ -23,12 +24,12 @@ const HomePage = () => {
                         <img
                             style={{width: "800px", height: "400px"}}
                             className="d-block w-100"
-                            src="holder.js/800x400?text=Second slide&bg=eee"
-                            alt="Second slide"
+                            src={barChartPic}
+                            alt="Second slide: A Bar Chart Picture"
                         />
                         <Carousel.Caption>
-                            <h5>Second slide label</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <h5>Bar Chart Example</h5>
+                            <p>This example goes over the bar chart from recharts component.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
