@@ -7,7 +7,7 @@ const HomePage = () => {
     return(
         <>
             <h1 style={{textAlign: "center"}} >Home Page</h1>
-            <div style={{margin: "50px auto", backgroundColor: "black"}} >
+            <div className='bg-black w-auto border-black ' style={{margin: "50px auto"}} >
                 <Carousel data-bs-theme="dark">
                     <Carousel.Item>
                         <img

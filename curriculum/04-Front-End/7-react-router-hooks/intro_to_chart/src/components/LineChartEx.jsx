@@ -7,7 +7,7 @@ const LineChartEx = () => {
         <>
             <h1 style={{margin: "50px auto", textAlign: "center"}} >Line Chart Example</h1>
             <div style={{margin: "20px auto", height: "600px", width: "600px"}} >
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height={500}>
                     <LineChart
                         width={500}
                         height={300}

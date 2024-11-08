@@ -7,7 +7,7 @@ const BarChartEx = () => {
         <>
             <h1 style={{margin:"50px auto", textAlign: "center"}} >Bar chart is rendering correctly</h1>
             <div style={{width: "600px", height: "600px", margin:"50px auto"}}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height={500}>
                     <BarChart
                         width={500}
                         height={300}

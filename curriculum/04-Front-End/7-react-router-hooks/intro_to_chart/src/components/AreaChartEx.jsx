@@ -49,7 +49,7 @@ const AreaChartComponent = () =>{
         <>
             <h1 style={{textAlign: "center" ,margin: "20px auto"}} >Area Chart Example</h1>
             <div style={{height: "600px", width: "600px", margin:"50px auto"}}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height={500}>
                     <AreaChart width={500} height={400} data={data} margin={{right: 50, top: 50, bottom: 30}}>
                     <defs>
                         <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
