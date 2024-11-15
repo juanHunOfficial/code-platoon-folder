@@ -35,11 +35,3 @@ def validate_combination_format(combination):
         return valid_combination
     else:
         raise ValidationError(error_message, params={'combination': combination})
-    
-def validate_subjects(subjects):
-    error_message = 'Subjects are not within 0-8 in length'
-    
-    if len(subjects) > 0 and len(subjects) < 8:
-        return subjects
-    else: 
-        raise ValidationError(error_message, params={'subjects' : subjects})
