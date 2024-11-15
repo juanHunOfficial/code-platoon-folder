@@ -18,7 +18,7 @@ def validate_subject_format(subject):
 def validate_professor_name(professor):
     error_m = 'Professor name must be in the format "Professor Adam".'
     
-    regex = r"^[A-Za-z]+\.?\s[A-Z][a-z]+$"
+    regex = r"^Professor\s[A-Z][a-z]+$"
     
     valid_combination = re.match(regex, professor)
     

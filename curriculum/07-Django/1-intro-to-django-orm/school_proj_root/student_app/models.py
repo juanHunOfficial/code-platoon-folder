@@ -11,7 +11,7 @@ class Student(models.Model):
     locker_number = models.IntegerField(default=110, unique=True, blank=False, validators=[v.MinValueValidator(1), v.MaxValueValidator(200)])
     locker_combination = models.CharField(default="12-12-12", unique=False, max_length=50, blank=False, validators=[validate_combination_format])
     good_student = models.BooleanField(default=True, unique=False, blank=False) 
-    subjects = models.ManyToManyField(Subject, default=None, unique=False, validators=[v.MinValueValidator(1), v.MaxValueValidator(7)], related_name='students')
+    subjects = models.ManyToManyField(Subject, default=None, unique=False, related_name='students')
     
     def __str__(self):
         return f"{self.name} - {self.student_email} - {self.locker_number}"
