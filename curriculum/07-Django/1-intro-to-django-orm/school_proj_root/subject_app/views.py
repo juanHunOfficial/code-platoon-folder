@@ -1,10 +1,13 @@
 from django.shortcuts import render
 from .models import Subject
 from .serializers import SubjectSerializer
-from django.http import JsonResponse
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
 # Create your views here.
-def all_subjects(request):
-    all_subjects_ser = SubjectSerializer(Subject.objects.order_by('subject_name'), many=True)
+class All_subjects(APIView):
     
-    return JsonResponse({'subjects': all_subjects_ser.data})
+    def get(self, request):
+        all_subjects_ser = SubjectSerializer(Subject.objects.order_by('subject_name'), many=True)
+        
+        return Response(all_subjects_ser.data)
