@@ -11,3 +11,6 @@ class All_subjects(APIView):
         all_subjects_ser = SubjectSerializer(Subject.objects.all(), many=True)
         
         return Response(all_subjects_ser.data)
+
+class A_subject():
+    pass

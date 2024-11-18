@@ -3,4 +3,5 @@ from .views import All_subjects
 
 urlpatterns = [
     path('', All_subjects.as_view(), name='all_subjects'),
+    # path('<str:name>/', A_subject.as_view(), name='')
 ]
