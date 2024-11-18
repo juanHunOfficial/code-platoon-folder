@@ -18,10 +18,12 @@ class Student(models.Model):
     
     def locker_reassignment(self, new_locker: int) -> None:
         self.locker_number = new_locker
+        self.full_clean()
         self.save()
         
     def student_status(self, new_status: bool) -> None:
         self.good_student = new_status
+        self.full_clean()
         self.save()
         
     def add_subject(self, subject_id):
