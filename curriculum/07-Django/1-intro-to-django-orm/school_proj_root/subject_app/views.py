@@ -8,6 +8,6 @@ from rest_framework.response import Response
 class All_subjects(APIView):
     
     def get(self, request):
-        all_subjects_ser = SubjectSerializer(Subject.objects.order_by('subject_name'), many=True)
+        all_subjects_ser = SubjectSerializer(Subject.objects.all(), many=True)
         
         return Response(all_subjects_ser.data)

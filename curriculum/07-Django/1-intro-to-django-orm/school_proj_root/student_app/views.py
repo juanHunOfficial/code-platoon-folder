@@ -9,6 +9,6 @@ from rest_framework.response import Response
 class All_students(APIView):
     
     def get(self, request):
-        all_students_ser = StudentAllSerializer(Student.objects.order_by('name'), many=True)
+        all_students_ser = StudentAllSerializer(Student.objects.all(), many=True)
         #JsonResponse requires a dict so the 'students' key is simply to put it in the format. it serves not real purpose otherwise
         return Response( all_students_ser.data)
