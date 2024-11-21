@@ -6,5 +6,5 @@ from list_app.models import List
 class Task(models.Model):
     task_name = models.CharField(max_length=150, blank=False)
     completed = models.BooleanField(default=False)
-    parent_list = models.ForeignKey(List, on_delete=models.CASCADE, related_name='tasks')
-                                                                    #this is shown in List.tasks
+    parent_list = models.ForeignKey(List, on_delete=models.CASCADE, related_name='tasks', null=True)
+                                                                    #this is shown in List.tasks 

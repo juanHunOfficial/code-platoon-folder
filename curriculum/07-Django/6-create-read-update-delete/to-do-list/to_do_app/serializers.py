@@ -6,4 +6,4 @@ class TaskSerializer(serializers.ModelSerializer):
         model = Task
         fields = ['task_name', 'completed']
         
-        
+    
