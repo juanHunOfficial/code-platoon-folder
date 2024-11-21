@@ -10,4 +10,4 @@ class IntOrStrConverter:
     def to_url(self, value):
         return str(value)
     
-    #import into url path with register_converter
+    #import into url path with register_converter(<NameOfConverter>, <alias>)
