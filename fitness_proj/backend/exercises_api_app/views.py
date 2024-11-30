@@ -2,7 +2,6 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 import requests
-from requests_oauthlib import OAuth1
 from fitness_proj.settings import env
 from rest_framework.status import HTTP_404_NOT_FOUND
 import pprint
