@@ -1,0 +1,142 @@
+[
+    {
+        "num_of_sets": 4, 
+        "num_of_reps": 12, 
+        "type": "legs", 
+        "exercise_name": "Squats", 
+        "workout": 1
+    },
+    {
+        "num_of_sets": 3, 
+        "num_of_reps": 10, 
+        "type": "arms", 
+        "exercise_name": "Bicep Curls", 
+        "workout": 2
+    },
+    {
+        "num_of_sets": 4, 
+        "num_of_reps": 8, 
+        "type": "chest", 
+        "exercise_name": "Bench Press", 
+        "workout": 3
+    },
+    {
+        "num_of_sets": 3, 
+        "num_of_reps": 12, 
+        "type": "back", 
+        "exercise_name": "Deadlifts", 
+        "workout": 4
+    },
+    {
+        "num_of_sets": 4, 
+        "num_of_reps": 20, 
+        "type": "abs", 
+        "exercise_name": "Planks", 
+        "workout": 5
+    },
+    {
+        "num_of_sets": 5, 
+        "num_of_reps": 15, 
+        "type": "push", 
+        "exercise_name": "Push-ups", 
+        "workout": 6
+    },
+    {
+        "num_of_sets": 4, 
+        "num_of_reps": 10, 
+        "type": "pull", 
+        "exercise_name": "Pull-ups", 
+        "workout": 7
+    },
+    {
+        "num_of_sets": 3, 
+        "num_of_reps": 8, 
+        "type": "shoulders", 
+        "exercise_name": "Overhead Press", 
+        "workout": 8
+    },
+    {
+        "num_of_sets": 4, 
+        "num_of_reps": 12, 
+        "type": "legs", 
+        "exercise_name": "Lunges", 
+        "workout": 9
+    },
+    {
+        "num_of_sets": 4, 
+        "num_of_reps": 10, 
+        "type": "chest", 
+        "exercise_name": "Chest Flys", 
+        "workout": 10
+    },
+    {
+        "num_of_sets": 4, 
+        "num_of_reps": 15, 
+        "type": "abs", 
+        "exercise_name": "Leg Raises", 
+        "workout": 11
+    },
+    {
+        "num_of_sets": 3, 
+        "num_of_reps": 8, 
+        "type": "back", 
+        "exercise_name": "Barbell Rows", 
+        "workout": 12
+    },
+    {
+        "num_of_sets": 4, 
+        "num_of_reps": 10, 
+        "type": "legs", 
+        "exercise_name": "Leg Press", 
+        "workout": 13
+    },
+    {
+        "num_of_sets": 3, 
+        "num_of_reps": 12, 
+        "type": "push", 
+        "exercise_name": "Incline Bench", 
+        "workout": 14
+    },
+    {
+        "num_of_sets": 4, 
+        "num_of_reps": 10, 
+        "type": "pull", 
+        "exercise_name": "Lat Pulldown", 
+        "workout": 15
+    },
+    {
+        "num_of_sets": 5,
+        "num_of_reps": 15, 
+        "type": "abs", 
+        "exercise_name": "Russian Twists", 
+        "workout": 16
+    },
+    {
+        "num_of_sets": 3, 
+        "num_of_reps": 8, 
+        "type": "shoulders", 
+        "exercise_name": "Lateral Raises", 
+        "workout": 17
+    },
+    {
+        "num_of_sets": 3, 
+        "num_of_reps": 10, 
+        "type": "chest", 
+        "exercise_name": "Dumbbell Press", 
+        "workout": 18
+    },
+    {
+        "num_of_sets": 4, 
+        "num_of_reps": 12, 
+        "type": "back", 
+        "exercise_name": "T-bar Row", 
+        "workout": 19
+    },
+    {
+        "num_of_sets": 3, 
+        "num_of_reps": 10, 
+        "type": "legs", 
+        "exercise_name": "Leg Curl", 
+        "workout": 20
+    }
+  ]

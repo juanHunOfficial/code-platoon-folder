@@ -11,5 +11,5 @@ def validate_workout_name(workout_name):
     
     regex = r'^[A-Za-z0-9]+(?:[\s][A-Za-z0-9]+)*$'
     
-    if not re.match(regex, tracker_name):
+    if not re.match(regex, workout_name):
         raise ValidationError(error_message)
