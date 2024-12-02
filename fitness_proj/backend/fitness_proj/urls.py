@@ -22,5 +22,5 @@ urlpatterns = [
     path('api/v1/users/', include('user_app.urls')),
     path('api/v1/exercises/', include('exercises_api_app.urls')),
     path('api/v1/nutrition/', include('nutrition_api_app.urls')),
-    # path('api/v1/tracker/', include('tracker_app.urls')),
+    path('api/v1/tracker/', include('tracker_app.urls')),
 ]
