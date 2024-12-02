@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'tracker_app',
     'user_app',
+    'exercise_app',
+    'workout_app',
     'exercises_api_app',
     'dotenv',
 ]
