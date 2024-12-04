@@ -1,9 +1,11 @@
-import { useState, useTransition } from 'react';
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { userSignup } from '../utilities';
+import { useOutletContext } from 'react-router-dom';
 
 function SignupForm() {
+    const { setUser } = useOutletContext()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [age, setAge] = useState("")
@@ -19,7 +21,7 @@ function SignupForm() {
             'age': age,
             'registration' : registration
         }
-        await userSignup(formData)
+        setUser(await userSignup(formData))
     }
 
   return (

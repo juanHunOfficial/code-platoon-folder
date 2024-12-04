@@ -31,14 +31,14 @@ class LogIn(APIView):
         current_user = authenticate(username=email, password=password)
         if current_user:
             token, created = Token.objects.get_or_create(user=current_user)
-            return Response({"token" : token.key, "email": current_user.email})
+            return Response({"token" : token.key, "email": current_user.email, "firstname" : current_user.firstname})
         else:
             return Response("None of our clients match those credentials.")
         
 class Info(TokenReq):
     
     def get(self, request):
-        return Response({'email':request.user.email})
+        return Response({'firstname':request.user.firstname})
     
 class LogOut(TokenReq):
     
