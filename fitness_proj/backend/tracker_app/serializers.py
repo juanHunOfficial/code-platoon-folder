@@ -4,4 +4,4 @@ from .models import Tracker
 class TrackerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tracker
-        fields = ['tracker_name']
+        fields = ['tracker_name', 'workout']
