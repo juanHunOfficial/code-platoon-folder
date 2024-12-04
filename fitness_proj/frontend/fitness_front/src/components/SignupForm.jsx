@@ -1,6 +1,7 @@
 import { useState, useTransition } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { userSignup } from '../utilities';
 
 function SignupForm() {
     const [email, setEmail] = useState("")
@@ -9,16 +10,16 @@ function SignupForm() {
     const [firstName, setFirstName] = useState("")
     const [registration, setRegistration] = useState(false)
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault()
         let formData = {
             'email' : email,
             'password': password,
-            'firstname': firstName,
+            'firstName': firstName,
             'age': age,
             'registration' : registration
         }
-        console.log(formData)
+        await userSignup(formData)
     }
 
   return (
