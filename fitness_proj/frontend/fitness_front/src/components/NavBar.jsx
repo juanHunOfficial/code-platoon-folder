@@ -9,10 +9,10 @@ const NavBar = () => {
         <>
             <Navbar bg="primary" data-bs-theme="dark">
                 <Container>
-                    <Navbar.Brand > <Link to='/'>Fitness App</Link> </Navbar.Brand>
+                    <Navbar.Brand as={Link} to='/' >Fitness App</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link> <Link to='/'>Home</Link> </Nav.Link>
-                        <Nav.Link> <Link to='/signup/'> Features</Link> </Nav.Link>
+                        <Nav.Link as={Link} to='/'>Home</Nav.Link>
+                        <Nav.Link as={Link} to='/signup/'>Features</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
