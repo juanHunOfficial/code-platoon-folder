@@ -3,9 +3,10 @@ import Form from 'react-bootstrap/Form';
 import { useOutletContext } from 'react-router-dom';
 import { useState } from 'react';
 import { userLogin } from '../utilities';
+import { useNavigate } from 'react-router-dom';
 
 const SigninForm = () => {
-
+    const navigate = useNavigate();
     const { setUser } = useOutletContext()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -17,6 +18,7 @@ const SigninForm = () => {
             'password': password,
         }
         setUser(await userLogin(formData))
+        navigate('/')
     }
 
     return(
