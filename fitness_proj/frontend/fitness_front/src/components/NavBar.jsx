@@ -13,15 +13,21 @@ const NavBar = ({user, setUser}) => {
     return(
         <>
             <Navbar bg="primary" data-bs-theme="dark">
-                <Container>
-                    <Navbar.Brand as={Link} to='/' >Fitness App</Navbar.Brand>
-                    <Nav className="me-auto">
-                        <Nav.Link as={Link} to='/'>Home</Nav.Link>
-                        <Nav.Link as={Link} to='/signup/'>Features</Nav.Link>
+                <Container style={{display : "flex"}}>
+                    <Navbar.Brand as={Link} to='/' >Progressive Overload Tracker</Navbar.Brand>
+                    <Nav className="ms-auto">
+                        <div style={{display :"flex", alignItems:"center"}} >
+                            <Nav.Link as={Link} to='/'>Home</Nav.Link>
+                            <Nav.Link as={Link} to='/'>Exercises</Nav.Link>
+                            <Nav.Link as={Link} to='/'>Nutrition</Nav.Link>
+                        </div>
                         {user ? 
                         <>
-                            <Button onClick={loggedOut} >Log Out</Button>
-                        </> : null
+                            <Button variant='outline-light' onClick={loggedOut} >Log Out</Button>
+                        </> : <>
+                                <Button variant='outline-light'><Nav.Link as={Link} to='/signup/'>Sign Up</Nav.Link></Button>
+                                <Button variant='outline-light'><Nav.Link as={Link} to='/signup/'>Login</Nav.Link></Button>
+                              </>
                         }
                     </Nav>
                 </Container>
