@@ -10,4 +10,4 @@ class Exercise(models.Model):
     type = models.CharField(blank=False, validators=[validate_valid_type])
     goal_num_of_sets = models.PositiveIntegerField(blank=False, validators=[v.MinValueValidator(1)])
     goal_num_of_reps = models.PositiveIntegerField(blank=False, validators=[v.MinValueValidator(1)])
-    workout_id = models.ForeignKey(Workout, on_delete=models.CASCADE, related_name='workout_id')
+    workout_id = models.ForeignKey(Workout, on_delete=models.CASCADE, related_name='workouts')
