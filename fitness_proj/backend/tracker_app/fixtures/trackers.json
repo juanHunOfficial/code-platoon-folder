@@ -3,133 +3,152 @@
         "model": "tracker_app.tracker",  
         "pk": 1,  
         "fields": {
-            "tracker_name": "Daily Fitness"
+            "tracker_name": "Daily Fitness",
+            "user_id": 1
         }
     },
     {
         "model": "tracker_app.tracker",
         "pk": 2,
         "fields": {
-            "tracker_name": "Strength Training"
+            "tracker_name": "Strength Training",
+            "user_id": 1
         }
     },
     {
         "model": "tracker_app.tracker",
         "pk": 3,
         "fields": {
-            "tracker_name": "Cardio Blast"
+            "tracker_name": "Cardio Blast",
+            "user_id": 1
         }
     },
     {
         "model": "tracker_app.tracker",
         "pk": 4,
         "fields": {
-            "tracker_name": "Total Body Workout"
+            "tracker_name": "Total Body Workout",
+            "user_id": 1
         }
     },
     {
         "model": "tracker_app.tracker",
         "pk": 5,
         "fields": {
-            "tracker_name": "Flexibility Routine"
+            "tracker_name": "Flexibility Routine",
+            "user_id": 1
         }
     },
     {
         "model": "tracker_app.tracker",
         "pk": 6,
         "fields": {
-            "tracker_name": "Fat Loss Tracker"
+            "tracker_name": "Fat Loss Tracker",
+            "user_id": 1
         }
     },
     {
         "model": "tracker_app.tracker",
         "pk": 7,
         "fields": {
-            "tracker_name": "Muscle Gain Plan"
+            "tracker_name": "Muscle Gain Plan",
+            "user_id": 1
         }
     },
     {
         "model": "tracker_app.tracker",
         "pk": 8,
         "fields": {
-            "tracker_name": "Endurance Training"
+            "tracker_name": "Endurance Training",
+            "user_id": 1
         }
     },
     {
         "model": "tracker_app.tracker",
         "pk": 9,
         "fields": {
-            "tracker_name": "Power Lifting"
+            "tracker_name": "Power Lifting",
+            "user_id": 1
         }
     },
     {
         "model": "tracker_app.tracker",
         "pk": 10,
         "fields": {
-            "tracker_name": "Recovery Program"
+            "tracker_name": "Recovery Program",
+            "user_id": 1
         }
     },
     {
         "model": "tracker_app.tracker",
         "pk": 11,
         "fields": {
-            "tracker_name": "Core Strength"
+            "tracker_name": "Core Strength",
+            "user_id": 1
         }
     },
     {
         "model": "tracker_app.tracker",
         "pk": 12,
         "fields": {
-            "tracker_name": "HIIT Sessions"
+            "tracker_name": "HIIT Sessions",
+            "user_id": 1
         }
     },
     {
         "model": "tracker_app.tracker",
         "pk": 13,
         "fields": {
-            "tracker_name": "Leg Day Focus"
+            "tracker_name": "Leg Day Focus",
+            "user_id": 1
         }
     },
     {
         "model": "tracker_app.tracker",
         "pk": 14,
         "fields": {
-            "tracker_name": "Push Pull Legs"
+            "tracker_name": "Push Pull Legs",
+            "user_id": 1
         }
     },
     {
         "model": "tracker_app.tracker",
         "pk": 15,
         "fields": {
-            "tracker_name": "Bodyweight Training"
+            "tracker_name": "Bodyweight Training",
+            "user_id": 1
         }
     },
     {
         "model": "tracker_app.tracker",
         "pk": 16,
         "fields": {
-            "tracker_name": "Strength & Cardio"
+            "tracker_name": "Strength & Cardio",
+            "user_id": 1
         }
     },
     {
         "model": "tracker_app.tracker",
         "pk": 17,
         "fields": {
-            "tracker_name": "Weight Loss Journey"
+            "tracker_name": "Weight Loss Journey",
+            "user_id": 1
         }
     },
     {
         "model": "tracker_app.tracker",
         "pk": 18,
         "fields": {
-            "tracker_name": "Flex & Tone"
+            "tracker_name": "Flex & Tone",
+            "user_id": 1
         }
     },
     {
         "model": "tracker_app.tracker",
         "pk": 19,
         "fields": {
-            "tracker_name": "Advanced Training"
+            "tracker_name": "Advanced Training",
+            "user_id": 1
         }
     }
 ]

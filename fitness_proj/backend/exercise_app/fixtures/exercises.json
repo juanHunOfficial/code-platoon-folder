@@ -9,7 +9,8 @@
             "goal_num_of_reps": 12,
             "type": "legs",
             "exercise_name": "Squats",
-            "workout": 1
+            "weight" : 100,
+            "workout_id": 1
         }
     },
     {
@@ -21,8 +22,9 @@
             "goal_num_of_sets": 3,
             "goal_num_of_reps": 10,
             "type": "arms",
+            "weight" : 100,
             "exercise_name": "Bicep Curls",
-            "workout": 2
+            "workout_id": 2
         }
     },
     {
@@ -34,8 +36,9 @@
             "goal_num_of_sets": 4,
             "goal_num_of_reps": 12,
             "type": "chest",
+            "weight" : 100,
             "exercise_name": "Bench Press",
-            "workout": 3
+            "workout_id": 3
         }
     },
     {
@@ -47,8 +50,9 @@
             "goal_num_of_sets": 4,
             "goal_num_of_reps": 12,
             "type": "back",
+            "weight" : 100,
             "exercise_name": "Deadlifts",
-            "workout": 4
+            "workout_id": 4
         }
     },
     {
@@ -60,8 +64,9 @@
             "goal_num_of_sets": 4,
             "goal_num_of_reps": 12,
             "type": "abs",
+            "weight" : 100,
             "exercise_name": "Planks",
-            "workout": 5
+            "workout_id": 5
         }
     },
     {
@@ -73,8 +78,9 @@
             "goal_num_of_sets": 4,
             "goal_num_of_reps": 12,
             "type": "push",
+            "weight" : 100,
             "exercise_name": "Push-ups",
-            "workout": 6
+            "workout_id": 6
         }
     },
     {
@@ -86,8 +92,9 @@
             "goal_num_of_sets": 4,
             "goal_num_of_reps": 12,
             "type": "pull",
+            "weight" : 100,
             "exercise_name": "Pull-ups",
-            "workout": 7
+            "workout_id": 7
         }
     },
     {
@@ -99,8 +106,9 @@
             "goal_num_of_sets": 4,
             "goal_num_of_reps": 12,
             "type": "shoulders",
+            "weight" : 100,
             "exercise_name": "Overhead Press",
-            "workout": 8
+            "workout_id": 8
         }
     },
     {
@@ -112,8 +120,9 @@
             "goal_num_of_sets": 4,
             "goal_num_of_reps": 12,
             "type": "legs",
+            "weight" : 100,
             "exercise_name": "Lunges",
-            "workout": 9
+            "workout_id": 9
         }
     },
     {
@@ -125,8 +134,9 @@
             "goal_num_of_sets": 4,
             "goal_num_of_reps": 12,
             "type": "chest",
+            "weight" : 100,
             "exercise_name": "Chest Flys",
-            "workout": 10
+            "workout_id": 10
         }
     },
     {
@@ -138,8 +148,9 @@
             "goal_num_of_sets": 4,
             "goal_num_of_reps": 12,
             "type": "abs",
+            "weight" : 100,
             "exercise_name": "Leg Raises",
-            "workout": 11
+            "workout_id": 11
         }
     },
     {
@@ -151,8 +162,9 @@
             "goal_num_of_sets": 4,
             "goal_num_of_reps": 12,
             "type": "back",
+            "weight" : 100,
             "exercise_name": "Barbell Rows",
-            "workout": 12
+            "workout_id": 12
         }
     },
     {
@@ -164,8 +176,9 @@
             "goal_num_of_sets": 4,
             "goal_num_of_reps": 12,
             "type": "legs",
+            "weight" : 100,
             "exercise_name": "Leg Press",
-            "workout": 13
+            "workout_id": 13
         }
     },
     {
@@ -177,8 +190,9 @@
             "goal_num_of_sets": 4,
             "goal_num_of_reps": 12,
             "type": "push",
+            "weight" : 100,
             "exercise_name": "Incline Bench",
-            "workout": 14
+            "workout_id": 14
         }
     },
     {
@@ -190,8 +204,9 @@
             "goal_num_of_sets": 4,
             "goal_num_of_reps": 12,
             "type": "pull",
+            "weight" : 100,
             "exercise_name": "Lat Pulldown",
-            "workout": 15
+            "workout_id": 15
         }
     },
     {
@@ -203,8 +218,9 @@
             "goal_num_of_sets": 4,
             "goal_num_of_reps": 12,
             "type": "abs",
+            "weight" : 100,
             "exercise_name": "Russian Twists",
-            "workout": 16
+            "workout_id": 16
         }
     },
     {
@@ -216,8 +232,9 @@
             "goal_num_of_sets": 4,
             "goal_num_of_reps": 12,
             "type": "shoulders",
+            "weight" : 100,
             "exercise_name": "Lateral Raises",
-            "workout": 17
+            "workout_id": 17
         }
     },
     {
@@ -229,8 +246,9 @@
             "goal_num_of_sets": 4,
             "goal_num_of_reps": 12,
             "type": "chest",
+            "weight" : 100,
             "exercise_name": "Dumbbell Press",
-            "workout": 18
+            "workout_id": 18
         }
     },
     {
@@ -242,8 +260,9 @@
             "goal_num_of_sets": 4,
             "goal_num_of_reps": 12,
             "type": "back",
+            "weight" : 100,
             "exercise_name": "T-bar Row",
-            "workout": 19
+            "workout_id": 19
         }
     }
 ]
