@@ -5,9 +5,9 @@ export const api = axios.create({
 })
 
 export const userSignup = async(formData) => {
-    const {email, password, firstName, age, registration} = formData
+    const {email, password, firstName, age} = formData
     let response = await api.post(
-        `users/${registration ? 'signup/' : 'login/'}`,
+        'users/signup/',
         {
             email : email,
             password : password,
@@ -16,7 +16,7 @@ export const userSignup = async(formData) => {
         }
     )
     
-    if (response.status === 200 || response.status === 201){
+    if (response.status === 201){
         let {token, firstname} = response.data 
         localStorage.setItem('token', token)
         api.defaults.headers.common['Authorization'] = `Token ${token}`
@@ -24,6 +24,24 @@ export const userSignup = async(formData) => {
     }
     alert(response.data)
     return null
+}
+
+export const userLogin = async(formData) => {
+    const {email, password} = formData
+    let response = await api.post(
+        "users/login/",
+        {
+            email: email,
+            password: password
+        }
+    )
+
+    if (response.status === 200){
+        let {token, firstname} = response.data
+        localStorage.setItem('token', token)
+        api.defaults.headers.common['Authorization'] = `Token ${token}`
+        return firstname
+    }
 }
 
 export const logOut = async() =>{

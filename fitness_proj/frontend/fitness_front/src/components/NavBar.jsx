@@ -5,8 +5,16 @@ import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import { logOut } from '../utilities';
 
+const NavBar = ({user, setUser, needsToSignup, setNeedsToSignup}) => {
 
-const NavBar = ({user, setUser}) => {
+    const clickOnLogin = () => {
+        setNeedsToSignup(false)
+    }
+
+    const clickOnSignup = () => {
+        setNeedsToSignup(true)
+    }
+    
     const loggedOut = async() => {
         setUser(await logOut(user))
     }
@@ -27,8 +35,8 @@ const NavBar = ({user, setUser}) => {
                             </> 
                             : 
                             <>
-                                <Button size='sm' ><Nav.Link as={Link} to='/signup/'>Sign Up</Nav.Link></Button>
-                                <Button size='sm' ><Nav.Link as={Link} to='/signup/'>Login</Nav.Link></Button>
+                                <Button size='sm' onClick={clickOnSignup} disabled={needsToSignup ? true : false} ><Nav.Link as={Link} to='/signup/'>Register</Nav.Link></Button>
+                                <Button size='sm' onClick={clickOnLogin} disabled={needsToSignup ? false : true}><Nav.Link as={Link} to='/signup/'>Login</Nav.Link></Button>
                             </>
                         }
                     </Nav>

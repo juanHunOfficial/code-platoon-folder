@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <h1>Welcome {user ? user : null}</h1>
-      <NavBar user={user} setUser={setUser}/>
+      <NavBar user={user} setUser={setUser} needsToSignup={needsToSignup} setNeedsToSignup={setNeedsToSignup}/>
       <Outlet context={{user, setUser, needsToSignup, setNeedsToSignup}}/>
     </>
   )

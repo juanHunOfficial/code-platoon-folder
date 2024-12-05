@@ -5,10 +5,7 @@ import { useOutletContext } from 'react-router-dom'
 
 const LoginPage = () => {
 
-    const { needsToSignup, setNeedsToSignup } = useOutletContext()
-
-
-
+    const { needsToSignup } = useOutletContext()
 
     return (
         <>
