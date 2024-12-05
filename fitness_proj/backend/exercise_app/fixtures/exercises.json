@@ -3,8 +3,10 @@
         "model": "exercise_app.exercise",  
         "pk": 1,  
         "fields": {
-            "num_of_sets": 4,
-            "num_of_reps": 12,
+            "actual_num_of_sets": 4,
+            "actual_num_of_reps": 12,
+            "goal_num_of_sets": 4,
+            "goal_num_of_reps": 12,
             "type": "legs",
             "exercise_name": "Squats",
             "workout": 1
@@ -14,8 +16,10 @@
         "model": "exercise_app.exercise",
         "pk": 2,
         "fields": {
-            "num_of_sets": 3,
-            "num_of_reps": 10,
+            "actual_num_of_sets": 3,
+            "actual_num_of_reps": 10,
+            "goal_num_of_sets": 3,
+            "goal_num_of_reps": 10,
             "type": "arms",
             "exercise_name": "Bicep Curls",
             "workout": 2
@@ -25,8 +29,10 @@
         "model": "exercise_app.exercise",
         "pk": 3,
         "fields": {
-            "num_of_sets": 4,
-            "num_of_reps": 8,
+            "actual_num_of_sets": 4,
+            "actual_num_of_reps": 12,
+            "goal_num_of_sets": 4,
+            "goal_num_of_reps": 12,
             "type": "chest",
             "exercise_name": "Bench Press",
             "workout": 3
@@ -36,8 +42,10 @@
         "model": "exercise_app.exercise",
         "pk": 4,
         "fields": {
-            "num_of_sets": 3,
-            "num_of_reps": 12,
+            "actual_num_of_sets": 4,
+            "actual_num_of_reps": 12,
+            "goal_num_of_sets": 4,
+            "goal_num_of_reps": 12,
             "type": "back",
             "exercise_name": "Deadlifts",
             "workout": 4
@@ -47,8 +55,10 @@
         "model": "exercise_app.exercise",
         "pk": 5,
         "fields": {
-            "num_of_sets": 4,
-            "num_of_reps": 20,
+            "actual_num_of_sets": 4,
+            "actual_num_of_reps": 12,
+            "goal_num_of_sets": 4,
+            "goal_num_of_reps": 12,
             "type": "abs",
             "exercise_name": "Planks",
             "workout": 5
@@ -58,8 +68,10 @@
         "model": "exercise_app.exercise",
         "pk": 6,
         "fields": {
-            "num_of_sets": 5,
-            "num_of_reps": 15,
+            "actual_num_of_sets": 4,
+            "actual_num_of_reps": 12,
+            "goal_num_of_sets": 4,
+            "goal_num_of_reps": 12,
             "type": "push",
             "exercise_name": "Push-ups",
             "workout": 6
@@ -69,8 +81,10 @@
         "model": "exercise_app.exercise",
         "pk": 7,
         "fields": {
-            "num_of_sets": 4,
-            "num_of_reps": 10,
+            "actual_num_of_sets": 4,
+            "actual_num_of_reps": 12,
+            "goal_num_of_sets": 4,
+            "goal_num_of_reps": 12,
             "type": "pull",
             "exercise_name": "Pull-ups",
             "workout": 7
@@ -80,8 +94,10 @@
         "model": "exercise_app.exercise",
         "pk": 8,
         "fields": {
-            "num_of_sets": 3,
-            "num_of_reps": 8,
+            "actual_num_of_sets": 4,
+            "actual_num_of_reps": 12,
+            "goal_num_of_sets": 4,
+            "goal_num_of_reps": 12,
             "type": "shoulders",
             "exercise_name": "Overhead Press",
             "workout": 8
@@ -91,8 +107,10 @@
         "model": "exercise_app.exercise",
         "pk": 9,
         "fields": {
-            "num_of_sets": 4,
-            "num_of_reps": 12,
+            "actual_num_of_sets": 4,
+            "actual_num_of_reps": 12,
+            "goal_num_of_sets": 4,
+            "goal_num_of_reps": 12,
             "type": "legs",
             "exercise_name": "Lunges",
             "workout": 9
@@ -102,8 +120,10 @@
         "model": "exercise_app.exercise",
         "pk": 10,
         "fields": {
-            "num_of_sets": 4,
-            "num_of_reps": 10,
+            "actual_num_of_sets": 4,
+            "actual_num_of_reps": 12,
+            "goal_num_of_sets": 4,
+            "goal_num_of_reps": 12,
             "type": "chest",
             "exercise_name": "Chest Flys",
             "workout": 10
@@ -113,8 +133,10 @@
         "model": "exercise_app.exercise",
         "pk": 11,
         "fields": {
-            "num_of_sets": 4,
-            "num_of_reps": 15,
+            "actual_num_of_sets": 4,
+            "actual_num_of_reps": 12,
+            "goal_num_of_sets": 4,
+            "goal_num_of_reps": 12,
             "type": "abs",
             "exercise_name": "Leg Raises",
             "workout": 11
@@ -124,8 +146,10 @@
         "model": "exercise_app.exercise",
         "pk": 12,
         "fields": {
-            "num_of_sets": 3,
-            "num_of_reps": 8,
+            "actual_num_of_sets": 4,
+            "actual_num_of_reps": 12,
+            "goal_num_of_sets": 4,
+            "goal_num_of_reps": 12,
             "type": "back",
             "exercise_name": "Barbell Rows",
             "workout": 12
@@ -135,8 +159,10 @@
         "model": "exercise_app.exercise",
         "pk": 13,
         "fields": {
-            "num_of_sets": 4,
-            "num_of_reps": 10,
+            "actual_num_of_sets": 4,
+            "actual_num_of_reps": 12,
+            "goal_num_of_sets": 4,
+            "goal_num_of_reps": 12,
             "type": "legs",
             "exercise_name": "Leg Press",
             "workout": 13
@@ -146,8 +172,10 @@
         "model": "exercise_app.exercise",
         "pk": 14,
         "fields": {
-            "num_of_sets": 3,
-            "num_of_reps": 12,
+            "actual_num_of_sets": 4,
+            "actual_num_of_reps": 12,
+            "goal_num_of_sets": 4,
+            "goal_num_of_reps": 12,
             "type": "push",
             "exercise_name": "Incline Bench",
             "workout": 14
@@ -157,8 +185,10 @@
         "model": "exercise_app.exercise",
         "pk": 15,
         "fields": {
-            "num_of_sets": 4,
-            "num_of_reps": 10,
+            "actual_num_of_sets": 4,
+            "actual_num_of_reps": 12,
+            "goal_num_of_sets": 4,
+            "goal_num_of_reps": 12,
             "type": "pull",
             "exercise_name": "Lat Pulldown",
             "workout": 15
@@ -168,8 +198,10 @@
         "model": "exercise_app.exercise",
         "pk": 16,
         "fields": {
-            "num_of_sets": 5,
-            "num_of_reps": 15,
+            "actual_num_of_sets": 4,
+            "actual_num_of_reps": 12,
+            "goal_num_of_sets": 4,
+            "goal_num_of_reps": 12,
             "type": "abs",
             "exercise_name": "Russian Twists",
             "workout": 16
@@ -179,8 +211,10 @@
         "model": "exercise_app.exercise",
         "pk": 17,
         "fields": {
-            "num_of_sets": 3,
-            "num_of_reps": 8,
+            "actual_num_of_sets": 4,
+            "actual_num_of_reps": 12,
+            "goal_num_of_sets": 4,
+            "goal_num_of_reps": 12,
             "type": "shoulders",
             "exercise_name": "Lateral Raises",
             "workout": 17
@@ -190,8 +224,10 @@
         "model": "exercise_app.exercise",
         "pk": 18,
         "fields": {
-            "num_of_sets": 3,
-            "num_of_reps": 10,
+            "actual_num_of_sets": 4,
+            "actual_num_of_reps": 12,
+            "goal_num_of_sets": 4,
+            "goal_num_of_reps": 12,
             "type": "chest",
             "exercise_name": "Dumbbell Press",
             "workout": 18
@@ -201,8 +237,10 @@
         "model": "exercise_app.exercise",
         "pk": 19,
         "fields": {
-            "num_of_sets": 4,
-            "num_of_reps": 12,
+            "actual_num_of_sets": 4,
+            "actual_num_of_reps": 12,
+            "goal_num_of_sets": 4,
+            "goal_num_of_reps": 12,
             "type": "back",
             "exercise_name": "T-bar Row",
             "workout": 19

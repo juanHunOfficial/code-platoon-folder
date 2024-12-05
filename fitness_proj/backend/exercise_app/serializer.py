@@ -4,4 +4,4 @@ from .models import Exercise
 class ExerciseSerializer(serializers.ModelSerializer):
     class Meta:
         model =  Exercise
-        fields = ['exercise_name', 'type', 'num_of_sets', 'num_of_reps', 'workout']
+        fields = ['workout_id', 'exercise_name', 'type', 'goal_num_of_sets', 'goal_num_of_reps', 'actual_num_of_sets', 'actual_num_of_reps',]

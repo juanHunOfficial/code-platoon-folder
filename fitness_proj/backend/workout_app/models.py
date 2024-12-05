@@ -7,5 +7,5 @@ class Workout(models.Model):
     weekly_frequency = models.PositiveIntegerField(blank=False, validators=[v.MinValueValidator(1), v.MaxValueValidator(7)])
     type_of_workout = models.CharField(blank=False, validators=[validate_valid_workout_type])
     workout_name = models.CharField(blank=False, validators=[validate_workout_name], default='Untitled_Workout')
-    tracker_name = models.ForeignKey(Tracker, on_delete=models.CASCADE, related_name='workout')
+    tracker_id = models.ForeignKey(Tracker, on_delete=models.CASCADE, related_name='tracker_id')
     

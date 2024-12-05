@@ -4,4 +4,4 @@ from .models import Workout
 class WorkoutSerializer(serializers.ModelSerializer):
     class Meta:
         model =  Workout
-        fields = ['tracker_name', 'weekly_frequency', 'type_of_workout']
+        fields = ['workout_name', 'weekly_frequency', 'type_of_workout']
