@@ -1,10 +1,29 @@
 import SignupForm from "../components/SignupForm";
+import SigninForm from "../components/SigninForm";
+import { useState, useEffect } from 'react';
+import { useOutletContext } from 'react-router-dom'
 
 const LoginPage = () => {
+
+    const { needsToSignup, setNeedsToSignup } = useOutletContext()
+
+
+
+
     return (
         <>
-            <h1>Login Page</h1>
-            <SignupForm/>
+            {
+                needsToSignup ?
+                <>
+                    <SignupForm/>
+                </>
+                :
+                <>
+                    <SigninForm/>
+                </>
+
+            }
+            
         </>
     );
 };

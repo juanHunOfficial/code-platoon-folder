@@ -4,12 +4,12 @@ import { useState } from 'react'
 
 function App() {
   const [user, setUser] = useState(useLoaderData())
-  
+  const [needsToSignup, setNeedsToSignup] = useState(false)
   return (
     <>
       <h1>Welcome {user ? user : null}</h1>
       <NavBar user={user} setUser={setUser}/>
-      <Outlet context={{user, setUser}}/>
+      <Outlet context={{user, setUser, needsToSignup, setNeedsToSignup}}/>
     </>
   )
 }

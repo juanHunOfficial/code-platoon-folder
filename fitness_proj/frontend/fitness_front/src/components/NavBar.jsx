@@ -22,12 +22,14 @@ const NavBar = ({user, setUser}) => {
                             <Nav.Link as={Link} to='/'>Nutrition</Nav.Link>
                         </div>
                         {user ? 
-                        <>
-                            <Button variant='outline-light' onClick={loggedOut} >Log Out</Button>
-                        </> : <>
-                                <Button variant='outline-light'><Nav.Link as={Link} to='/signup/'>Sign Up</Nav.Link></Button>
-                                <Button variant='outline-light'><Nav.Link as={Link} to='/signup/'>Login</Nav.Link></Button>
-                              </>
+                            <>
+                                <Button variant='outline-light' onClick={loggedOut} >Log Out</Button>
+                            </> 
+                            : 
+                            <>
+                                <Button size='sm' ><Nav.Link as={Link} to='/signup/'>Sign Up</Nav.Link></Button>
+                                <Button size='sm' ><Nav.Link as={Link} to='/signup/'>Login</Nav.Link></Button>
+                            </>
                         }
                     </Nav>
                 </Container>
