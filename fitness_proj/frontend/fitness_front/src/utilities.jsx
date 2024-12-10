@@ -89,9 +89,9 @@ export const getMuscle = async(fromData) => {
 }
 
 export const getFood = async(formData) => {
-    const { foodRequested } = formData
+    const { food } = formData
     try {
-        let response = await api.get(`nutrition/${foodRequested}/`)
+        let response = await api.get(`nutrition/${food}/`)
         if(response.status === 200){
             return response.data
         }

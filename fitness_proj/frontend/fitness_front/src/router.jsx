@@ -5,6 +5,7 @@ import ExercisePage from './pages/ExercisePage';
 import App from './App';
 import { getInfo } from './utilities';
 import NutritionPage from './pages/NutritionPage';
+import WorkoutStatsPage from './pages/WorkoutStatsPage';
 
 const router = createBrowserRouter([
     {
@@ -26,7 +27,11 @@ const router = createBrowserRouter([
             },
             {
                 path:'/nutrition/',
-                element: <NutritionPage />
+                element: <NutritionPage />,
+            },
+            {
+                path:'/workouts/',
+                element: <WorkoutStatsPage />,
             },
         ],
     },

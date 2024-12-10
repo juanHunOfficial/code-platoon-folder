@@ -23,6 +23,7 @@ const NutritionSearchBar = () => {
             if(results){
                 setSearchResults(results)
             }
+            console.log(results)
         }catch(error){
             console.error("Working as intended")
             setSearchResults([])
@@ -52,7 +53,8 @@ const NutritionSearchBar = () => {
                             <Modal.Title>What can I search?</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
-                            The possible search items like the following: <br/> brisket, fries, 
+                            The possible search items like the following: <br/> brisket, fries, soda, hamburger, 
+                            and many more. 
                         </Modal.Body>
                         <Modal.Footer>
                             <Button variant="secondary" onClick={handleClose}>

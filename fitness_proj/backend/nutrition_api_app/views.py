@@ -20,4 +20,4 @@ class NutritionAPI(APIView):
         
         response_json = response.json()
         
-        return Response({'exercises':response_json})
+        return Response({'foods':response_json})

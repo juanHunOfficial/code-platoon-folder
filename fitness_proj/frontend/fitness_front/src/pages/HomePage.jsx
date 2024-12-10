@@ -36,7 +36,7 @@ const HomePage = () => {
                 <div className='food_section_text_container' style={{marginRight: '50px'}} >
                     <h3>Satisfy your craving without ruining your diet</h3>
                     <p>Choose from a large selection of nutritious meals to meet your individual fitness goals</p>
-                    <Button>Start Browsing</Button> 
+                    <Button as={ Link } to='/nutrition/' >Start Browsing</Button> 
                 </div>
             </div>
             <div className='exercise_search_section_container' style={{background:'lightgrey', display: 'flex', justifyContent: "space-between",  paddingTop: '30px', paddingBottom: "30px"}} >
