@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 import requests
 from fitness_proj.settings import env
-from rest_framework.status import HTTP_404_NOT_FOUND
+from rest_framework.status import HTTP_404_NOT_FOUND, HTTP_200_OK
 import pprint
 # Create your views here.
 
@@ -28,4 +28,4 @@ class ExercisesAPI(APIView):
         
         response_json = response.json()
         
-        return Response({'exercises':response_json})
+        return Response({'exercises':response_json}, status=HTTP_200_OK)

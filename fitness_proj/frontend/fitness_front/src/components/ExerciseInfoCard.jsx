@@ -1,23 +1,31 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { useOutletContext } from 'react-router-dom';
 
 const ExerciseInfoCard = () => {
-    const stockPhotos = []
+    const { searchResults } = useOutletContext()
 
     return(
         <>
-            <div className='search_result_card' style={{display: 'flex', margin: '100px auto', justifyContent: 'center'}}>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" style={{height: '250px'}} src="" />
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                            <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                            </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
+            <div className='search_result_card' style={{display: 'flex', flexWrap:'wrap', margin: '100px auto',  gap: '20px', overflow: 'auto'}}>
+            {searchResults && searchResults['exercises']?.length > 0 ? (
+                searchResults['exercises'].map((exercise, index) =>(                    
+                    <Card style={{ width: '18rem' }}>
+                        <Card.Body  >
+                            <Card.Title style={{marginBottom: '10px'}} >{exercise.name}</Card.Title>
+                                <Card.Subtitle style={{marginBottom: '10px'}} >Type: {exercise.type}</Card.Subtitle>
+                                <Card.Subtitle style={{marginBottom: '10px'}} >Muscle: {exercise.muscle}</Card.Subtitle>
+                                <Card.Subtitle style={{marginBottom: '10px'}} >Equipment: {exercise.equipment}</Card.Subtitle>
+                                <Card.Subtitle style={{marginBottom: '10px'}} >Difficulty: {exercise.difficulty}</Card.Subtitle>
+                                <Card.Subtitle style={{marginBottom: '5px'}} >Instructions:</Card.Subtitle>
+                                <Card.Text>
+                                    {exercise.instructions}
+                                </Card.Text>
+                            <Button variant="primary">Add???</Button>
+                        </Card.Body>
+                    </Card>
+                ))
+            ) : null }
             </div>
         </>
     )

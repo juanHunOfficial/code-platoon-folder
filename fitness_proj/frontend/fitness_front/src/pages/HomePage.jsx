@@ -1,6 +1,6 @@
 import { useOutletContext } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import DashboardCard from '../components/DashboardCard'
 import Button from 'react-bootstrap/Button';
 import nutritionStockPic from '../assets/nutrition_pic.jpeg'

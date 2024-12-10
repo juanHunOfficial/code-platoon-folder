@@ -6,7 +6,6 @@ const ExercisePage = () =>{
     
     return(
         <>
-            <h1>Exercise page linked</h1>
             <SearchBar />
             <ExerciseInfoCard />
         </>

@@ -71,3 +71,21 @@ export const getInfo = async() => {
         return null
     }
 }
+
+export const getMuscle = async(fromData) => {
+    const { muscle } = fromData
+    let token = localStorage.getItem('token')
+    if(token){
+        api.defaults.headers.common['Authorization'] = `Token ${token}`
+        let response = await api.get(`exercises/${muscle}/`)
+        if(response.status === 200){
+            return response.data
+        }
+        else{
+            return null
+        }
+    }
+    else{
+        return null
+    }
+}
