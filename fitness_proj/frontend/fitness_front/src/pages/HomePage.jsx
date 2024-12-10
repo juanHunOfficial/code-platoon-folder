@@ -31,7 +31,7 @@ const HomePage = () => {
                 </div>
             </div>
             <div className='food_section_container' style={{background:'lightgreen' ,display: 'flex', justifyContent: "space-between", paddingTop: '30px', paddingBottom: "30px"}}>
-                <img className='food_stock_img' style={{background: 'blue', height: '250px', width: '250px', marginLeft: '50px', marginRight: '25px'}} src={nutritionStockPic}/>
+                <img className='food_stock_img' style={{background: 'blue', height: '250px', width: '250px', marginLeft: '50px', marginRight: '25px', borderRadius: '6px'}} src={nutritionStockPic}/>
                 <div className='food_section_text_container' style={{marginRight: '50px'}} >
                     <h3>Satisfy your craving without ruining your diet</h3>
                     <p>Choose from a large selection of nutritious meals to meet your individual fitness goals</p>
@@ -44,7 +44,7 @@ const HomePage = () => {
                     <p>Choose from a large selection of nutritious meals to meet your individual fitness goals</p>
                     <Button>Start Browsing</Button> 
                 </div>
-                <img className='food_stock_img' style={{background: 'blue', height: '250px', width: '250px', marginRight : "50px", marginLeft: '25px'}} src={exerciseStockPic}/>
+                <img className='food_stock_img' style={{background: 'blue', height: '250px', width: '250px', marginRight : "50px", marginLeft: '25px', borderRadius: '6px'}} src={exerciseStockPic}/>
             </div>
         </>
     )

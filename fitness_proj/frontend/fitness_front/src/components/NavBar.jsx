@@ -26,7 +26,7 @@ const NavBar = ({user, setUser, needsToSignup, setNeedsToSignup}) => {
                     <Nav className="ms-auto">
                         <div style={{display :"flex", alignItems:"center"}} >
                             <Nav.Link as={Link} to='/'>Home</Nav.Link>
-                            <Nav.Link as={Link} to='/'>Exercises</Nav.Link>
+                            <Nav.Link as={Link} to='/exercise/'>Exercises</Nav.Link>
                             <Nav.Link as={Link} to='/'>Nutrition</Nav.Link>
                         </div>
                         {user ? 
