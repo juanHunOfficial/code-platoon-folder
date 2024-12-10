@@ -73,10 +73,8 @@ export const getInfo = async() => {
 }
 
 export const getMuscle = async(fromData) => {
-    const { muscle } = fromData
-    let token = localStorage.getItem('token')
-    if(token){
-        api.defaults.headers.common['Authorization'] = `Token ${token}`
+    const { muscle } = fromData    
+    try{
         let response = await api.get(`exercises/${muscle}/`)
         if(response.status === 200){
             return response.data
@@ -84,8 +82,23 @@ export const getMuscle = async(fromData) => {
         else{
             return null
         }
+    }catch(error){
+        return null
     }
-    else{
+    
+}
+
+export const getFood = async(formData) => {
+    const { foodRequested } = formData
+    try {
+        let response = await api.get(`nutrition/${foodRequested}/`)
+        if(response.status === 200){
+            return response.data
+        }
+        else{
+            return null
+        }
+    }catch (error){
         return null
     }
 }

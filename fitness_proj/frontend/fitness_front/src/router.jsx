@@ -4,6 +4,7 @@ import LoginPage from './pages/LoginPage';
 import ExercisePage from './pages/ExercisePage';
 import App from './App';
 import { getInfo } from './utilities';
+import NutritionPage from './pages/NutritionPage';
 
 const router = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
             {
                 path:'/exercise/',
                 element: <ExercisePage />,
+            },
+            {
+                path:'/nutrition/',
+                element: <NutritionPage />
             },
         ],
     },

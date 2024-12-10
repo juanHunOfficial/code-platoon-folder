@@ -7,8 +7,10 @@ const ExerciseInfoCard = () => {
 
     return(
         <>
-            <div className='search_result_card' style={{padding: '20px', display: 'flex', flexWrap:'wrap', margin: '100px auto',  gap: '20px', overflow: 'auto', justifyContent:'center'}}>
-            {searchResults && searchResults['exercises']?.length > 0 ? (
+            <div className='search_result_card' style={{padding: '20px', display: 'flex', flexWrap:'wrap', 
+                                                        margin: '100px auto',  gap: '20px', overflow: 'auto', 
+                                                        justifyContent:'center'}}>
+            {searchResults && Array.isArray(searchResults['exercises']) && searchResults['exercises'].length > 0 ? (
                 searchResults['exercises'].map((exercise, index) =>(                    
                     <Card bg='primary' text='white' style={{ width: '18rem' }}>
                         <Card.Body  >
@@ -25,7 +27,9 @@ const ExerciseInfoCard = () => {
                         </Card.Body>
                     </Card>
                 ))
-            ) : null }
+            ) : 
+                null
+            }
             </div>
         </>
     )

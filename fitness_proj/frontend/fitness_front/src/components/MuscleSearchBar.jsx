@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { getMuscle } from '../utilities';
 import { useOutletContext } from 'react-router-dom';
 
-const SearchBar = () => {
+const MuscleSearchBar = () => {
     const { searchResults, setSearchResults } = useOutletContext()
     const [muscle, setMuscle] = useState("")
     const [show, setShow] = useState(false);
@@ -25,8 +25,17 @@ const SearchBar = () => {
         let formData = {
             'muscle' : finalMuscleVar
         }
-        setSearchResults(await getMuscle(formData))
-        console.log(searchResults['exercises'][0])
+        try{
+            const results = await getMuscle(formData)
+            if(results){
+                setSearchResults(results)
+            }
+        }catch(error){
+            console.error("Working as intended")
+            setSearchResults([])
+        }
+        console.log(results)
+        
     }
     
     return(
@@ -45,26 +54,26 @@ const SearchBar = () => {
                     <div className='search_and_info_button' style={{display: 'flex'}}>
                         <Button style={{marginRight: '20px', width: '100px'}} variant="primary" type="submit">Search</Button>
                         <Button style={{width: '100px'}} variant="primary" type="submit" onClick={handleShow}>Info</Button>
-                        <Modal show={show} onHide={handleClose}>
-                            <Modal.Header closeButton>
-                                <Modal.Title>What can I search?</Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body>
-                                The possible search items as as follows:<br/>abdominals, abductors, adductors, biceps, 
-                                calves, chest, forearms, glutes, hamstrings, lats, lower back, middle back, nack, 
-                                quadriceps, traps, and triceps 
-                            </Modal.Body>
-                            <Modal.Footer>
-                                <Button variant="secondary" onClick={handleClose}>
-                                    Close
-                                </Button>
-                            </Modal.Footer>
-                        </Modal>
-                    </div>
+                    </div> 
+                    <Modal show={show} onHide={handleClose}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>What can I search?</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            The possible search items as as follows: <br/> abdominals, abductors, adductors, biceps, 
+                            calves, chest, forearms, glutes, hamstrings, lats, lower back, middle back, nack, 
+                            quadriceps, traps, and triceps 
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={handleClose}>
+                                Close
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>                    
                 </Form>
             </div>
         </>
     )
 }
 
-export default SearchBar
+export default MuscleSearchBar

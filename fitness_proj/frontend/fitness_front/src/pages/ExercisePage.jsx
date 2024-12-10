@@ -1,12 +1,12 @@
 import ExerciseInfoCard from "../components/ExerciseInfoCard"
-import SearchBar from "../components/SearchBar"
+import MuscleSearchBar from "../components/MuscleSearchBar"
 
 
 const ExercisePage = () =>{
     
     return(
         <>
-            <SearchBar />
+            <MuscleSearchBar />
             <ExerciseInfoCard />
         </>
     )
