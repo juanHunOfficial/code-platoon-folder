@@ -7,10 +7,10 @@ const ExerciseInfoCard = () => {
 
     return(
         <>
-            <div className='search_result_card' style={{display: 'flex', flexWrap:'wrap', margin: '100px auto',  gap: '20px', overflow: 'auto'}}>
+            <div className='search_result_card' style={{padding: '20px', display: 'flex', flexWrap:'wrap', margin: '100px auto',  gap: '20px', overflow: 'auto', justifyContent:'center'}}>
             {searchResults && searchResults['exercises']?.length > 0 ? (
                 searchResults['exercises'].map((exercise, index) =>(                    
-                    <Card style={{ width: '18rem' }}>
+                    <Card bg='primary' text='white' style={{ width: '18rem' }}>
                         <Card.Body  >
                             <Card.Title style={{marginBottom: '10px'}} >{exercise.name}</Card.Title>
                                 <Card.Subtitle style={{marginBottom: '10px'}} >Type: {exercise.type}</Card.Subtitle>
@@ -21,7 +21,7 @@ const ExerciseInfoCard = () => {
                                 <Card.Text>
                                     {exercise.instructions}
                                 </Card.Text>
-                            <Button variant="primary">Add???</Button>
+                            <Button variant="light">Add???</Button>
                         </Card.Body>
                     </Card>
                 ))

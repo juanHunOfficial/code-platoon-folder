@@ -1,5 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react'
 import { getMuscle } from '../utilities';
 import { useOutletContext } from 'react-router-dom';
@@ -7,6 +8,9 @@ import { useOutletContext } from 'react-router-dom';
 const SearchBar = () => {
     const { searchResults, setSearchResults } = useOutletContext()
     const [muscle, setMuscle] = useState("")
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const handleSubmit = async(e) =>{
         e.preventDefault()
@@ -40,7 +44,22 @@ const SearchBar = () => {
                     </Form.Group>
                     <div className='search_and_info_button' style={{display: 'flex'}}>
                         <Button style={{marginRight: '20px', width: '100px'}} variant="primary" type="submit">Search</Button>
-                        <Button style={{width: '100px'}} variant="primary" type="submit">Info</Button>
+                        <Button style={{width: '100px'}} variant="primary" type="submit" onClick={handleShow}>Info</Button>
+                        <Modal show={show} onHide={handleClose}>
+                            <Modal.Header closeButton>
+                                <Modal.Title>What can I search?</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                                The possible search items as as follows:<br/>abdominals, abductors, adductors, biceps, 
+                                calves, chest, forearms, glutes, hamstrings, lats, lower back, middle back, nack, 
+                                quadriceps, traps, and triceps 
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="secondary" onClick={handleClose}>
+                                    Close
+                                </Button>
+                            </Modal.Footer>
+                        </Modal>
                     </div>
                 </Form>
             </div>
