@@ -4,12 +4,15 @@ from .serializers import TrackerSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.status import HTTP_400_BAD_REQUEST, HTTP_200_OK, HTTP_201_CREATED, HTTP_204_NO_CONTENT
+from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 class AllTrackers(APIView):
+    permission_classes = [IsAuthenticated]
     
     def get(self, request):
-        ser_all_trackers = TrackerSerializer(Tracker.objects.all(), many=True)
+        current_user = request.user
+        ser_all_trackers = TrackerSerializer(Tracker.objects.filter(user=current_user), many=True)
         return Response(ser_all_trackers.data)
     
     def post(self, request):

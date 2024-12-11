@@ -6,9 +6,27 @@ class TrackerSerializer(serializers.ModelSerializer):
     user_id = serializers.IntegerField()
     class Meta:
         model = Tracker
-        fields = ['id', 'tracker_name', 'user_id', 'workouts']
+        fields = '__all__'
         
     def get_workouts(self, instance):
         workouts = instance.workouts.all()
-        ser_workouts = [{"workout_name": workout.workout_name,"workout_type": workout.type_of_workout} for workout in workouts]
+        ser_workouts = [{
+            "workout_name": workout.workout_name,
+            "workout_type": workout.type_of_workout, 
+            'exercises': self.get_exercises(workout)
+        } for workout in workouts]
         return ser_workouts
+    
+    def get_exercises(self, workout):
+        exercises = workout.exercises.all() 
+        return [{
+            'exercise_name': exercise.exercise_name, 
+            'iteration': exercise.iteration, 
+            'type': exercise.type,
+            'goal_num_of_reps': exercise.goal_num_of_reps,
+            'goal_num_of_sets': exercise.goal_num_of_sets,
+            'actual_num_of_reps': exercise.actual_num_of_reps,
+            'actual_num_of_sets' : exercise.actual_num_of_sets,
+            'weight': exercise.weight,
+            'workout_id': exercise.workout_id
+        } for exercise in exercises]
