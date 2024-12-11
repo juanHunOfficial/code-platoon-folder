@@ -20,7 +20,7 @@ export const userSignup = async(formData) => {
         let {token, firstname} = response.data 
         localStorage.setItem('token', token)
         api.defaults.headers.common['Authorization'] = `Token ${token}`
-        return firstname
+        return {'firstname' : firstname, 'id' : id}
     }
     alert(response.data)
     return null
@@ -37,10 +37,10 @@ export const userLogin = async(formData) => {
     )
 
     if (response.status === 200){
-        let {token, firstname} = response.data
+        let {token, firstname, id} = response.data
         localStorage.setItem('token', token)
         api.defaults.headers.common['Authorization'] = `Token ${token}`
-        return firstname
+        return {'firstname' : firstname, 'id' : id}
     }
 }
 
@@ -61,7 +61,7 @@ export const getInfo = async() => {
         api.defaults.headers.common['Authorization'] = `Token ${token}`
         let response = await api.get('users/info/')
         if (response.status === 200){
-            return response.data.firstname
+            return {'firstname': response.data.firstname, 'id': response.data.id}
         }
         else{
             return null

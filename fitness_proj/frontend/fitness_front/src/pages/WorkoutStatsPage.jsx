@@ -3,7 +3,9 @@
 const WorkoutStatsPage = () => {
     return(
         <>
-            <h1>Now we can start looking into charts js, start with being able to
+            {/* <h1>
+                
+                Now we can start looking into charts js, start with being able to
                 add workouts to the db and fetch them along with the desired data
                 that we will be utilizing for rendering the charts.
 
@@ -16,7 +18,10 @@ const WorkoutStatsPage = () => {
                 the get request
 
                 
-            </h1>
+            </h1> */}
+
+
+            
         </>
     )
 }

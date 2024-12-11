@@ -21,7 +21,7 @@ class SignUp(APIView):
         data["username"] = request.data["email"]
         new_user = User.objects.create_user(**data)
         token = Token.objects.create(user=new_user)
-        return Response({'email' : new_user.email, 'token': token.key, 'firstname': new_user.firstname, 'age': new_user.age}, status=HTTP_201_CREATED)
+        return Response({'email' : new_user.email, 'token': token.key, 'firstname': new_user.firstname, 'age': new_user.age, 'id': new_user.id}, status=HTTP_201_CREATED)
     
 class LogIn(APIView):
     
@@ -31,14 +31,14 @@ class LogIn(APIView):
         current_user = authenticate(username=email, password=password)
         if current_user:
             token, created = Token.objects.get_or_create(user=current_user)
-            return Response({"token" : token.key, "email": current_user.email, "firstname" : current_user.firstname})
+            return Response({"token" : token.key, "email": current_user.email, "firstname" : current_user.firstname, 'id': current_user.id})
         else:
             return Response("None of our clients match those credentials.")
         
 class Info(TokenReq):
     
     def get(self, request):
-        return Response({'firstname':request.user.firstname})
+        return Response({'firstname':request.user.firstname, 'id': request.user.id})
     
 class LogOut(TokenReq):
     
