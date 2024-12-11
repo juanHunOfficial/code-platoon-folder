@@ -15,7 +15,7 @@ class AllTrackers(APIView):
     
     def post(self, request):
         data = request.data.copy()
-        
+        print(data)
         new_tracker = TrackerSerializer(data=data)
         if new_tracker.is_valid():
             new_tracker.save()
@@ -26,8 +26,8 @@ class AllTrackers(APIView):
 
 class SingleTracker(APIView):
     def get_tracker(self, tracker_name):
-        tracker = Tracker.objects.get(tracker_name=tracker_name)
-        return tracker
+        trackers = Tracker.objects.get(id=tracker_name)
+        return trackers
     
     def get(self, request, tracker_name):
         a_ser_tracker = TrackerSerializer(self.get_tracker(tracker_name))

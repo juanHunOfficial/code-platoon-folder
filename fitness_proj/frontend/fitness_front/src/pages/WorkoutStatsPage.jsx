@@ -20,8 +20,9 @@ const WorkoutStatsPage = () => {
                 
             </h1> */}
 
-
             
+
+
         </>
     )
 }

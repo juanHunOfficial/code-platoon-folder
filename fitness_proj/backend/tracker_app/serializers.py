@@ -3,9 +3,10 @@ from .models import Tracker
 
 class TrackerSerializer(serializers.ModelSerializer):
     workouts = serializers.SerializerMethodField()
+    user_id = serializers.IntegerField()
     class Meta:
         model = Tracker
-        fields = ['tracker_name', 'workouts']
+        fields = ['id', 'tracker_name', 'user_id', 'workouts']
         
     def get_workouts(self, instance):
         workouts = instance.workouts.all()
