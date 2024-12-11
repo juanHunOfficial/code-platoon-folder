@@ -138,3 +138,36 @@ export const createWorkout = async(formData) => {
         return null
     }
 }
+
+export const createExercise = async(formData) => {
+    const { exerciseName, iteration, type, actualNumOfReps, actualNumOfSets, goalNumOfReps, goalNumOfSets, weight, workoutId  } = formData
+    let response = await api.post(
+        'user_exercise/',
+        {
+            "exercise_name" : exerciseName,
+            "iteration" : iteration,
+            "type": type,
+            "actual_num_of_reps": actualNumOfReps,
+            "actual_num_of_sets": actualNumOfSets,
+            "goal_num_of_reps": goalNumOfReps,
+            "goal_num_of_sets": goalNumOfSets,
+            "weight": weight,
+            "workout_id": workoutId
+        }
+    )
+    if(response.status === 201){
+        return {
+            'exerciseName' : response.data.exercise_name, 
+            'iteration': response.data.iteration,
+            'actualNumOfReps' : response.data.actual_num_of_reps,
+            'actualNumOfSets' : response.data.actual_num_of_sets,
+            'goalNumOfReps': response.data.goal_num_of_reps,
+            'goalNumOfSets': response.data.goal_num_of_sets,
+            'weight' : response.data.weight,
+            'type' : response.data.type,
+            'workoutId' : response.data.workout_id,
+
+        }
+    }
+}
+

@@ -2,25 +2,36 @@ import { useState, useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import { createWorkout } from '../utilities';
+import { createExercise } from '../utilities';
 
-function NewWorkoutModalForm({ workoutName, setWorkoutName, trackerName, setTrackerName }) {
+function NewExerciseModalForm({ workoutName, setWorkoutName }) {
     const [show, setShow] = useState(false);
     const inputRef = useRef(null);
-    const [typeOfWorkout, setTypeOfWorkout] = useState("");
-    const [weeklyFrequency, setWeeklyFrequency] = useState("");
+    const [weight, setWeight] = useState("");
+    const [goalNumOfReps, setGoalNumOfReps] = useState("");
+    const [goalNumOfSets, setGoalNumOfSets] = useState("");
+    const [actualNumOfReps, setActualNumOfReps] = useState("");
+    const [actualNumOfSets, setActualNumOfSets] = useState("");
+    const [type, setType] = useState("");
+    const [iteration, setIteration] = useState("");
+    const [exerciseName, setExerciseName] = useState("");
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
     const handleSubmit = async(e) =>{
         e.preventDefault() 
         let formData = {
-            'typeOfWorkout': typeOfWorkout,
-            'weeklyFrequency': weeklyFrequency,
-            'workoutName' : workoutName,
-            'trackerId' : trackerName.trackerId,
+            "exerciseName" : exerciseName,
+            "iteration" : iteration,
+            "type": type,
+            "actualNumOfReps": actualNumOfReps,
+            "actualNumOfSets": actualNumOfSets,
+            "goalNumOfReps": goalNumOfReps,
+            "goalNumOfSets": goalNumOfSets,
+            "weight": weight,
+            "workoutId": workoutName.workoutId
         }
-        const results = await createWorkout(formData)
+        const results = await createExercise(formData)
         if(results){
             inputRef.current.value = ''
             setWorkoutName(results)
@@ -34,37 +45,72 @@ function NewWorkoutModalForm({ workoutName, setWorkoutName, trackerName, setTrac
     return (
         <>
             <Button variant="primary" onClick={handleShow}>
-                Create a new workout
+                Create a new exercise entry
             </Button>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Workout Creation</Modal.Title>
+                    <Modal.Title>Exercise Creation</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form>
                         <Form.Group className="mb-3" >
-                        <Form.Label>Workout Name</Form.Label>
+                        <Form.Label>Exercise Name</Form.Label>
                         <Form.Control
                             ref={inputRef}
-                            onChange={(e)=> setWorkoutName(e.target.value)}
+                            onChange={(e)=> setExerciseName(e.target.value)}
                             type="text"
-                            placeholder="Enter the name of your workout"
+                            placeholder="Enter the name of this exercise"
                             autoFocus
                         />
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Label>Weekly Frequency</Form.Label>
+                            <Form.Label>Iteration</Form.Label>
                             <Form.Control 
                                 ref={inputRef}
-                                onChange={(e)=> setWeeklyFrequency(e.target.value)}
-                                type='text' placeholder='Enter a number'/>
+                                onChange={(e)=> setIteration(e.target.value)}
+                                type='text' placeholder='Enter which set your currently on'/>
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Label>Type of Workout</Form.Label>
+                            <Form.Label>Type of Exercise</Form.Label>
                             <Form.Control 
                                 ref={inputRef}
-                                onChange={(e)=> setTypeOfWorkout(e.target.value)}
-                                type='text' placeholder='Enter the type of workout this will be'/>
+                                onChange={(e)=> setType(e.target.value)}
+                                type='text' placeholder='Enter the type of exercise this will be'/>
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>Goal Rep Count</Form.Label>
+                            <Form.Control 
+                                ref={inputRef}
+                                onChange={(e)=> setGoalNumOfReps(e.target.value)}
+                                type='text' placeholder='Enter the goal amount for your rep count'/>
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>Goal Set Count</Form.Label>
+                            <Form.Control 
+                                ref={inputRef}
+                                onChange={(e)=> setGoalNumOfSets(e.target.value)}
+                                type='text' placeholder='Enter the goal amount for your set count'/>
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>Actual Rep Count</Form.Label>
+                            <Form.Control 
+                                ref={inputRef}
+                                onChange={(e)=> setActualNumOfReps(e.target.value)}
+                                type='text' placeholder='Enter the actual number of reps you accomplished'/>
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>Actual Set Count</Form.Label>
+                            <Form.Control 
+                                ref={inputRef}
+                                onChange={(e)=> setActualNumOfSets(e.target.value)}
+                                type='text' placeholder='Enter the actual number sets you accomplished'/>
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>Weight</Form.Label>
+                            <Form.Control 
+                                ref={inputRef}
+                                onChange={(e)=> setWeight(e.target.value)}
+                                type='text' placeholder='Enter the weight you did on this set'/>
                         </Form.Group>
                     </Form>
                 </Modal.Body>
@@ -83,4 +129,4 @@ function NewWorkoutModalForm({ workoutName, setWorkoutName, trackerName, setTrac
     );
 }
 
-export default NewWorkoutModalForm;
+export default NewExerciseModalForm;

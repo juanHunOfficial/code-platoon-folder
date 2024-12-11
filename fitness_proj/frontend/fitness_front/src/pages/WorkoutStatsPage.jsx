@@ -5,6 +5,7 @@ import { useState, useRef } from 'react'
 import { createTracker } from '../utilities';
 import { useOutletContext } from 'react-router-dom';
 import NewWorkoutModalForm from '../components/NewWorkoutModalForm';
+import NewExerciseModalForm from '../components/NewExerciseModalForm';
 
 const WorkoutStatsPage = () => {
     const { user } = useOutletContext();
@@ -67,7 +68,7 @@ const WorkoutStatsPage = () => {
             </div>
 
             <NewWorkoutModalForm trackerName={trackerName} setTrackerName={setTrackerName} workoutName={workoutName} setWorkoutName={setWorkoutName} />
-
+            <NewExerciseModalForm workoutName={workoutName} setWorkoutName={setWorkoutName} />
             {/* <h1>
                 
                 Now we can start looking into charts js, start with being able to
