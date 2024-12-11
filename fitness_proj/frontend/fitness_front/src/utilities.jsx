@@ -113,7 +113,26 @@ export const createTracker = async(formData) => {
         }
     )
     if(response.status === 201){
-        return response.data.tracker_name
+        return {'trackerName': response.data.tracker_name, 'trackerId': response.data.id}
+    }
+    else{
+        return null
+    }
+}
+
+export const createWorkout = async(formData) => {
+    const { typeOfWorkout, weeklyFrequency, workoutName, trackerId } = formData
+    let response = await api.post(
+        'workout/',
+        {
+            'type_of_workout': typeOfWorkout,
+            'weekly_frequency': weeklyFrequency,
+            'workout_name' : workoutName,
+            'tracker_id' : trackerId
+        }
+    )
+    if(response.status === 201){
+        return {'workoutName': response.data.workout_name, 'workoutId': response.data.id}
     }
     else{
         return null

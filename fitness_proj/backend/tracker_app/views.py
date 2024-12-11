@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Tracker
-from workout_app.models import Workout
 from .serializers import TrackerSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -15,7 +14,7 @@ class AllTrackers(APIView):
     
     def post(self, request):
         data = request.data.copy()
-        print(data)
+        
         new_tracker = TrackerSerializer(data=data)
         if new_tracker.is_valid():
             new_tracker.save()

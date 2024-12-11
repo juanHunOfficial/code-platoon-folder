@@ -4,11 +4,12 @@ import Modal from 'react-bootstrap/Modal';
 import { useState } from 'react'
 import { createTracker } from '../utilities';
 import { useOutletContext } from 'react-router-dom';
-
+import NewWorkoutModalForm from '../components/NewWorkoutModalForm';
 
 const WorkoutStatsPage = () => {
     const { user } = useOutletContext();
-    const [trackerName, setTrackerName] = useState("")
+    const [trackerName, setTrackerName] = useState("");
+    const [workoutName, setWorkoutName] = useState("");
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -23,7 +24,7 @@ const WorkoutStatsPage = () => {
         const results = await createTracker(formData)
 
         if(results){
-            console.log(results)
+            setTrackerName(results)
         }
         else{
             console.log('something went wrong in the return statement')
@@ -34,23 +35,6 @@ const WorkoutStatsPage = () => {
 
     return(
         <>
-            {/* <h1>
-                
-                Now we can start looking into charts js, start with being able to
-                add workouts to the db and fetch them along with the desired data
-                that we will be utilizing for rendering the charts.
-
-                load 1 sample line chart to plot our desire points
-
-                create a form with the desired data to pass for the creation of new entries like workouts
-                and exercises.
-
-                create a utilities function that will create the post request as well as one that will be
-                the get request
-
-                
-            </h1> */}
-
             <div className='search_result_card' style={{display: 'flex', margin: '100px auto', justifyContent: 'center'}}>
                 <Form onSubmit={(e) => handleSubmit(e)}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -80,7 +64,24 @@ const WorkoutStatsPage = () => {
                 </Form>
             </div>
 
+            <NewWorkoutModalForm trackerName={trackerName} setTrackerName={setTrackerName} workoutName={workoutName} setWorkoutName={setWorkoutName} />
 
+            {/* <h1>
+                
+                Now we can start looking into charts js, start with being able to
+                add workouts to the db and fetch them along with the desired data
+                that we will be utilizing for rendering the charts.
+
+                load 1 sample line chart to plot our desire points
+
+                create a form with the desired data to pass for the creation of new entries like workouts
+                and exercises.
+
+                create a utilities function that will create the post request as well as one that will be
+                the get request
+
+                
+            </h1> */}
         </>
     )
 }
