@@ -1,13 +1,14 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { createTracker } from '../utilities';
 import { useOutletContext } from 'react-router-dom';
 import NewWorkoutModalForm from '../components/NewWorkoutModalForm';
 
 const WorkoutStatsPage = () => {
     const { user } = useOutletContext();
+    const inputRef = useRef(null);
     const [trackerName, setTrackerName] = useState("");
     const [workoutName, setWorkoutName] = useState("");
     const [show, setShow] = useState(false);
@@ -24,6 +25,7 @@ const WorkoutStatsPage = () => {
         const results = await createTracker(formData)
 
         if(results){
+            inputRef.current.value = ''
             setTrackerName(results)
         }
         else{
@@ -38,8 +40,8 @@ const WorkoutStatsPage = () => {
             <div className='search_result_card' style={{display: 'flex', margin: '100px auto', justifyContent: 'center'}}>
                 <Form onSubmit={(e) => handleSubmit(e)}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Control 
-                        value={trackerName}
+                        <Form.Control
+                        ref={inputRef} 
                         onChange={(e)=> setTrackerName(e.target.value)}
                         type="text" placeholder="Enter the name of your new tracker" style={{width: '450px'}}/>
                     </Form.Group>

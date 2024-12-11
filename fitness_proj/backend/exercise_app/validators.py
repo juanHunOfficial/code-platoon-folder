@@ -1,4 +1,5 @@
 from django.core.exceptions import ValidationError
+import re
 
 def validate_valid_type(type):
     valid_types = ['legs', 'arms', 'chest', 'back', 'abs', 'push', 'pull', 'shoulders']
