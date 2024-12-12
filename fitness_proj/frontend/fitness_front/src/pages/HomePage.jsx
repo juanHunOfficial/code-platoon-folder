@@ -2,7 +2,7 @@ import { useOutletContext } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import DashboardCard from '../components/DashboardCard'
+import TrackerDashboardCard from '../components/TrackerDashboardCard'
 import Button from 'react-bootstrap/Button';
 import nutritionStockPic from '../assets/nutrition_pic.jpeg'
 import exerciseStockPic from '../assets/exercise_pic.jpg'
@@ -26,9 +26,9 @@ const HomePage = () => {
                     <h2>Your Workouts</h2>
                 </div>
                 <div className='workout_cards' style={{display : 'flex', justifyContent: "space-around"}} >
-                    <DashboardCard />
-                    <DashboardCard />
-                    <DashboardCard />
+                    <TrackerDashboardCard />
+                    <TrackerDashboardCard />
+                    <TrackerDashboardCard />
                 </div>
             </div>
             <div className='food_section_container' style={{background:'lightgreen' ,display: 'flex', justifyContent: "space-between", paddingTop: '30px', paddingBottom: "30px"}}>
