@@ -6,12 +6,27 @@ function App() {
   const [user, setUser] = useState(useLoaderData())
   const [needsToSignup, setNeedsToSignup] = useState(false)
   const [searchResults, setSearchResults] = useState(null)
+  const [userTrackers, setUserTrackers] = useState(null)
   
   return (
     <>
       <h1>Welcome {user ? user.firstname : null}</h1>
-      <NavBar user={user} setUser={setUser} needsToSignup={needsToSignup} setNeedsToSignup={setNeedsToSignup}/>
-      <Outlet context={{user, setUser, needsToSignup, setNeedsToSignup, searchResults, setSearchResults}}/>
+      <NavBar 
+        user={user} 
+        setUser={setUser} 
+        needsToSignup={needsToSignup} 
+        setNeedsToSignup={setNeedsToSignup} 
+        setUserTrackers={setUserTrackers}
+      />
+      <Outlet context={{user, 
+                        setUser, 
+                        needsToSignup, 
+                        setNeedsToSignup, 
+                        searchResults, 
+                        setSearchResults,
+                        userTrackers,
+                        setUserTrackers
+                      }}/>
     </>
   )
 }

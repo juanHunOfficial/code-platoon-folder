@@ -4,8 +4,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import { logOut } from '../utilities';
+import { getTrackers } from '../utilities';
 
-const NavBar = ({user, setUser, needsToSignup, setNeedsToSignup}) => {
+const NavBar = ({user, setUser, needsToSignup, setNeedsToSignup, setUserTrackers}) => {
 
     const clickOnLogin = () => {
         setNeedsToSignup(false)
@@ -18,6 +19,12 @@ const NavBar = ({user, setUser, needsToSignup, setNeedsToSignup}) => {
     const loggedOut = async() => {
         setUser(await logOut(user))
     }
+
+    const handleClick = async() => {
+        let data = await getTrackers()
+        setUserTrackers(data)
+    }
+
     return(
         <>
             <Navbar bg="primary" data-bs-theme="dark">
@@ -29,7 +36,7 @@ const NavBar = ({user, setUser, needsToSignup, setNeedsToSignup}) => {
                             <Nav.Link as={ Link } to='/exercise/'>Exercises</Nav.Link>
                             <Nav.Link as={ Link } to='/nutrition/'>Nutrition</Nav.Link>
                             {user ? <>
-                                <Nav.Link as={ Link } to='/workouts/'>Your Fitness</Nav.Link>
+                                <Nav.Link as={ Link } to='/workouts/' onClick={handleClick}>Your Fitness</Nav.Link>
                             </>: null}
                         </div>
                         {user ? 
