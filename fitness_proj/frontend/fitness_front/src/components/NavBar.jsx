@@ -28,6 +28,9 @@ const NavBar = ({user, setUser, needsToSignup, setNeedsToSignup}) => {
                             <Nav.Link as={ Link } to='/'>Home</Nav.Link>
                             <Nav.Link as={ Link } to='/exercise/'>Exercises</Nav.Link>
                             <Nav.Link as={ Link } to='/nutrition/'>Nutrition</Nav.Link>
+                            {user ? <>
+                                <Nav.Link as={ Link } to='/workouts/'>Your Fitness</Nav.Link>
+                            </>: null}
                         </div>
                         {user ? 
                             <>

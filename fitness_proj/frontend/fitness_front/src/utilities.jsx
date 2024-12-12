@@ -104,12 +104,13 @@ export const getFood = async(formData) => {
 }
 
 export const createTracker = async(formData) => {
-    const { trackerName, userId } = formData
+    const { trackerName, userId, user } = formData
     let response = await api.post(
         'tracker/',
         {
             'tracker_name' : trackerName,
-            'user_id' : userId
+            'user_id' : userId,
+            'user': user
         }
     )
     if(response.status === 201){
