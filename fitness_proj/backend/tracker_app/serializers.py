@@ -21,6 +21,7 @@ class TrackerSerializer(serializers.ModelSerializer):
     def get_exercises(self, workout):
         exercises = workout.exercises.all() 
         return [{
+                    'id': exercise.id,
                     'exercise_name': exercise.exercise_name, 
                     'iteration': exercise.iteration, 
                     'type': exercise.type,
