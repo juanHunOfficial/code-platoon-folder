@@ -8,11 +8,9 @@ from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 class AllExercises(APIView):
-    permission_classes = [IsAuthenticated]
     
     def get(self, request):
-        current_user = request.user
-        ser_exercises = ExerciseSerializer(Exercise.objects.filter(user=current_user), many=True)
+        ser_exercises = ExerciseSerializer(Exercise.objects.all(), many=True)
         return Response(ser_exercises.data)
     
     def post(self, request):
@@ -40,7 +38,6 @@ class SingleExercise(APIView):
     def put(self, request, exercise):
         exercise = self.get_exercise(exercise)
         body_data = request.data.copy()
-        print(body_data)
         
         if(exercise):
             exercise.actual_num_of_reps = body_data['actual_num_of_reps']
@@ -48,6 +45,7 @@ class SingleExercise(APIView):
             exercise.goal_num_of_reps = body_data['goal_num_of_reps']
             exercise.goal_num_of_sets = body_data['goal_num_of_sets']
             exercise.weight = body_data['weight']
+            exercise.date = body_data['date']
             
             exercise.save()
         else:

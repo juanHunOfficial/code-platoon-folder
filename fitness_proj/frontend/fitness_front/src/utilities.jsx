@@ -114,7 +114,10 @@ export const createTracker = async(formData) => {
         }
     )
     if(response.status === 201){
-        return {'trackerName': response.data.tracker_name, 'trackerId': response.data.id}
+        return {
+            'trackerName': response.data.tracker_name, 
+            'trackerId': response.data.id
+        }
     }
     else{
         return null
@@ -122,7 +125,11 @@ export const createTracker = async(formData) => {
 }
 
 export const createWorkout = async(formData) => {
-    const { typeOfWorkout, weeklyFrequency, workoutName, trackerId } = formData
+    const { typeOfWorkout, 
+            weeklyFrequency, 
+            workoutName, 
+            trackerId 
+        } = formData
     let response = await api.post(
         'workout/',
         {
@@ -133,7 +140,10 @@ export const createWorkout = async(formData) => {
         }
     )
     if(response.status === 201){
-        return {'workoutName': response.data.workout_name, 'workoutId': response.data.id}
+        return {
+            'workoutName': response.data.workout_name, 
+            'workoutId': response.data.id
+        }
     }
     else{
         return null
@@ -141,7 +151,17 @@ export const createWorkout = async(formData) => {
 }
 
 export const createExercise = async(formData) => {
-    const { exerciseName, iteration, type, actualNumOfReps, actualNumOfSets, goalNumOfReps, goalNumOfSets, weight, workoutId  } = formData
+    const { exerciseName, 
+            iteration,
+            type, 
+            actualNumOfReps, 
+            actualNumOfSets, 
+            goalNumOfReps, 
+            goalNumOfSets, 
+            weight, 
+            date, 
+            workoutId  
+        } = formData
     let response = await api.post(
         'user_exercise/',
         {
@@ -153,6 +173,7 @@ export const createExercise = async(formData) => {
             "goal_num_of_reps": goalNumOfReps,
             "goal_num_of_sets": goalNumOfSets,
             "weight": weight,
+            "date": date,
             "workout_id": workoutId
         }
     )

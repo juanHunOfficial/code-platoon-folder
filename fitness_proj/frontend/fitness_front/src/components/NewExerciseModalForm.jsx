@@ -12,6 +12,7 @@ function NewExerciseModalForm({ workoutName, setWorkoutName }) {
     const [goalNumOfSets, setGoalNumOfSets] = useState("");
     const [actualNumOfReps, setActualNumOfReps] = useState("");
     const [actualNumOfSets, setActualNumOfSets] = useState("");
+    const [date, setDate] = useState("");
     const [type, setType] = useState("");
     const [iteration, setIteration] = useState("");
     const [exerciseName, setExerciseName] = useState("");
@@ -29,6 +30,7 @@ function NewExerciseModalForm({ workoutName, setWorkoutName }) {
             "goalNumOfReps": goalNumOfReps,
             "goalNumOfSets": goalNumOfSets,
             "weight": weight,
+            "date": date,
             "workoutId": workoutName.workoutId
         }
         const results = await createExercise(formData)
@@ -111,6 +113,13 @@ function NewExerciseModalForm({ workoutName, setWorkoutName }) {
                                 ref={inputRef}
                                 onChange={(e)=> setWeight(e.target.value)}
                                 type='text' placeholder='Enter the weight you did on this set'/>
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>Date</Form.Label>
+                            <Form.Control 
+                                ref={inputRef}
+                                onChange={(e)=> setDate(e.target.value)}
+                                type='text' placeholder='Format MM/DD/YYYY'/>
                         </Form.Group>
                     </Form>
                 </Modal.Body>

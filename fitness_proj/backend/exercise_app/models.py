@@ -2,6 +2,7 @@ from django.db import models
 from workout_app.models import Workout
 from django.core import validators as v
 from .validators import validate_valid_type, validate_exercise_name
+import datetime
 # Create your models here.
 class Exercise(models.Model):
     exercise_name = models.CharField(blank=False, validators=[validate_exercise_name])
@@ -12,4 +13,6 @@ class Exercise(models.Model):
     goal_num_of_sets = models.PositiveIntegerField(blank=False, validators=[v.MinValueValidator(1)])
     goal_num_of_reps = models.PositiveIntegerField(blank=False, validators=[v.MinValueValidator(1)])
     weight = models.PositiveIntegerField(blank=False, validators=[v.MaxValueValidator(2000)])
+    date = models.DateField(default=datetime.date.today)
     workout_id = models.ForeignKey(Workout, on_delete=models.CASCADE, related_name='exercises')
+    

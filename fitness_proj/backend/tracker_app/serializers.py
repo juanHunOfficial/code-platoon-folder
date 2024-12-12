@@ -30,5 +30,11 @@ class TrackerSerializer(serializers.ModelSerializer):
                     'actual_num_of_reps': exercise.actual_num_of_reps,
                     'actual_num_of_sets' : exercise.actual_num_of_sets,
                     'weight': exercise.weight,
+                    'date': self.format_date(exercise.date),
                     'workout_id': exercise.workout_id.id
                 } for exercise in exercises]
+    
+    def format_date(self, date_obj):
+        if date_obj:
+            return date_obj.strftime('%m/%d/%Y')
+        return None
