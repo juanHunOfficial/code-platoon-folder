@@ -193,3 +193,21 @@ export const createExercise = async(formData) => {
     }
 }
 
+export const getTrackers = async() => {
+    let response = await api.get(
+        'tracker/',
+        {
+
+        })
+    let token = localStorage.getItem('token')
+    if(token){
+        api.defaults.headers.common['Authorization'] = `Token ${token}`
+        let response = await api.get('tracker/')
+        if (response.status === 200){
+            return response.data
+        }
+    }
+    else{
+        return null
+    }
+}

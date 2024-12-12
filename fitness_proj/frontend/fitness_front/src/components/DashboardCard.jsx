@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 function DashboardCard() {
+  const [trackerDisplay, setTrackerDisplay] = useState(true);
+  
+
   return (
     <Card style={{ width: '18rem' }}>
         <div style={{width:'100px', height: '180px'}} ></div>
