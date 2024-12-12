@@ -5,9 +5,8 @@ import { useOutletContext } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 function TrackerDashboardCard() {
-  const { userTrackers } = useOutletContext();
+  const { userTrackers, workoutSelected, setWorkoutSelected} = useOutletContext();
   const [currentPage, setCurrentPage] = useState(0);
-  const [workoutSelected, setWorkoutSelected] = useState("");
   const navigate = useNavigate();
   const cardsPerPage = 3;
   let displayedTrackers = []
@@ -24,9 +23,6 @@ function TrackerDashboardCard() {
     }
   };
 
-  if(userTrackers){
-    console.log(workoutSelected)
-  }
   
   const prevPage = () => {
     if (currentPage > 0) {
@@ -54,7 +50,10 @@ function TrackerDashboardCard() {
                   ))}
                 </Card.Text>
                 <div className="mt-auto">
-                  <Button onClick={() => setWorkoutSelected(tracker.workouts[index -1])} variant="primary" className="w-100">Select</Button>
+                  <Button onClick={() => {{
+                    setWorkoutSelected(tracker.workouts[index -1])
+                    navigate("/workout/")
+                    }}} variant="primary" className="w-100">Select</Button>
                 </div>
             </Card.Body>
           </Card>

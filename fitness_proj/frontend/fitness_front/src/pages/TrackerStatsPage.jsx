@@ -4,7 +4,7 @@ import NewExerciseModalForm from '../components/NewExerciseModalForm';
 import TrackerCreationForm from '../components/TrackerCreationForm';
 import TrackerDashboardCard from '../components/TrackerDashboardCard';
 
-const WorkoutStatsPage = () => {
+const TrackerStatsPage = () => {
     
     const [trackerName, setTrackerName] = useState("");
     const [workoutName, setWorkoutName] = useState("");
@@ -19,4 +19,4 @@ const WorkoutStatsPage = () => {
     )
 }
 
-export default WorkoutStatsPage
+export default TrackerStatsPage

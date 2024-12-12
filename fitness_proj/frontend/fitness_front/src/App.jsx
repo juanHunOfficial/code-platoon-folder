@@ -7,6 +7,7 @@ function App() {
   const [needsToSignup, setNeedsToSignup] = useState(false)
   const [searchResults, setSearchResults] = useState(null)
   const [userTrackers, setUserTrackers] = useState(null)
+  const [workoutSelected, setWorkoutSelected] = useState("");
   
   return (
     <>
@@ -25,7 +26,9 @@ function App() {
                         searchResults, 
                         setSearchResults,
                         userTrackers,
-                        setUserTrackers
+                        setUserTrackers,
+                        workoutSelected,
+                        setWorkoutSelected
                       }}/>
     </>
   )

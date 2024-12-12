@@ -36,7 +36,7 @@ const NavBar = ({user, setUser, needsToSignup, setNeedsToSignup, setUserTrackers
                             <Nav.Link as={ Link } to='/exercise/'>Exercises</Nav.Link>
                             <Nav.Link as={ Link } to='/nutrition/'>Nutrition</Nav.Link>
                             {user ? <>
-                                <Nav.Link as={ Link } to='/workouts/' onClick={handleClick}>Your Fitness</Nav.Link>
+                                <Nav.Link as={ Link } to='/trackers/' onClick={handleClick}>Your Fitness</Nav.Link>
                             </>: null}
                         </div>
                         {user ? 
