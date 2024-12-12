@@ -11,6 +11,7 @@ class TrackerSerializer(serializers.ModelSerializer):
     def get_workouts(self, instance):
         workouts = instance.workouts.all()
         ser_workouts = [{
+            "id": workout.id,
             "workout_name": workout.workout_name,
             "workout_type": workout.type_of_workout, 
             'exercises': self.get_exercises(workout)
@@ -19,25 +20,14 @@ class TrackerSerializer(serializers.ModelSerializer):
     
     def get_exercises(self, workout):
         exercises = workout.exercises.all() 
-        list_of_exercises = []
-        for exercise in exercises:
-            
-            if exercise:
-                print(type(exercise))
-                list_of_exercises.append(
-                    {
-                        'exercise_name': exercise.exercise_name, 
-                        'iteration': exercise.iteration, 
-                        'type': exercise.type,
-                        'goal_num_of_reps': exercise.goal_num_of_reps,
-                        'goal_num_of_sets': exercise.goal_num_of_sets,
-                        'actual_num_of_reps': exercise.actual_num_of_reps,
-                        'actual_num_of_sets' : exercise.actual_num_of_sets,
-                        'weight': exercise.weight,
-                        # 'workout_id': exercise.workout_id
-                    }
-                )
-            else: 
-                return None
-        print(list_of_exercises)
-        return list_of_exercises
+        return [{
+                    'exercise_name': exercise.exercise_name, 
+                    'iteration': exercise.iteration, 
+                    'type': exercise.type,
+                    'goal_num_of_reps': exercise.goal_num_of_reps,
+                    'goal_num_of_sets': exercise.goal_num_of_sets,
+                    'actual_num_of_reps': exercise.actual_num_of_reps,
+                    'actual_num_of_sets' : exercise.actual_num_of_sets,
+                    'weight': exercise.weight,
+                    'workout_id': exercise.workout_id.id
+                } for exercise in exercises]

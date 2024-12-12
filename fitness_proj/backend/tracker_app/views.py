@@ -28,8 +28,11 @@ class AllTrackers(APIView):
 
 class SingleTracker(APIView):
     def get_tracker(self, tracker_name):
-        trackers = Tracker.objects.get(id=tracker_name)
-        return trackers
+        if type(tracker_name) == int:
+            tracker_name = get_object_or_404(Tracker, id=tracker_name)
+        else:
+            tracker_name = get_object_or_404(Tracker, tracker_name=tracker_name)
+        return tracker_name
     
     def get(self, request, tracker_name):
         a_ser_tracker = TrackerSerializer(self.get_tracker(tracker_name))
