@@ -5,14 +5,12 @@ import { useOutletContext } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 function TrackerDashboardCard() {
-  const { userTrackers, workoutSelected, setWorkoutSelected} = useOutletContext();
+  const { userTrackers, trackerSelected, setTrackerSelected } = useOutletContext();
   const [currentPage, setCurrentPage] = useState(0);
   const navigate = useNavigate();
   const cardsPerPage = 3;
   let displayedTrackers = []
 
-  console.log(workoutSelected)
-  
   if(userTrackers){
     displayedTrackers = userTrackers.slice(currentPage * cardsPerPage, (currentPage + 1) * cardsPerPage);
   } 
@@ -51,7 +49,7 @@ function TrackerDashboardCard() {
                 </Card.Text>
                 <div className="mt-auto">
                   <Button onClick={() => {{
-                    setWorkoutSelected(tracker.workouts[index -1])
+                    setTrackerSelected(tracker);
                     navigate("/workout/")
                     }}} variant="primary" className="w-100">Select</Button>
                 </div>

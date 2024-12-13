@@ -119,7 +119,7 @@ function NewExerciseModalForm({ workoutName, setWorkoutName }) {
                             <Form.Control 
                                 ref={inputRef}
                                 onChange={(e)=> setDate(e.target.value)}
-                                type='text' placeholder='Format MM/DD/YYYY'/>
+                                type='text' placeholder='Format YYYY-MM-DD'/>
                         </Form.Group>
                     </Form>
                 </Modal.Body>

@@ -3,11 +3,12 @@ import NavBar from './components/NavBar'
 import { useState } from 'react'
 
 function App() {
-  const [user, setUser] = useState(useLoaderData())
-  const [needsToSignup, setNeedsToSignup] = useState(false)
-  const [searchResults, setSearchResults] = useState(null)
-  const [userTrackers, setUserTrackers] = useState(null)
+  const [user, setUser] = useState(useLoaderData());
+  const [needsToSignup, setNeedsToSignup] = useState(false);
+  const [searchResults, setSearchResults] = useState(null);
+  const [userTrackers, setUserTrackers] = useState(null);
   const [workoutSelected, setWorkoutSelected] = useState("");
+  const [trackerSelected, setTrackerSelected] = useState("");
   
   return (
     <>
@@ -28,7 +29,9 @@ function App() {
                         userTrackers,
                         setUserTrackers,
                         workoutSelected,
-                        setWorkoutSelected
+                        setWorkoutSelected,
+                        trackerSelected,
+                        setTrackerSelected
                       }}/>
     </>
   )
