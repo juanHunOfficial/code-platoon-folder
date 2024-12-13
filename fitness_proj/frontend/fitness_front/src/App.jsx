@@ -9,6 +9,7 @@ function App() {
   const [userTrackers, setUserTrackers] = useState(null);
   const [workoutSelected, setWorkoutSelected] = useState("");
   const [trackerSelected, setTrackerSelected] = useState("");
+  const [exerciseSelected, setExerciseSelected] = useState("")
   
   return (
     <>
@@ -31,7 +32,9 @@ function App() {
                         workoutSelected,
                         setWorkoutSelected,
                         trackerSelected,
-                        setTrackerSelected
+                        setTrackerSelected,
+                        exerciseSelected,
+                        setExerciseSelected
                       }}/>
     </>
   )

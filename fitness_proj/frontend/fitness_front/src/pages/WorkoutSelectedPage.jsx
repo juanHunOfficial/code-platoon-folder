@@ -5,7 +5,7 @@ import { useOutletContext } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 const WorkoutSelectedPage = () => {
-    const { workoutSelected, setWorkoutSelected, trackerSelected, setTrackerSelected } = useOutletContext();
+    const { workoutSelected, setWorkoutSelected, trackerSelected } = useOutletContext();
     const [currentPage, setCurrentPage] = useState(0);
     const navigate = useNavigate();
     const cardsPerPage = 3;
@@ -28,6 +28,8 @@ const WorkoutSelectedPage = () => {
         }
     };
     
+    console.log(workoutSelected)
+
     return(
         
         <>
@@ -49,6 +51,7 @@ const WorkoutSelectedPage = () => {
                                 <div className="mt-auto">
                                 <Button onClick={() => {{
                                     setWorkoutSelected(workout);
+                                    navigate('/selected_exercise/')
                                     }}} variant="primary" className="w-100">Select</Button>
                                 </div>
                             </Card.Body>
