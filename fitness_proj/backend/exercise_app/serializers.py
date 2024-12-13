@@ -2,8 +2,21 @@ from rest_framework import serializers
 from .models import Exercise
 
 class ExerciseSerializer(serializers.ModelSerializer):
-    date = serializers.DateField(format="%m/%d/%Y")
+    charts = serializers.SerializerMethodField()
     class Meta:
         model =  Exercise
-        # fields = ['workout_id', 'exercise_name', 'type', 'goal_num_of_sets', 'goal_num_of_reps', 'actual_num_of_sets', 'actual_num_of_reps',]
         fields = '__all__'
+        
+    def get_charts(self, instance):
+        charts = instance.charts.all()
+        ser_chart_data = [{
+            'iteration': chart.iteration, 
+            'type': chart.type,
+            'goal_num_of_reps': chart.goal_num_of_reps,
+            'goal_num_of_sets': chart.goal_num_of_sets,
+            'actual_num_of_reps': chart.actual_num_of_reps,
+            'actual_num_of_sets' : chart.actual_num_of_sets,
+            'weight': chart.weight,
+            'exercise_id': chart.workout_id
+        } for chart in charts]
+        return ser_chart_data

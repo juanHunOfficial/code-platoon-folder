@@ -14,4 +14,4 @@ class ChartData(models.Model):
     goal_num_of_reps = models.PositiveIntegerField(blank=False, validators=[v.MinValueValidator(1)])
     weight = models.PositiveIntegerField(blank=False, validators=[v.MaxValueValidator(2000)])
     date = models.DateField(default=datetime.date.today)
-    exercise_id = models.ForeignKey(Exercise, on_delete=models.CASCADE, related_name='chart_data')
+    exercise_id = models.ForeignKey(Exercise, on_delete=models.CASCADE, related_name='charts')
