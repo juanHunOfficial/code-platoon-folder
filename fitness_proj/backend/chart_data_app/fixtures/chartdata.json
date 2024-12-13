@@ -1,0 +1,603 @@
+[
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 1,
+      "fields": {
+         "iteration": 1,
+         "actual_num_of_sets": 4,
+         "actual_num_of_reps": 12,
+         "type": "strength",
+         "goal_num_of_sets": 4,
+         "goal_num_of_reps": 12,
+         "weight": 60,
+         "date": "2024-12-13",
+         "exercise_id": 1
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 2,
+      "fields": {
+         "iteration": 2,
+         "actual_num_of_sets": 4,
+         "actual_num_of_reps": 10,
+         "type": "strength",
+         "goal_num_of_sets": 4,
+         "goal_num_of_reps": 10,
+         "weight": 55,
+         "date": "2024-12-13",
+         "exercise_id": 2
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 3,
+      "fields": {
+         "iteration": 3,
+         "actual_num_of_sets": 3,
+         "actual_num_of_reps": 8,
+         "type": "strength",
+         "goal_num_of_sets": 3,
+         "goal_num_of_reps": 8,
+         "weight": 70,
+         "date": "2024-12-13",
+         "exercise_id": 3
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 4,
+      "fields": {
+         "iteration": 4,
+         "actual_num_of_sets": 5,
+         "actual_num_of_reps": 12,
+         "type": "strength",
+         "goal_num_of_sets": 5,
+         "goal_num_of_reps": 12,
+         "weight": 80,
+         "date": "2024-12-13",
+         "exercise_id": 4
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 5,
+      "fields": {
+         "iteration": 5,
+         "actual_num_of_sets": 4,
+         "actual_num_of_reps": 10,
+         "type": "strength",
+         "goal_num_of_sets": 4,
+         "goal_num_of_reps": 10,
+         "weight": 90,
+         "date": "2024-12-13",
+         "exercise_id": 5
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 6,
+      "fields": {
+         "iteration": 6,
+         "actual_num_of_sets": 5,
+         "actual_num_of_reps": 15,
+         "type": "strength",
+         "goal_num_of_sets": 5,
+         "goal_num_of_reps": 15,
+         "weight": 100,
+         "date": "2024-12-13",
+         "exercise_id": 6
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 7,
+      "fields": {
+         "iteration": 7,
+         "actual_num_of_sets": 3,
+         "actual_num_of_reps": 10,
+         "type": "strength",
+         "goal_num_of_sets": 3,
+         "goal_num_of_reps": 10,
+         "weight": 75,
+         "date": "2024-12-13",
+         "exercise_id": 7
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 8,
+      "fields": {
+         "iteration": 8,
+         "actual_num_of_sets": 4,
+         "actual_num_of_reps": 8,
+         "type": "strength",
+         "goal_num_of_sets": 4,
+         "goal_num_of_reps": 8,
+         "weight": 60,
+         "date": "2024-12-13",
+         "exercise_id": 8
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 9,
+      "fields": {
+         "iteration": 9,
+         "actual_num_of_sets": 3,
+         "actual_num_of_reps": 12,
+         "type": "strength",
+         "goal_num_of_sets": 3,
+         "goal_num_of_reps": 12,
+         "weight": 65,
+         "date": "2024-12-13",
+         "exercise_id": 9
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 10,
+      "fields": {
+         "iteration": 10,
+         "actual_num_of_sets": 4,
+         "actual_num_of_reps": 10,
+         "type": "strength",
+         "goal_num_of_sets": 4,
+         "goal_num_of_reps": 10,
+         "weight": 55,
+         "date": "2024-12-13",
+         "exercise_id": 10
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 11,
+      "fields": {
+         "iteration": 11,
+         "actual_num_of_sets": 4,
+         "actual_num_of_reps": 20,
+         "type": "cardio",
+         "goal_num_of_sets": 4,
+         "goal_num_of_reps": 20,
+         "weight": 0,
+         "date": "2024-12-13",
+         "exercise_id": 21
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 12,
+      "fields": {
+         "iteration": 12,
+         "actual_num_of_sets": 5,
+         "actual_num_of_reps": 25,
+         "type": "cardio",
+         "goal_num_of_sets": 5,
+         "goal_num_of_reps": 25,
+         "weight": 0,
+         "date": "2024-12-13",
+         "exercise_id": 22
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 13,
+      "fields": {
+         "iteration": 13,
+         "actual_num_of_sets": 3,
+         "actual_num_of_reps": 15,
+         "type": "cardio",
+         "goal_num_of_sets": 3,
+         "goal_num_of_reps": 15,
+         "weight": 0,
+         "date": "2024-12-13",
+         "exercise_id": 23
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 14,
+      "fields": {
+         "iteration": 14,
+         "actual_num_of_sets": 5,
+         "actual_num_of_reps": 30,
+         "type": "cardio",
+         "goal_num_of_sets": 5,
+         "goal_num_of_reps": 30,
+         "weight": 0,
+         "date": "2024-12-13",
+         "exercise_id": 24
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 15,
+      "fields": {
+         "iteration": 15,
+         "actual_num_of_sets": 4,
+         "actual_num_of_reps": 20,
+         "type": "cardio",
+         "goal_num_of_sets": 4,
+         "goal_num_of_reps": 20,
+         "weight": 0,
+         "date": "2024-12-13",
+         "exercise_id": 25
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 16,
+      "fields": {
+         "iteration": 16,
+         "actual_num_of_sets": 3,
+         "actual_num_of_reps": 10,
+         "type": "cardio",
+         "goal_num_of_sets": 3,
+         "goal_num_of_reps": 10,
+         "weight": 0,
+         "date": "2024-12-13",
+         "exercise_id": 26
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 17,
+      "fields": {
+         "iteration": 17,
+         "actual_num_of_sets": 5,
+         "actual_num_of_reps": 15,
+         "type": "flexibility",
+         "goal_num_of_sets": 5,
+         "goal_num_of_reps": 15,
+         "weight": 0,
+         "date": "2024-12-13",
+         "exercise_id": 35
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 18,
+      "fields": {
+         "iteration": 18,
+         "actual_num_of_sets": 4,
+         "actual_num_of_reps": 12,
+         "type": "flexibility",
+         "goal_num_of_sets": 4,
+         "goal_num_of_reps": 12,
+         "weight": 0,
+         "date": "2024-12-13",
+         "exercise_id": 36
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 19,
+      "fields": {
+         "iteration": 19,
+         "actual_num_of_sets": 5,
+         "actual_num_of_reps": 20,
+         "type": "flexibility",
+         "goal_num_of_sets": 5,
+         "goal_num_of_reps": 20,
+         "weight": 0,
+         "date": "2024-12-13",
+         "exercise_id": 37
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 20,
+      "fields": {
+         "iteration": 20,
+         "actual_num_of_sets": 3,
+         "actual_num_of_reps": 8,
+         "type": "flexibility",
+         "goal_num_of_sets": 3,
+         "goal_num_of_reps": 8,
+         "weight": 0,
+         "date": "2024-12-13",
+         "exercise_id": 38
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 1,
+      "fields": {
+         "iteration": 1,
+         "actual_num_of_sets": 3,
+         "actual_num_of_reps": 12,
+         "type": "Strength",
+         "goal_num_of_sets": 4,
+         "goal_num_of_reps": 12,
+         "weight": 120,
+         "date": "2024-01-01",
+         "exercise_id": 1
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 2,
+      "fields": {
+         "iteration": 2,
+         "actual_num_of_sets": 3,
+         "actual_num_of_reps": 10,
+         "type": "Strength",
+         "goal_num_of_sets": 4,
+         "goal_num_of_reps": 10,
+         "weight": 110,
+         "date": "2024-01-02",
+         "exercise_id": 1
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 3,
+      "fields": {
+         "iteration": 1,
+         "actual_num_of_sets": 4,
+         "actual_num_of_reps": 12,
+         "type": "Strength",
+         "goal_num_of_sets": 5,
+         "goal_num_of_reps": 12,
+         "weight": 130,
+         "date": "2024-01-03",
+         "exercise_id": 2
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 4,
+      "fields": {
+         "iteration": 2,
+         "actual_num_of_sets": 5,
+         "actual_num_of_reps": 10,
+         "type": "Strength",
+         "goal_num_of_sets": 6,
+         "goal_num_of_reps": 10,
+         "weight": 120,
+         "date": "2024-01-04",
+         "exercise_id": 2
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 5,
+      "fields": {
+         "iteration": 1,
+         "actual_num_of_sets": 3,
+         "actual_num_of_reps": 8,
+         "type": "Strength",
+         "goal_num_of_sets": 4,
+         "goal_num_of_reps": 8,
+         "weight": 100,
+         "date": "2024-01-05",
+         "exercise_id": 3
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 6,
+      "fields": {
+         "iteration": 2,
+         "actual_num_of_sets": 4,
+         "actual_num_of_reps": 10,
+         "type": "Strength",
+         "goal_num_of_sets": 5,
+         "goal_num_of_reps": 10,
+         "weight": 120,
+         "date": "2024-01-06",
+         "exercise_id": 3
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 7,
+      "fields": {
+         "iteration": 1,
+         "actual_num_of_sets": 4,
+         "actual_num_of_reps": 12,
+         "type": "Strength",
+         "goal_num_of_sets": 5,
+         "goal_num_of_reps": 12,
+         "weight": 130,
+         "date": "2024-01-07",
+         "exercise_id": 4
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 8,
+      "fields": {
+         "iteration": 2,
+         "actual_num_of_sets": 4,
+         "actual_num_of_reps": 12,
+         "type": "Strength",
+         "goal_num_of_sets": 5,
+         "goal_num_of_reps": 12,
+         "weight": 125,
+         "date": "2024-01-08",
+         "exercise_id": 4
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 9,
+      "fields": {
+         "iteration": 1,
+         "actual_num_of_sets": 5,
+         "actual_num_of_reps": 8,
+         "type": "Strength",
+         "goal_num_of_sets": 6,
+         "goal_num_of_reps": 8,
+         "weight": 150,
+         "date": "2024-01-09",
+         "exercise_id": 5
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 10,
+      "fields": {
+         "iteration": 2,
+         "actual_num_of_sets": 5,
+         "actual_num_of_reps": 10,
+         "type": "Strength",
+         "goal_num_of_sets": 6,
+         "goal_num_of_reps": 10,
+         "weight": 145,
+         "date": "2024-01-10",
+         "exercise_id": 5
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 11,
+      "fields": {
+         "iteration": 1,
+         "actual_num_of_sets": 3,
+         "actual_num_of_reps": 12,
+         "type": "Strength",
+         "goal_num_of_sets": 4,
+         "goal_num_of_reps": 12,
+         "weight": 100,
+         "date": "2024-01-11",
+         "exercise_id": 6
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 12,
+      "fields": {
+         "iteration": 2,
+         "actual_num_of_sets": 4,
+         "actual_num_of_reps": 10,
+         "type": "Strength",
+         "goal_num_of_sets": 5,
+         "goal_num_of_reps": 10,
+         "weight": 105,
+         "date": "2024-01-12",
+         "exercise_id": 6
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 13,
+      "fields": {
+         "iteration": 1,
+         "actual_num_of_sets": 4,
+         "actual_num_of_reps": 12,
+         "type": "Strength",
+         "goal_num_of_sets": 5,
+         "goal_num_of_reps": 12,
+         "weight": 120,
+         "date": "2024-01-13",
+         "exercise_id": 7
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 14,
+      "fields": {
+         "iteration": 2,
+         "actual_num_of_sets": 5,
+         "actual_num_of_reps": 8,
+         "type": "Strength",
+         "goal_num_of_sets": 6,
+         "goal_num_of_reps": 8,
+         "weight": 125,
+         "date": "2024-01-14",
+         "exercise_id": 7
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 15,
+      "fields": {
+         "iteration": 1,
+         "actual_num_of_sets": 5,
+         "actual_num_of_reps": 10,
+         "type": "Strength",
+         "goal_num_of_sets": 6,
+         "goal_num_of_reps": 10,
+         "weight": 140,
+         "date": "2024-01-15",
+         "exercise_id": 8
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 16,
+      "fields": {
+         "iteration": 2,
+         "actual_num_of_sets": 6,
+         "actual_num_of_reps": 12,
+         "type": "Strength",
+         "goal_num_of_sets": 7,
+         "goal_num_of_reps": 12,
+         "weight": 135,
+         "date": "2024-01-16",
+         "exercise_id": 8
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 17,
+      "fields": {
+         "iteration": 1,
+         "actual_num_of_sets": 3,
+         "actual_num_of_reps": 12,
+         "type": "Strength",
+         "goal_num_of_sets": 4,
+         "goal_num_of_reps": 12,
+         "weight": 120,
+         "date": "2024-01-17",
+         "exercise_id": 9
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 18,
+      "fields": {
+         "iteration": 2,
+         "actual_num_of_sets": 3,
+         "actual_num_of_reps": 8,
+         "type": "Strength",
+         "goal_num_of_sets": 4,
+         "goal_num_of_reps": 8,
+         "weight": 125,
+         "date": "2024-01-18",
+         "exercise_id": 9
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 19,
+      "fields": {
+         "iteration": 1,
+         "actual_num_of_sets": 4,
+         "actual_num_of_reps": 12,
+         "type": "Strength",
+         "goal_num_of_sets": 5,
+         "goal_num_of_reps": 12,
+         "weight": 130,
+         "date": "2024-01-19",
+         "exercise_id": 10
+      }
+   },
+   {
+      "model": "chart_data_app.chartdata",
+      "pk": 20,
+      "fields": {
+         "iteration": 2,
+         "actual_num_of_sets": 4,
+         "actual_num_of_reps": 10,
+         "type": "Strength",
+         "goal_num_of_sets": 5,
+         "goal_num_of_reps": 10,
+         "weight": 140,
+         "date": "2024-01-20",
+         "exercise_id": 10
+      }
+   }
+]
+

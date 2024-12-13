@@ -1,154 +1,403 @@
 [
     {
-        "model": "tracker_app.tracker",  
-        "pk": 1,  
-        "fields": {
-            "tracker_name": "Daily Fitness",
-            "user_id": 1
-        }
+       "model": "tracker_app.tracker",
+       "pk": 1,
+       "fields": {
+          "tracker_name": "Tracker 1 for User 1",
+          "user": 1
+       }
     },
     {
-        "model": "tracker_app.tracker",
-        "pk": 2,
-        "fields": {
-            "tracker_name": "Strength Training",
-            "user_id": 1
-        }
+       "model": "tracker_app.tracker",
+       "pk": 2,
+       "fields": {
+          "tracker_name": "Tracker 2 for User 1",
+          "user": 1
+       }
     },
     {
-        "model": "tracker_app.tracker",
-        "pk": 3,
-        "fields": {
-            "tracker_name": "Cardio Blast",
-            "user_id": 1
-        }
+       "model": "tracker_app.tracker",
+       "pk": 3,
+       "fields": {
+          "tracker_name": "Tracker 3 for User 1",
+          "user": 1
+       }
     },
     {
-        "model": "tracker_app.tracker",
-        "pk": 4,
-        "fields": {
-            "tracker_name": "Total Body Workout",
-            "user_id": 1
-        }
+       "model": "tracker_app.tracker",
+       "pk": 4,
+       "fields": {
+          "tracker_name": "Tracker 4 for User 1",
+          "user": 1
+       }
     },
     {
-        "model": "tracker_app.tracker",
-        "pk": 5,
-        "fields": {
-            "tracker_name": "Flexibility Routine",
-            "user_id": 1
-        }
+       "model": "tracker_app.tracker",
+       "pk": 5,
+       "fields": {
+          "tracker_name": "Tracker 5 for User 1",
+          "user": 1
+       }
     },
     {
-        "model": "tracker_app.tracker",
-        "pk": 6,
-        "fields": {
-            "tracker_name": "Fat Loss Tracker",
-            "user_id": 1
-        }
+       "model": "tracker_app.tracker",
+       "pk": 6,
+       "fields": {
+          "tracker_name": "Tracker 6 for User 1",
+          "user": 1
+       }
     },
     {
-        "model": "tracker_app.tracker",
-        "pk": 7,
-        "fields": {
-            "tracker_name": "Muscle Gain Plan",
-            "user_id": 1
-        }
+       "model": "tracker_app.tracker",
+       "pk": 7,
+       "fields": {
+          "tracker_name": "Tracker 7 for User 1",
+          "user": 1
+       }
     },
     {
-        "model": "tracker_app.tracker",
-        "pk": 8,
-        "fields": {
-            "tracker_name": "Endurance Training",
-            "user_id": 1
-        }
+       "model": "tracker_app.tracker",
+       "pk": 8,
+       "fields": {
+          "tracker_name": "Tracker 8 for User 1",
+          "user": 1
+       }
     },
     {
-        "model": "tracker_app.tracker",
-        "pk": 9,
-        "fields": {
-            "tracker_name": "Power Lifting",
-            "user_id": 1
-        }
+       "model": "tracker_app.tracker",
+       "pk": 9,
+       "fields": {
+          "tracker_name": "Tracker 9 for User 1",
+          "user": 1
+       }
     },
     {
-        "model": "tracker_app.tracker",
-        "pk": 10,
-        "fields": {
-            "tracker_name": "Recovery Program",
-            "user_id": 1
-        }
+       "model": "tracker_app.tracker",
+       "pk": 10,
+       "fields": {
+          "tracker_name": "Tracker 10 for User 1",
+          "user": 1
+       }
     },
     {
-        "model": "tracker_app.tracker",
-        "pk": 11,
-        "fields": {
-            "tracker_name": "Core Strength",
-            "user_id": 1
-        }
+       "model": "tracker_app.tracker",
+       "pk": 11,
+       "fields": {
+          "tracker_name": "Tracker 1 for User 2",
+          "user": 2
+       }
     },
     {
-        "model": "tracker_app.tracker",
-        "pk": 12,
-        "fields": {
-            "tracker_name": "HIIT Sessions",
-            "user_id": 1
-        }
+       "model": "tracker_app.tracker",
+       "pk": 12,
+       "fields": {
+          "tracker_name": "Tracker 2 for User 2",
+          "user": 2
+       }
     },
     {
-        "model": "tracker_app.tracker",
-        "pk": 13,
-        "fields": {
-            "tracker_name": "Leg Day Focus",
-            "user_id": 1
-        }
+       "model": "tracker_app.tracker",
+       "pk": 13,
+       "fields": {
+          "tracker_name": "Tracker 3 for User 2",
+          "user": 2
+       }
     },
     {
-        "model": "tracker_app.tracker",
-        "pk": 14,
-        "fields": {
-            "tracker_name": "Push Pull Legs",
-            "user_id": 1
-        }
+       "model": "tracker_app.tracker",
+       "pk": 14,
+       "fields": {
+          "tracker_name": "Tracker 4 for User 2",
+          "user": 2
+       }
     },
     {
-        "model": "tracker_app.tracker",
-        "pk": 15,
-        "fields": {
-            "tracker_name": "Bodyweight Training",
-            "user_id": 1
-        }
+       "model": "tracker_app.tracker",
+       "pk": 15,
+       "fields": {
+          "tracker_name": "Tracker 5 for User 2",
+          "user": 2
+       }
     },
     {
-        "model": "tracker_app.tracker",
-        "pk": 16,
-        "fields": {
-            "tracker_name": "Strength & Cardio",
-            "user_id": 1
-        }
+       "model": "tracker_app.tracker",
+       "pk": 16,
+       "fields": {
+          "tracker_name": "Tracker 6 for User 2",
+          "user": 2
+       }
     },
     {
-        "model": "tracker_app.tracker",
-        "pk": 17,
-        "fields": {
-            "tracker_name": "Weight Loss Journey",
-            "user_id": 1
-        }
+       "model": "tracker_app.tracker",
+       "pk": 17,
+       "fields": {
+          "tracker_name": "Tracker 7 for User 2",
+          "user": 2
+       }
     },
     {
-        "model": "tracker_app.tracker",
-        "pk": 18,
-        "fields": {
-            "tracker_name": "Flex & Tone",
-            "user_id": 1
-        }
+       "model": "tracker_app.tracker",
+       "pk": 18,
+       "fields": {
+          "tracker_name": "Tracker 8 for User 2",
+          "user": 2
+       }
     },
     {
-        "model": "tracker_app.tracker",
-        "pk": 19,
-        "fields": {
-            "tracker_name": "Advanced Training",
-            "user_id": 1
-        }
+       "model": "tracker_app.tracker",
+       "pk": 19,
+       "fields": {
+          "tracker_name": "Tracker 9 for User 2",
+          "user": 2
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 20,
+       "fields": {
+          "tracker_name": "Tracker 10 for User 2",
+          "user": 2
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 21,
+       "fields": {
+          "tracker_name": "Tracker 1 for User 3",
+          "user": 3
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 22,
+       "fields": {
+          "tracker_name": "Tracker 2 for User 3",
+          "user": 3
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 23,
+       "fields": {
+          "tracker_name": "Tracker 3 for User 3",
+          "user": 3
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 24,
+       "fields": {
+          "tracker_name": "Tracker 4 for User 3",
+          "user": 3
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 25,
+       "fields": {
+          "tracker_name": "Tracker 5 for User 3",
+          "user": 3
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 26,
+       "fields": {
+          "tracker_name": "Tracker 6 for User 3",
+          "user": 3
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 27,
+       "fields": {
+          "tracker_name": "Tracker 7 for User 3",
+          "user": 3
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 28,
+       "fields": {
+          "tracker_name": "Tracker 8 for User 3",
+          "user": 3
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 29,
+       "fields": {
+          "tracker_name": "Tracker 9 for User 3",
+          "user": 3
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 30,
+       "fields": {
+          "tracker_name": "Tracker 10 for User 3",
+          "user": 3
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 31,
+       "fields": {
+          "tracker_name": "Tracker 1 for User 4",
+          "user": 4
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 32,
+       "fields": {
+          "tracker_name": "Tracker 2 for User 4",
+          "user": 4
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 33,
+       "fields": {
+          "tracker_name": "Tracker 3 for User 4",
+          "user": 4
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 34,
+       "fields": {
+          "tracker_name": "Tracker 4 for User 4",
+          "user": 4
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 35,
+       "fields": {
+          "tracker_name": "Tracker 5 for User 4",
+          "user": 4
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 36,
+       "fields": {
+          "tracker_name": "Tracker 6 for User 4",
+          "user": 4
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 37,
+       "fields": {
+          "tracker_name": "Tracker 7 for User 4",
+          "user": 4
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 38,
+       "fields": {
+          "tracker_name": "Tracker 8 for User 4",
+          "user": 4
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 39,
+       "fields": {
+          "tracker_name": "Tracker 9 for User 4",
+          "user": 4
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 40,
+       "fields": {
+          "tracker_name": "Tracker 10 for User 4",
+          "user": 4
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 41,
+       "fields": {
+          "tracker_name": "Tracker 1 for User 5",
+          "user": 5
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 42,
+       "fields": {
+          "tracker_name": "Tracker 2 for User 5",
+          "user": 5
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 43,
+       "fields": {
+          "tracker_name": "Tracker 3 for User 5",
+          "user": 5
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 44,
+       "fields": {
+          "tracker_name": "Tracker 4 for User 5",
+          "user": 5
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 45,
+       "fields": {
+          "tracker_name": "Tracker 5 for User 5",
+          "user": 5
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 46,
+       "fields": {
+          "tracker_name": "Tracker 6 for User 5",
+          "user": 5
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 47,
+       "fields": {
+          "tracker_name": "Tracker 7 for User 5",
+          "user": 5
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 48,
+       "fields": {
+          "tracker_name": "Tracker 8 for User 5",
+          "user": 5
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 49,
+       "fields": {
+          "tracker_name": "Tracker 9 for User 5",
+          "user": 5
+       }
+    },
+    {
+       "model": "tracker_app.tracker",
+       "pk": 50,
+       "fields": {
+          "tracker_name": "Tracker 10 for User 5",
+          "user": 5
+       }
     }
-]
+ ]
+ 

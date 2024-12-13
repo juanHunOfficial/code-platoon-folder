@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'exercise_app',
     'workout_app',
     'exercises_api_app',
+    'chart_data_app',
     'dotenv',
     'corsheaders',
 ]

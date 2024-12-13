@@ -1,268 +1,322 @@
 [
     {
-        "model": "exercise_app.exercise",  
-        "pk": 1,  
-        "fields": {
-            "actual_num_of_sets": 4,
-            "actual_num_of_reps": 12,
-            "goal_num_of_sets": 4,
-            "goal_num_of_reps": 12,
-            "type": "legs",
-            "exercise_name": "Squats",
-            "weight" : 100,
-            "workout_id": 1
-        }
+       "model": "exercise_app.exercise",
+       "pk": 1,
+       "fields": {
+          "exercise_name": "Push-up",
+          "workout_id": 1
+       }
     },
     {
-        "model": "exercise_app.exercise",
-        "pk": 2,
-        "fields": {
-            "actual_num_of_sets": 3,
-            "actual_num_of_reps": 10,
-            "goal_num_of_sets": 3,
-            "goal_num_of_reps": 10,
-            "type": "arms",
-            "weight" : 100,
-            "exercise_name": "Bicep Curls",
-            "workout_id": 2
-        }
+       "model": "exercise_app.exercise",
+       "pk": 2,
+       "fields": {
+          "exercise_name": "Squat",
+          "workout_id": 1
+       }
     },
     {
-        "model": "exercise_app.exercise",
-        "pk": 3,
-        "fields": {
-            "actual_num_of_sets": 4,
-            "actual_num_of_reps": 12,
-            "goal_num_of_sets": 4,
-            "goal_num_of_reps": 12,
-            "type": "chest",
-            "weight" : 100,
-            "exercise_name": "Bench Press",
-            "workout_id": 3
-        }
+       "model": "exercise_app.exercise",
+       "pk": 3,
+       "fields": {
+          "exercise_name": "Pull-up",
+          "workout_id": 1
+       }
     },
     {
-        "model": "exercise_app.exercise",
-        "pk": 4,
-        "fields": {
-            "actual_num_of_sets": 4,
-            "actual_num_of_reps": 12,
-            "goal_num_of_sets": 4,
-            "goal_num_of_reps": 12,
-            "type": "back",
-            "weight" : 100,
-            "exercise_name": "Deadlifts",
-            "workout_id": 4
-        }
+       "model": "exercise_app.exercise",
+       "pk": 4,
+       "fields": {
+          "exercise_name": "Deadlift",
+          "workout_id": 1
+       }
     },
     {
-        "model": "exercise_app.exercise",
-        "pk": 5,
-        "fields": {
-            "actual_num_of_sets": 4,
-            "actual_num_of_reps": 12,
-            "goal_num_of_sets": 4,
-            "goal_num_of_reps": 12,
-            "type": "abs",
-            "weight" : 100,
-            "exercise_name": "Planks",
-            "workout_id": 5
-        }
+       "model": "exercise_app.exercise",
+       "pk": 5,
+       "fields": {
+          "exercise_name": "Leg Press",
+          "workout_id": 1
+       }
     },
     {
-        "model": "exercise_app.exercise",
-        "pk": 6,
-        "fields": {
-            "actual_num_of_sets": 4,
-            "actual_num_of_reps": 12,
-            "goal_num_of_sets": 4,
-            "goal_num_of_reps": 12,
-            "type": "push",
-            "weight" : 100,
-            "exercise_name": "Push-ups",
-            "workout_id": 6
-        }
+       "model": "exercise_app.exercise",
+       "pk": 6,
+       "fields": {
+          "exercise_name": "Lunge",
+          "workout_id": 1
+       }
     },
     {
-        "model": "exercise_app.exercise",
-        "pk": 7,
-        "fields": {
-            "actual_num_of_sets": 4,
-            "actual_num_of_reps": 12,
-            "goal_num_of_sets": 4,
-            "goal_num_of_reps": 12,
-            "type": "pull",
-            "weight" : 100,
-            "exercise_name": "Pull-ups",
-            "workout_id": 7
-        }
+       "model": "exercise_app.exercise",
+       "pk": 7,
+       "fields": {
+          "exercise_name": "Barbell Row",
+          "workout_id": 1
+       }
     },
     {
-        "model": "exercise_app.exercise",
-        "pk": 8,
-        "fields": {
-            "actual_num_of_sets": 4,
-            "actual_num_of_reps": 12,
-            "goal_num_of_sets": 4,
-            "goal_num_of_reps": 12,
-            "type": "shoulders",
-            "weight" : 100,
-            "exercise_name": "Overhead Press",
-            "workout_id": 8
-        }
+       "model": "exercise_app.exercise",
+       "pk": 8,
+       "fields": {
+          "exercise_name": "Bench Press",
+          "workout_id": 1
+       }
     },
     {
-        "model": "exercise_app.exercise",
-        "pk": 9,
-        "fields": {
-            "actual_num_of_sets": 4,
-            "actual_num_of_reps": 12,
-            "goal_num_of_sets": 4,
-            "goal_num_of_reps": 12,
-            "type": "legs",
-            "weight" : 100,
-            "exercise_name": "Lunges",
-            "workout_id": 9
-        }
+       "model": "exercise_app.exercise",
+       "pk": 9,
+       "fields": {
+          "exercise_name": "Overhead Press",
+          "workout_id": 1
+       }
     },
     {
-        "model": "exercise_app.exercise",
-        "pk": 10,
-        "fields": {
-            "actual_num_of_sets": 4,
-            "actual_num_of_reps": 12,
-            "goal_num_of_sets": 4,
-            "goal_num_of_reps": 12,
-            "type": "chest",
-            "weight" : 100,
-            "exercise_name": "Chest Flys",
-            "workout_id": 10
-        }
+       "model": "exercise_app.exercise",
+       "pk": 10,
+       "fields": {
+          "exercise_name": "Bicep Curl",
+          "workout_id": 1
+       }
     },
     {
-        "model": "exercise_app.exercise",
-        "pk": 11,
-        "fields": {
-            "actual_num_of_sets": 4,
-            "actual_num_of_reps": 12,
-            "goal_num_of_sets": 4,
-            "goal_num_of_reps": 12,
-            "type": "abs",
-            "weight" : 100,
-            "exercise_name": "Leg Raises",
-            "workout_id": 11
-        }
+       "model": "exercise_app.exercise",
+       "pk": 11,
+       "fields": {
+          "exercise_name": "Tricep Dip",
+          "workout_id": 1
+       }
     },
     {
-        "model": "exercise_app.exercise",
-        "pk": 12,
-        "fields": {
-            "actual_num_of_sets": 4,
-            "actual_num_of_reps": 12,
-            "goal_num_of_sets": 4,
-            "goal_num_of_reps": 12,
-            "type": "back",
-            "weight" : 100,
-            "exercise_name": "Barbell Rows",
-            "workout_id": 12
-        }
+       "model": "exercise_app.exercise",
+       "pk": 12,
+       "fields": {
+          "exercise_name": "Leg Curl",
+          "workout_id": 1
+       }
     },
     {
-        "model": "exercise_app.exercise",
-        "pk": 13,
-        "fields": {
-            "actual_num_of_sets": 4,
-            "actual_num_of_reps": 12,
-            "goal_num_of_sets": 4,
-            "goal_num_of_reps": 12,
-            "type": "legs",
-            "weight" : 100,
-            "exercise_name": "Leg Press",
-            "workout_id": 13
-        }
+       "model": "exercise_app.exercise",
+       "pk": 13,
+       "fields": {
+          "exercise_name": "Glute Bridge",
+          "workout_id": 1
+       }
     },
     {
-        "model": "exercise_app.exercise",
-        "pk": 14,
-        "fields": {
-            "actual_num_of_sets": 4,
-            "actual_num_of_reps": 12,
-            "goal_num_of_sets": 4,
-            "goal_num_of_reps": 12,
-            "type": "push",
-            "weight" : 100,
-            "exercise_name": "Incline Bench",
-            "workout_id": 14
-        }
+       "model": "exercise_app.exercise",
+       "pk": 14,
+       "fields": {
+          "exercise_name": "Lat Pulldown",
+          "workout_id": 1
+       }
     },
     {
-        "model": "exercise_app.exercise",
-        "pk": 15,
-        "fields": {
-            "actual_num_of_sets": 4,
-            "actual_num_of_reps": 12,
-            "goal_num_of_sets": 4,
-            "goal_num_of_reps": 12,
-            "type": "pull",
-            "weight" : 100,
-            "exercise_name": "Lat Pulldown",
-            "workout_id": 15
-        }
+       "model": "exercise_app.exercise",
+       "pk": 15,
+       "fields": {
+          "exercise_name": "Cable Fly",
+          "workout_id": 1
+       }
     },
     {
-        "model": "exercise_app.exercise",
-        "pk": 16,
-        "fields": {
-            "actual_num_of_sets": 4,
-            "actual_num_of_reps": 12,
-            "goal_num_of_sets": 4,
-            "goal_num_of_reps": 12,
-            "type": "abs",
-            "weight" : 100,
-            "exercise_name": "Russian Twists",
-            "workout_id": 16
-        }
+       "model": "exercise_app.exercise",
+       "pk": 16,
+       "fields": {
+          "exercise_name": "Chest Press",
+          "workout_id": 1
+       }
     },
     {
-        "model": "exercise_app.exercise",
-        "pk": 17,
-        "fields": {
-            "actual_num_of_sets": 4,
-            "actual_num_of_reps": 12,
-            "goal_num_of_sets": 4,
-            "goal_num_of_reps": 12,
-            "type": "shoulders",
-            "weight" : 100,
-            "exercise_name": "Lateral Raises",
-            "workout_id": 17
-        }
+       "model": "exercise_app.exercise",
+       "pk": 17,
+       "fields": {
+          "exercise_name": "Leg Extension",
+          "workout_id": 1
+       }
     },
     {
-        "model": "exercise_app.exercise",
-        "pk": 18,
-        "fields": {
-            "actual_num_of_sets": 4,
-            "actual_num_of_reps": 12,
-            "goal_num_of_sets": 4,
-            "goal_num_of_reps": 12,
-            "type": "chest",
-            "weight" : 100,
-            "exercise_name": "Dumbbell Press",
-            "workout_id": 18
-        }
+       "model": "exercise_app.exercise",
+       "pk": 18,
+       "fields": {
+          "exercise_name": "Seated Row",
+          "workout_id": 1
+       }
     },
     {
-        "model": "exercise_app.exercise",
-        "pk": 19,
-        "fields": {
-            "actual_num_of_sets": 4,
-            "actual_num_of_reps": 12,
-            "goal_num_of_sets": 4,
-            "goal_num_of_reps": 12,
-            "type": "back",
-            "weight" : 100,
-            "exercise_name": "T-bar Row",
-            "workout_id": 19
-        }
+       "model": "exercise_app.exercise",
+       "pk": 19,
+       "fields": {
+          "exercise_name": "Romanian Deadlift",
+          "workout_id": 1
+       }
+    },
+    {
+       "model": "exercise_app.exercise",
+       "pk": 20,
+       "fields": {
+          "exercise_name": "Mountain Climbers",
+          "workout_id": 1
+       }
+    },
+    {
+       "model": "exercise_app.exercise",
+       "pk": 21,
+       "fields": {
+          "exercise_name": "Jump Rope",
+          "workout_id": 2
+       }
+    },
+    {
+       "model": "exercise_app.exercise",
+       "pk": 22,
+       "fields": {
+          "exercise_name": "Burpees",
+          "workout_id": 2
+       }
+    },
+    {
+       "model": "exercise_app.exercise",
+       "pk": 23,
+       "fields": {
+          "exercise_name": "Box Jump",
+          "workout_id": 2
+       }
+    },
+    {
+       "model": "exercise_app.exercise",
+       "pk": 24,
+       "fields": {
+          "exercise_name": "Jumping Jacks",
+          "workout_id": 2
+       }
+    },
+    {
+       "model": "exercise_app.exercise",
+       "pk": 25,
+       "fields": {
+          "exercise_name": "High Knees",
+          "workout_id": 2
+       }
+    },
+    {
+       "model": "exercise_app.exercise",
+       "pk": 26,
+       "fields": {
+          "exercise_name": "Sprints",
+          "workout_id": 2
+       }
+    },
+    {
+       "model": "exercise_app.exercise",
+       "pk": 27,
+       "fields": {
+          "exercise_name": "Side Lunges",
+          "workout_id": 2
+       }
+    },
+    {
+       "model": "exercise_app.exercise",
+       "pk": 28,
+       "fields": {
+          "exercise_name": "Plank",
+          "workout_id": 2
+       }
+    },
+    {
+       "model": "exercise_app.exercise",
+       "pk": 29,
+       "fields": {
+          "exercise_name": "Squat Jumps",
+          "workout_id": 2
+       }
+    },
+    {
+       "model": "exercise_app.exercise",
+       "pk": 30,
+       "fields": {
+          "exercise_name": "Bear Crawl",
+          "workout_id": 2
+       }
+    },
+    {
+       "model": "exercise_app.exercise",
+       "pk": 31,
+       "fields": {
+          "exercise_name": "Spider Man Push-ups",
+          "workout_id": 2
+       }
+    },
+    {
+       "model": "exercise_app.exercise",
+       "pk": 32,
+       "fields": {
+          "exercise_name": "Tuck Jumps",
+          "workout_id": 2
+       }
+    },
+    {
+       "model": "exercise_app.exercise",
+       "pk": 33,
+       "fields": {
+          "exercise_name": "Side Plank",
+          "workout_id": 2
+       }
+    },
+    {
+       "model": "exercise_app.exercise",
+       "pk": 34,
+       "fields": {
+          "exercise_name": "Mountain Climbers",
+          "workout_id": 2
+       }
+    },
+    {
+       "model": "exercise_app.exercise",
+       "pk": 35,
+       "fields": {
+          "exercise_name": "Standing Calf Raises",
+          "workout_id": 3
+       }
+    },
+    {
+       "model": "exercise_app.exercise",
+       "pk": 36,
+       "fields": {
+          "exercise_name": "Downward Dog",
+          "workout_id": 3
+       }
+    },
+    {
+       "model": "exercise_app.exercise",
+       "pk": 37,
+       "fields": {
+          "exercise_name": "Child's Pose",
+          "workout_id": 3
+       }
+    },
+    {
+       "model": "exercise_app.exercise",
+       "pk": 38,
+       "fields": {
+          "exercise_name": "Cobra Stretch",
+          "workout_id": 3
+       }
+    },
+    {
+       "model": "exercise_app.exercise",
+       "pk": 39,
+       "fields": {
+          "exercise_name": "Seated Hamstring Stretch",
+          "workout_id": 3
+       }
+    },
+    {
+       "model": "exercise_app.exercise",
+       "pk": 40,
+       "fields": {
+          "exercise_name": "Hip Flexor Stretch",
+          "workout_id": 3
+       }
     }
-]
+ ]

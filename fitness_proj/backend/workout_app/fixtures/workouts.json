@@ -1,192 +1,103 @@
 [
-{
-    "model": "workout_app.workout",  
-    "pk": 1,  
-    "fields": {
-        "weekly_frequency": 3,
-        "type_of_workout": "legs",
-        "workout_name": "Leg Day Routine",
-        "tracker_name": 1
+    {
+       "model": "workout_app.workout",
+       "pk": 1,
+       "fields": {
+          "weekly_frequency": 3,
+          "type_of_workout": "Strength",
+          "workout_name": "Upper Body Strength",
+          "tracker_id": 1
+       }
+    },
+    {
+       "model": "workout_app.workout",
+       "pk": 2,
+       "fields": {
+          "weekly_frequency": 4,
+          "type_of_workout": "Cardio",
+          "workout_name": "Running Endurance",
+          "tracker_id": 1
+       }
+    },
+    {
+       "model": "workout_app.workout",
+       "pk": 3,
+       "fields": {
+          "weekly_frequency": 5,
+          "type_of_workout": "HIIT",
+          "workout_name": "Full Body HIIT",
+          "tracker_id": 2
+       }
+    },
+    {
+       "model": "workout_app.workout",
+       "pk": 4,
+       "fields": {
+          "weekly_frequency": 2,
+          "type_of_workout": "Yoga",
+          "workout_name": "Morning Yoga",
+          "tracker_id": 2
+       }
+    },
+    {
+       "model": "workout_app.workout",
+       "pk": 5,
+       "fields": {
+          "weekly_frequency": 4,
+          "type_of_workout": "Strength",
+          "workout_name": "Lower Body Strength",
+          "tracker_id": 3
+       }
+    },
+    {
+       "model": "workout_app.workout",
+       "pk": 6,
+       "fields": {
+          "weekly_frequency": 3,
+          "type_of_workout": "Cardio",
+          "workout_name": "Cycling",
+          "tracker_id": 3
+       }
+    },
+    {
+       "model": "workout_app.workout",
+       "pk": 7,
+       "fields": {
+          "weekly_frequency": 5,
+          "type_of_workout": "Yoga",
+          "workout_name": "Evening Stretch",
+          "tracker_id": 4
+       }
+    },
+    {
+       "model": "workout_app.workout",
+       "pk": 8,
+       "fields": {
+          "weekly_frequency": 3,
+          "type_of_workout": "Strength",
+          "workout_name": "Push-Pull Strength",
+          "tracker_id": 4
+       }
+    },
+    {
+       "model": "workout_app.workout",
+       "pk": 9,
+       "fields": {
+          "weekly_frequency": 2,
+          "type_of_workout": "Cardio",
+          "workout_name": "Jump Rope",
+          "tracker_id": 5
+       }
+    },
+    {
+       "model": "workout_app.workout",
+       "pk": 10,
+       "fields": {
+          "weekly_frequency": 4,
+          "type_of_workout": "HIIT",
+          "workout_name": "Tabata Workout",
+          "tracker_id": 5
+       }
     }
-},
-{
-    "model": "workout_app.workout",
-    "pk": 2,
-    "fields": {
-        "weekly_frequency": 4,
-        "type_of_workout": "arms",
-        "workout_name": "Arm Building",
-        "tracker_name": 2
-    }
-},
-{
-    "model": "workout_app.workout",
-    "pk": 3,
-    "fields": {
-        "weekly_frequency": 2,
-        "type_of_workout": "chest",
-        "workout_name": "Chest Blast",
-        "tracker_name": 3
-    }
-},
-{
-    "model": "workout_app.workout",
-    "pk": 4,
-    "fields": {
-        "weekly_frequency": 5,
-        "type_of_workout": "back",
-        "workout_name": "Back Strength",
-        "tracker_name": 4
-    }
-},
-{
-    "model": "workout_app.workout",
-    "pk": 5,
-    "fields": {
-        "weekly_frequency": 3,
-        "type_of_workout": "abs",
-        "workout_name": "Core Workout",
-        "tracker_name": 5
-    }
-},
-{
-    "model": "workout_app.workout",
-    "pk": 6,
-    "fields": {
-        "weekly_frequency": 2,
-        "type_of_workout": "push",
-        "workout_name": "Push Training",
-        "tracker_name": 6
-    }
-},
-{
-    "model": "workout_app.workout",
-    "pk": 7,
-    "fields": {
-        "weekly_frequency": 4,
-        "type_of_workout": "pull",
-        "workout_name": "Pull Routine",
-        "tracker_name": 7
-    }
-},
-{
-    "model": "workout_app.workout",
-    "pk": 8,
-    "fields": {
-        "weekly_frequency": 1,
-        "type_of_workout": "shoulders",
-        "workout_name": "Shoulder Strength",
-        "tracker_name": 8
-    }
-},
-{
-    "model": "workout_app.workout",
-    "pk": 9,
-    "fields": {
-        "weekly_frequency": 3,
-        "type_of_workout": "legs",
-        "workout_name": "Legs and Glutes",
-        "tracker_name": 9
-    }
-},
-{
-    "model": "workout_app.workout",
-    "pk": 10,
-    "fields": {
-        "weekly_frequency": 5,
-        "type_of_workout": "chest",
-        "workout_name": "Chest & Triceps",
-        "tracker_name": 10
-    }
-},
-{
-    "model": "workout_app.workout",
-    "pk": 11,
-    "fields": {
-        "weekly_frequency": 4,
-        "type_of_workout": "abs",
-        "workout_name": "Abs Workout",
-        "tracker_name": 11
-    }
-},
-{
-    "model": "workout_app.workout",
-    "pk": 12,
-    "fields": {
-        "weekly_frequency": 3,
-        "type_of_workout": "back",
-        "workout_name": "Back & Biceps",
-        "tracker_name": 12
-    }
-},
-{
-    "model": "workout_app.workout",
-    "pk": 13,
-    "fields": {
-        "weekly_frequency": 2,
-        "type_of_workout": "legs",
-        "workout_name": "Lower Body Strength",
-        "tracker_name": 13
-    }
-},
-{
-    "model": "workout_app.workout",
-    "pk": 14,
-    "fields": {
-        "weekly_frequency": 6,
-        "type_of_workout": "push",
-        "workout_name": "Push Focus",
-        "tracker_name": 14
-    }
-},
-{
-    "model": "workout_app.workout",
-    "pk": 15,
-    "fields": {
-        "weekly_frequency": 2,
-        "type_of_workout": "pull",
-        "workout_name": "Pull Push Routine",
-        "tracker_name": 15
-    }
-},
-{
-    "model": "workout_app.workout",
-    "pk": 16,
-    "fields": {
-        "weekly_frequency": 4,
-        "type_of_workout": "abs",
-        "workout_name": "Core & Abs",
-        "tracker_name": 16
-    }
-},
-{
-    "model": "workout_app.workout",
-    "pk": 17,
-    "fields": {
-        "weekly_frequency": 1,
-        "type_of_workout": "shoulders",
-        "workout_name": "Shoulder Hypertrophy",
-        "tracker_name": 17
-    }
-},
-{
-    "model": "workout_app.workout",
-    "pk": 18,
-    "fields": {
-        "weekly_frequency": 3,
-        "type_of_workout": "chest",
-        "workout_name": "Chest Day",
-        "tracker_name": 18
-    }
-},
-{
-    "model": "workout_app.workout",
-    "pk": 19,
-    "fields": {
-        "weekly_frequency": 5,
-        "type_of_workout": "back",
-        "workout_name": "Back Routine",
-        "tracker_name": 19
-    }
-}
-]
+ ]
+ 

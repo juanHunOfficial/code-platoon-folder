@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('num_of_sets', models.PositiveIntegerField(validators=[django.core.validators.MinValueValidator(1)])),
                 ('num_of_reps', models.PositiveIntegerField(validators=[django.core.validators.MinValueValidator(1)])),
-                ('type', models.CharField(validators=[exercise_app.validators.validate_valid_type])),
+                ('type', models.CharField()),
                 ('exercise_name', models.CharField(validators=[exercise_app.validators.validate_exercise_name])),
             ],
         ),
