@@ -50,7 +50,7 @@ const MuscleSearchBar = () => {
                             Enter a particular muscle group you with to target. (ex: biceps, chest, lower back)
                         </Form.Text>
                     </Form.Group>
-                    <div className='search_and_info_button' style={{display: 'flex'}}>
+                    <div className='search_and_info_button' style={{ textAlign: 'center', marginTop: '20px' }}>
                         <Button style={{marginRight: '20px', width: '100px'}} variant="primary" type="submit">Search</Button>
                         <Button style={{width: '100px'}} variant="primary" type="submit" onClick={handleShow}>Info</Button>
                     </div> 
