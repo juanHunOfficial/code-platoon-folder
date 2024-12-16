@@ -6,9 +6,10 @@ import TrackerDashboardCard from '../components/TrackerDashboardCard'
 import Button from 'react-bootstrap/Button';
 import nutritionStockPic from '../assets/nutrition_pic.jpeg'
 import exerciseStockPic from '../assets/exercise_pic.jpg'
+import { getTrackers } from '../utilities'
 
 const HomePage = () => {
-    const { user } = useOutletContext();
+    const { user, setUserTrackers } = useOutletContext();
     const navigate =  useNavigate();
 
     useEffect(() => {
@@ -16,6 +17,16 @@ const HomePage = () => {
             navigate('signup/');
         }
     }, [user, navigate])
+
+    useEffect(() => {
+        if (user) {
+            const fetchTracker = async () => {
+                const trackers = await getTrackers();
+                setUserTrackers(trackers);
+            };
+            fetchTracker();
+        }
+    }, []);
 
     return (
         <>
@@ -26,8 +37,6 @@ const HomePage = () => {
                     <h2>Your Workouts</h2>
                 </div>
                 <div className='workout_cards' style={{display : 'flex', justifyContent: "space-around"}} >
-                    <TrackerDashboardCard />
-                    <TrackerDashboardCard />
                     <TrackerDashboardCard />
                 </div>
             </div>

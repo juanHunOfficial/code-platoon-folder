@@ -31,7 +31,7 @@ const TrackerCreationForm = ({trackerName, setTrackerName}) => {
         
     }
     return(
-        <div className='search_result_card' style={{display: 'flex', margin: '100px auto', justifyContent: 'center'}}>
+        <div className='search_result_card' style={{display: 'flex', margin: '100px auto', justifyContent: 'center', alignItems: "center"}}>
             <Form onSubmit={(e) => handleSubmit(e)}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Control
@@ -39,9 +39,11 @@ const TrackerCreationForm = ({trackerName, setTrackerName}) => {
                     onChange={(e)=> setTrackerName(e.target.value)}
                     type="text" placeholder="Enter the name of your new tracker" style={{width: '450px'}}/>
                 </Form.Group>
-                <div className='search_and_info_button' style={{display: 'flex'}}>
-                    <Button style={{marginRight: '20px', width: '100px'}} variant="primary" type="submit">Add</Button>
-                    <Button style={{width: '100px'}} variant="primary" type="submit" onClick={handleShow}>Info</Button>
+                <div style={{display: "flex", alignItems:"center"}}>
+                    <div className='search_and_info_button' style={{display: 'flex', margin: "20px auto"}}>
+                        <Button style={{marginRight: '20px', width: '100px'}} variant="primary" type="submit">Add</Button>
+                        <Button style={{width: '100px'}} variant="primary" type="submit" onClick={handleShow}>Info</Button>
+                    </div>
                 </div>
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>

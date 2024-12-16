@@ -38,28 +38,78 @@ const ChartPage = () => {
                 data: exerciseSelected.charts.map(chart => chart.goal_num_of_reps),
                 borderColor: 'gold',
             }
-        ]
-    } 
+        ],
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    }
+
+    const lineChartOptionsReps = {
+        plugins: {
+          title: {
+            display: true,          
+            text: 'Rep Count Over Time', 
+            font: {
+              size: 18,            
+              weight: 'bold',      
+            },
+            padding: { top: 10, bottom: 30 }, 
+          },
+        },
+        responsive: true,        
+        maintainAspectRatio: false, 
+      };
 
     const lineChartDataSets ={
         labels: exerciseSelected.charts.map(chart => `Workout #${chart.iteration}`), 
         datasets: [
             { 
-                label : "Actual Rep Count",
+                label : "Actual Set Count",
                 data: exerciseSelected.charts.map(chart => chart.actual_num_of_sets),
                 borderColor: 'blue',
             },
             { 
-                label : "Goal Rep Count",
+                label : "Goal Set Count",
                 data: exerciseSelected.charts.map(chart => chart.goal_num_of_sets),
                 borderColor: 'gold',
             }
         ]
     }
+    const lineChartOptionsSets = {
+        plugins: {
+          title: {
+            display: true,          
+            text: 'Sets Count Over Time', 
+            font: {
+              size: 18,            
+              weight: 'bold',      
+            },
+            padding: { top: 10, bottom: 30 }, 
+          },
+        },
+        responsive: true,        
+        maintainAspectRatio: false, 
+      };
     return(
         <>
-            <Line data={lineChartDataReps} />
-            <Line data={lineChartDataSets} />
+        {exerciseSelected ? 
+                <div style={{
+                            display: 'flex', 
+                            flexDirection: "column", 
+                            margin: "60px auto", 
+                            justifyContent:"center", 
+                            alignItems:"center"
+                        }} >
+                    <div style={{height: "400px", width: "80%", position: "relative", marginBottom: "50px"}}>
+                        <Line options={lineChartOptionsReps} data={lineChartDataReps} />
+                    </div>
+                    <div style={{height: "400px", width: "80%", position: "relative"}}>
+                        <Line options={lineChartOptionsSets} data={lineChartDataSets} />
+                    </div>
+                </div>   
+            : null 
+        }   
         </>
     )
 }

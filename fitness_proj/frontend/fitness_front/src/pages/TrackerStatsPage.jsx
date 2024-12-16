@@ -12,9 +12,10 @@ const TrackerStatsPage = () => {
     return(
         <>
             <TrackerDashboardCard />
-            <TrackerCreationForm trackerName={trackerName} setTrackerName={setTrackerName} />
-            <NewWorkoutModalForm trackerName={trackerName} setTrackerName={setTrackerName} workoutName={workoutName} setWorkoutName={setWorkoutName} />
-            <NewExerciseModalForm workoutName={workoutName} setWorkoutName={setWorkoutName} />
+            <TrackerCreationForm 
+                trackerName={trackerName} 
+                setTrackerName={setTrackerName} 
+            />
         </>
     )
 }

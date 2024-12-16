@@ -30,14 +30,19 @@ function TrackerDashboardCard() {
 
   return (
     <>
+    <div>
     <div style={{display: "flex", alignItems: "center"}} >
     {userTrackers ? displayedTrackers.map((tracker, index) => (
       
-        <div key={index} >
+        <div key={index} style={{display: "flex", alignItems: "center", margin:"20px auto"}} >
           <Card  style={{ width: '18rem', height: '400px', margin: '10px' }}>
             <Card.Body className="d-flex flex-column" >
                 <Card.Title className="display-7" >{tracker.tracker_name}</Card.Title>
-                <Card.Text className="text-truncate" style={{ maxHeight: '280px', overflow: 'hidden', fontWeight: "800"}}>
+                <Card.Text className="text-truncate" style={{ 
+                                                              maxHeight: '280px', 
+                                                              overflow: 'hidden', 
+                                                              fontWeight: "800"
+                                                            }}>
                   Workouts:
                   <br/>
                   {tracker.workouts.map((workout, index) => (
@@ -69,6 +74,7 @@ function TrackerDashboardCard() {
           </Button>
         </div>
       </>: null}
+      </div>
     </>
   );
 }

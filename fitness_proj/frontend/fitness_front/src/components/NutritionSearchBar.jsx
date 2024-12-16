@@ -23,9 +23,7 @@ const NutritionSearchBar = () => {
             if(results){
                 setSearchResults(results)
             }
-            console.log(results)
         }catch(error){
-            console.error("Working as intended")
             setSearchResults([])
         }
         

@@ -34,7 +34,6 @@ const MuscleSearchBar = () => {
             console.error("Working as intended")
             setSearchResults([])
         }
-        console.log(results)
         
     }
     
