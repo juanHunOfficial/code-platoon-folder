@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import Workout
+from exercise_app.serializers import ExerciseSerializer
 
 class WorkoutSerializer(serializers.ModelSerializer):
     exercises = serializers.SerializerMethodField()
@@ -15,8 +16,5 @@ class WorkoutSerializer(serializers.ModelSerializer):
         
     def get_exercises(self, instance):
         exercises = instance.exercises.all()
-        ser_exercises = [{
-            'exercise_name': exercise.exercise_name, 
-            'workout_id': exercise.workout_id.id
-        } for exercise in exercises]
-        return ser_exercises
+        ser_exercises = ExerciseSerializer(exercises, many=True)
+        return ser_exercises.data
