@@ -8,6 +8,7 @@ import NutritionPage from './pages/NutritionPage';
 import TrackerStatsPage from './pages/TrackerStatsPage';
 import WorkoutSelectedPage from './pages/WorkoutSelectedPage';
 import ExerciseSelectedPage from './pages/ExerciseSelectedPage';
+import ChartPage from './pages/ChartPage';
 
 const router = createBrowserRouter([
     {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
             {
                 path:'/selected_exercise/',
                 element: <ExerciseSelectedPage />,
+            },
+            {
+                path:'/chart_display/',
+                element: <ChartPage />,
             },
         ],
     },

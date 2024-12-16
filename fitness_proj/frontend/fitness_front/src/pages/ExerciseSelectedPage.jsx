@@ -42,6 +42,7 @@ const ExerciseSelectedPage = () => {
                                 <div className="mt-auto">
                                 <Button onClick={() => {{
                                     setExerciseSelected(exercise);
+                                    navigate('/chart_display/')
                                     }}} variant="primary" className="w-100">Select</Button>
                                 </div>
                             </Card.Body>
