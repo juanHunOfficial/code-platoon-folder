@@ -33,7 +33,7 @@ function NewWorkoutModalForm({ workoutName, setWorkoutName, trackerName, setTrac
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow}>
+            <Button variant="primary" className="w-100" onClick={handleShow}>
                 Create a new workout
             </Button>
             <Modal show={show} onHide={handleClose}>
@@ -75,7 +75,7 @@ function NewWorkoutModalForm({ workoutName, setWorkoutName, trackerName, setTrac
                     <Button variant="primary" onClick={(e) =>{ handleClose(); 
                                                                 handleSubmit(e); 
                                                                 }} >
-                        Save Changes
+                        Save
                     </Button>
                 </Modal.Footer>
             </Modal>

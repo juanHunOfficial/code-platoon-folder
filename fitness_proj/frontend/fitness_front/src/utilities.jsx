@@ -206,3 +206,55 @@ export const getTrackers = async() => {
         return null
     }
 }
+
+export const deleteTracker = async(trackerId) =>{
+    try {
+        let token = localStorage.getItem('token');
+        if (token) {
+          api.defaults.headers.common['Authorization'] = `Token ${token}`;
+          const { data } = await api.delete(`tracker/${trackerId}/`);
+          return data;
+        }
+      } catch (error) {
+        console.error('Error deleting workout:', error.message);
+      }
+}
+
+export const deleteWorkout = async(workoutId) =>{
+    try {
+        let token = localStorage.getItem('token');
+        if (token) {
+          api.defaults.headers.common['Authorization'] = `Token ${token}`;
+          const { data } = await api.delete(`workout/${workoutId}/`);
+          return data;
+        }
+      } catch (error) {
+        console.error('Error deleting workout:', error.message);
+      }
+}
+
+export const deleteExercise = async(exerciseId) =>{
+    try {
+        let token = localStorage.getItem('token');
+        if (token) {
+          api.defaults.headers.common['Authorization'] = `Token ${token}`;
+          const { data } = await api.delete(`exercise/${exerciseId}/`);
+          return data;
+        }
+      } catch (error) {
+        console.error('Error deleting workout:', error.message);
+      }
+}
+
+export const deleteDataPoint = async(dataPointId) =>{
+    try {
+        let token = localStorage.getItem('token');
+        if (token) {
+          api.defaults.headers.common['Authorization'] = `Token ${token}`;
+          const { data } = await api.delete(`chart_data/${dataPointId}/`);
+          return data;
+        }
+      } catch (error) {
+        console.error('Error deleting workout:', error.message);
+      }
+}

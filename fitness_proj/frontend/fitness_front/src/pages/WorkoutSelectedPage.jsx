@@ -3,6 +3,8 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useOutletContext } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { deleteWorkout } from '../utilities';
+import NewWorkoutModalForm from '../components/NewWorkoutModalForm'
 
 const WorkoutSelectedPage = () => {
     const { workoutSelected, setWorkoutSelected, trackerSelected } = useOutletContext();
@@ -27,19 +29,23 @@ const WorkoutSelectedPage = () => {
         setCurrentPage(prev => prev - 1);
         }
     };
-    
-    console.log(workoutSelected)
 
+    const handleDeletionClick = async() => {
+        if(workoutSelected){
+            deleteWorkout(workoutSelected.id)
+        } 
+    };
+    
     return(
         
         <>
             <div style={{display: "flex", alignItems: "center"}} >
                 {trackerSelected ? displayedTrackers.map((workout, index) => (
                     <div key={index} >
-                        <Card  style={{ width: '18rem', height: '400px', margin: '10px' }}>
+                        <Card  style={{ width: '18rem', height: '470px', margin: '10px' }}>
                             <Card.Body className="d-flex flex-column" >
                                 <Card.Title className="display-7" >{workout.workout_name}</Card.Title>
-                                <Card.Text className="text-truncate" style={{ maxHeight: '280px', overflow: 'hidden', fontWeight: "800"}}>
+                                <Card.Text className="text-truncate" style={{ maxHeight: '284px', overflow: 'hidden', fontWeight: "800"}}>
                                 Workout Type: {workout.workout_type} <br/>  <br/>
                                 Exercises: <br/>
                                 {workout.exercises.map((exercise, index) => (
@@ -49,10 +55,15 @@ const WorkoutSelectedPage = () => {
                                 ))}
                                 </Card.Text>
                                 <div className="mt-auto">
-                                <Button onClick={() => {{
-                                    setWorkoutSelected(workout);
-                                    navigate('/selected_exercise/')
-                                    }}} variant="primary" className="w-100">Select</Button>
+                                    <Button onClick={() => {{
+                                        setWorkoutSelected(workout);
+                                        navigate('/selected_exercise/')
+                                        }}} variant="primary" className="w-100">Select</Button>
+
+                                    <Button style={{marginTop:"20px"}} onClick={() => {{
+                                        setWorkoutSelected(workout);
+                                        handleDeletionClick()
+                                        }}} variant="primary" className="w-100">Delete</Button>
                                 </div>
                             </Card.Body>
                         </Card>

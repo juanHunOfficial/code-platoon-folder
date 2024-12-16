@@ -21,3 +21,10 @@ class AllWorkouts(APIView):
             new_workout.save()
             return Response(new_workout.data, status=HTTP_201_CREATED)
         return Response(new_workout.errors, status=HTTP_400_BAD_REQUEST)
+
+class SingleWorkout(APIView):
+    
+    def delete(self, request, workout_id):
+        workout_id = get_object_or_404(Workout, id=workout_id)
+        workout_id.delete()
+        return Response(status=HTTP_204_NO_CONTENT)
