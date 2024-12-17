@@ -11,3 +11,13 @@ class ChartData(models.Model):
     goal_num_of_reps = models.PositiveIntegerField(blank=False, validators=[v.MinValueValidator(1)])
     weight = models.PositiveIntegerField(blank=False, validators=[v.MaxValueValidator(2000)])
     exercise_id = models.ForeignKey(Exercise, on_delete=models.CASCADE, related_name='charts')
+    
+    def clean(self):
+        if ChartData.objects.filter(exercise_id=self.exercise_id, iteration=self.iteration).exists():
+            raise ValidationError(f"This exercise already has an entry with iteration {self.iteration}.")
+        super().clean()
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['exercise_id', 'iteration'], name='exercise_iteration')
+        ]

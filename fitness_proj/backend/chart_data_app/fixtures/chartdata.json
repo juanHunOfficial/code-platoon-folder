@@ -10,7 +10,6 @@
          "goal_num_of_sets": 4,
          "goal_num_of_reps": 12,
          "weight": 125,
-         "date": "2024-12-14",
          "exercise_id": 1
       }
    },
@@ -25,7 +24,6 @@
          "goal_num_of_sets": 4,
          "goal_num_of_reps": 10,
          "weight": 130,
-         "date": "2024-12-15",
          "exercise_id": 1
       }
    },
@@ -40,7 +38,6 @@
          "goal_num_of_sets": 4,
          "goal_num_of_reps": 8,
          "weight": 135,
-         "date": "2024-12-16",
          "exercise_id": 1
       }
    },
@@ -55,7 +52,6 @@
          "goal_num_of_sets": 4,
          "goal_num_of_reps": 10,
          "weight": 140,
-         "date": "2024-12-17",
          "exercise_id": 1
       }
    },
@@ -70,7 +66,6 @@
          "goal_num_of_sets": 4,
          "goal_num_of_reps": 12,
          "weight": 145,
-         "date": "2024-12-18",
          "exercise_id": 1
       }
    },
@@ -85,7 +80,6 @@
          "goal_num_of_sets": 4,
          "goal_num_of_reps": 10,
          "weight": 150,
-         "date": "2024-12-19",
          "exercise_id": 1
       }
    },
@@ -100,7 +94,6 @@
          "goal_num_of_sets": 4,
          "goal_num_of_reps": 8,
          "weight": 155,
-         "date": "2024-12-20",
          "exercise_id": 1
       }
    },
@@ -115,7 +108,6 @@
          "goal_num_of_sets": 4,
          "goal_num_of_reps": 12,
          "weight": 160,
-         "date": "2024-12-21",
          "exercise_id": 1
       }
    },
@@ -130,7 +122,6 @@
          "goal_num_of_sets": 4,
          "goal_num_of_reps": 10,
          "weight": 165,
-         "date": "2024-12-22",
          "exercise_id": 1
       }
    },
@@ -145,7 +136,6 @@
          "goal_num_of_sets": 4,
          "goal_num_of_reps": 8,
          "weight": 170,
-         "date": "2024-12-23",
          "exercise_id": 1
       }
    },   
@@ -160,7 +150,6 @@
          "goal_num_of_sets": 4,
          "goal_num_of_reps": 10,
          "weight": 115,
-         "date": "2024-12-14",
          "exercise_id": 2
       }
    },
@@ -175,7 +164,6 @@
          "goal_num_of_sets": 4,
          "goal_num_of_reps": 12,
          "weight": 120,
-         "date": "2024-12-15",
          "exercise_id": 2
       }
    },
@@ -190,7 +178,6 @@
          "goal_num_of_sets": 5,
          "goal_num_of_reps": 10,
          "weight": 125,
-         "date": "2024-12-16",
          "exercise_id": 2
       }
    },
@@ -205,7 +192,6 @@
          "goal_num_of_sets": 5,
          "goal_num_of_reps": 12,
          "weight": 130,
-         "date": "2024-12-17",
          "exercise_id": 2
       }
    },
@@ -220,7 +206,6 @@
          "goal_num_of_sets": 5,
          "goal_num_of_reps": 8,
          "weight": 135,
-         "date": "2024-12-18",
          "exercise_id": 2
       }
    },
@@ -235,7 +220,6 @@
          "goal_num_of_sets": 5,
          "goal_num_of_reps": 10,
          "weight": 140,
-         "date": "2024-12-19",
          "exercise_id": 2
       }
    },
@@ -250,7 +234,6 @@
          "goal_num_of_sets": 5,
          "goal_num_of_reps": 12,
          "weight": 145,
-         "date": "2024-12-20",
          "exercise_id": 2
       }
    },
@@ -265,7 +248,6 @@
          "goal_num_of_sets": 5,
          "goal_num_of_reps": 8,
          "weight": 150,
-         "date": "2024-12-21",
          "exercise_id": 2
       }
    },
@@ -280,7 +262,6 @@
          "goal_num_of_sets": 5,
          "goal_num_of_reps": 10,
          "weight": 155,
-         "date": "2024-12-22",
          "exercise_id": 2
       }
    },
@@ -295,7 +276,6 @@
          "goal_num_of_sets": 5,
          "goal_num_of_reps": 12,
          "weight": 160,
-         "date": "2024-12-23",
          "exercise_id": 2
       }
    },
@@ -310,7 +290,6 @@
          "goal_num_of_sets": 3,
          "goal_num_of_reps": 15,
          "weight": 90,
-         "date": "2024-12-14",
          "exercise_id": 3
       }
    },
@@ -325,7 +304,6 @@
          "goal_num_of_sets": 3,
          "goal_num_of_reps": 14,
          "weight": 95,
-         "date": "2024-12-15",
          "exercise_id": 3
       }
    },
@@ -340,7 +318,6 @@
          "goal_num_of_sets": 3,
          "goal_num_of_reps": 16,
          "weight": 100,
-         "date": "2024-12-16",
          "exercise_id": 3
       }
    },
@@ -355,7 +332,6 @@
          "goal_num_of_sets": 3,
          "goal_num_of_reps": 12,
          "weight": 105,
-         "date": "2024-12-17",
          "exercise_id": 3
       }
    },
@@ -370,7 +346,6 @@
          "goal_num_of_sets": 3,
          "goal_num_of_reps": 15,
          "weight": 110,
-         "date": "2024-12-18",
          "exercise_id": 3
       }
    },
@@ -385,7 +360,6 @@
          "goal_num_of_sets": 3,
          "goal_num_of_reps": 14,
          "weight": 115,
-         "date": "2024-12-19",
          "exercise_id": 3
       }
    },
@@ -400,7 +374,6 @@
          "goal_num_of_sets": 3,
          "goal_num_of_reps": 16,
          "weight": 120,
-         "date": "2024-12-20",
          "exercise_id": 3
       }
    },
@@ -415,7 +388,6 @@
          "goal_num_of_sets": 3,
          "goal_num_of_reps": 12,
          "weight": 125,
-         "date": "2024-12-21",
          "exercise_id": 3
       }
    },
@@ -430,7 +402,6 @@
          "goal_num_of_sets": 3,
          "goal_num_of_reps": 15,
          "weight": 130,
-         "date": "2024-12-22",
          "exercise_id": 3
       }
    },
@@ -445,7 +416,6 @@
          "goal_num_of_sets": 3,
          "goal_num_of_reps": 14,
          "weight": 135,
-         "date": "2024-12-23",
          "exercise_id": 3
       }
    },
@@ -460,7 +430,6 @@
          "goal_num_of_sets": 4,
          "goal_num_of_reps": 10,
          "weight": 140,
-         "date": "2024-12-14",
          "exercise_id": 4
       }
    },
@@ -475,7 +444,6 @@
          "goal_num_of_sets": 4,
          "goal_num_of_reps": 12,
          "weight": 145,
-         "date": "2024-12-15",
          "exercise_id": 4
       }
    },
@@ -490,7 +458,6 @@
          "goal_num_of_sets": 4,
          "goal_num_of_reps": 10,
          "weight": 150,
-         "date": "2024-12-16",
          "exercise_id": 4
       }
    },
@@ -505,7 +472,6 @@
          "goal_num_of_sets": 4,
          "goal_num_of_reps": 12,
          "weight": 155,
-         "date": "2024-12-17",
          "exercise_id": 4
       }
    },
@@ -520,7 +486,6 @@
          "goal_num_of_sets": 4,
          "goal_num_of_reps": 10,
          "weight": 160,
-         "date": "2024-12-18",
          "exercise_id": 4
       }
    },
@@ -535,7 +500,6 @@
          "goal_num_of_sets": 4,
          "goal_num_of_reps": 12,
          "weight": 165,
-         "date": "2024-12-19",
          "exercise_id": 4
       }
    },
@@ -550,7 +514,6 @@
          "goal_num_of_sets": 4,
          "goal_num_of_reps": 10,
          "weight": 170,
-         "date": "2024-12-20",
          "exercise_id": 4
       }
    },
@@ -565,7 +528,6 @@
          "goal_num_of_sets": 4,
          "goal_num_of_reps": 12,
          "weight": 175,
-         "date": "2024-12-21",
          "exercise_id": 4
       }
    },
@@ -580,7 +542,6 @@
          "goal_num_of_sets": 4,
          "goal_num_of_reps": 10,
          "weight": 180,
-         "date": "2024-12-22",
          "exercise_id": 4
       }
    },
@@ -595,7 +556,6 @@
          "goal_num_of_sets": 4,
          "goal_num_of_reps": 12,
          "weight": 185,
-         "date": "2024-12-23",
          "exercise_id": 4
       }
    },
@@ -610,7 +570,6 @@
          "goal_num_of_sets": 5,
          "goal_num_of_reps": 8,
          "weight": 200,
-         "date": "2024-12-14",
          "exercise_id": 5
       }
    },
@@ -625,7 +584,6 @@
          "goal_num_of_sets": 5,
          "goal_num_of_reps": 10,
          "weight": 210,
-         "date": "2024-12-15",
          "exercise_id": 5
       }
    },
@@ -640,7 +598,6 @@
          "goal_num_of_sets": 5,
          "goal_num_of_reps": 8,
          "weight": 220,
-         "date": "2024-12-16",
          "exercise_id": 5
       }
    },
@@ -655,7 +612,6 @@
          "goal_num_of_sets": 5,
          "goal_num_of_reps": 10,
          "weight": 230,
-         "date": "2024-12-17",
          "exercise_id": 5
       }
    },
@@ -670,7 +626,6 @@
          "goal_num_of_sets": 5,
          "goal_num_of_reps": 8,
          "weight": 240,
-         "date": "2024-12-18",
          "exercise_id": 5
       }
    },
@@ -685,7 +640,6 @@
          "goal_num_of_sets": 5,
          "goal_num_of_reps": 10,
          "weight": 250,
-         "date": "2024-12-19",
          "exercise_id": 5
       }
    },
@@ -700,7 +654,6 @@
          "goal_num_of_sets": 5,
          "goal_num_of_reps": 8,
          "weight": 260,
-         "date": "2024-12-20",
          "exercise_id": 5
       }
    },
@@ -715,7 +668,6 @@
          "goal_num_of_sets": 5,
          "goal_num_of_reps": 10,
          "weight": 270,
-         "date": "2024-12-21",
          "exercise_id": 5
       }
    },
@@ -730,7 +682,6 @@
          "goal_num_of_sets": 5,
          "goal_num_of_reps": 8,
          "weight": 280,
-         "date": "2024-12-22",
          "exercise_id": 5
       }
    },
@@ -745,7 +696,6 @@
          "goal_num_of_sets": 5,
          "goal_num_of_reps": 10,
          "weight": 290,
-         "date": "2024-12-23",
          "exercise_id": 5
       }
    },
@@ -760,7 +710,6 @@
          "goal_num_of_sets": 6,
          "goal_num_of_reps": 6,
          "weight": 90,
-         "date": "2024-12-14",
          "exercise_id": 6
       }
    },
@@ -775,7 +724,6 @@
          "goal_num_of_sets": 6,
          "goal_num_of_reps": 8,
          "weight": 95,
-         "date": "2024-12-15",
          "exercise_id": 6
       }
    },
@@ -790,7 +738,6 @@
          "goal_num_of_sets": 6,
          "goal_num_of_reps": 6,
          "weight": 100,
-         "date": "2024-12-16",
          "exercise_id": 6
       }
    },
@@ -805,7 +752,6 @@
          "goal_num_of_sets": 6,
          "goal_num_of_reps": 8,
          "weight": 105,
-         "date": "2024-12-17",
          "exercise_id": 6
       }
    },
@@ -820,7 +766,6 @@
          "goal_num_of_sets": 6,
          "goal_num_of_reps": 6,
          "weight": 110,
-         "date": "2024-12-18",
          "exercise_id": 6
       }
    },
@@ -835,7 +780,6 @@
          "goal_num_of_sets": 6,
          "goal_num_of_reps": 8,
          "weight": 115,
-         "date": "2024-12-19",
          "exercise_id": 6
       }
    },
@@ -850,7 +794,6 @@
          "goal_num_of_sets": 6,
          "goal_num_of_reps": 6,
          "weight": 120,
-         "date": "2024-12-20",
          "exercise_id": 6
       }
    },
@@ -865,7 +808,6 @@
          "goal_num_of_sets": 6,
          "goal_num_of_reps": 8,
          "weight": 125,
-         "date": "2024-12-21",
          "exercise_id": 6
       }
    },
@@ -880,7 +822,6 @@
          "goal_num_of_sets": 6,
          "goal_num_of_reps": 6,
          "weight": 130,
-         "date": "2024-12-22",
          "exercise_id": 6
       }
    },
@@ -895,7 +836,6 @@
          "goal_num_of_sets": 6,
          "goal_num_of_reps": 8,
          "weight": 135,
-         "date": "2024-12-23",
          "exercise_id": 6
       }
    }   
