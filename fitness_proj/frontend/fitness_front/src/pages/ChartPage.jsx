@@ -1,5 +1,6 @@
 import { useOutletContext } from "react-router-dom";
 import { Line } from 'react-chartjs-2'
+import NewChartEntryModalForm from "../components/NewChartEntryModalForm";
 
 import { Chart as ChartJs, 
          CategoryScale, 
@@ -101,15 +102,18 @@ const ChartPage = () => {
                             justifyContent:"center", 
                             alignItems:"center"
                         }} >
-                    <div style={{height: "400px", width: "80%", position: "relative", marginBottom: "50px"}}>
+                    <div style={{height: "300px", width: "80%", position: "relative", marginBottom: "50px"}}>
                         <Line options={lineChartOptionsReps} data={lineChartDataReps} />
                     </div>
-                    <div style={{height: "400px", width: "80%", position: "relative"}}>
+                    <div style={{height: "300px", width: "80%", position: "relative"}}>
                         <Line options={lineChartOptionsSets} data={lineChartDataSets} />
                     </div>
                 </div>   
             : null 
-        }   
+        }
+        <div style={{ textAlign: 'center', marginTop: '20px' }} >
+            <NewChartEntryModalForm exerciseSelected={exerciseSelected} />
+        </div>
         </>
     )
 }

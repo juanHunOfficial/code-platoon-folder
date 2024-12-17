@@ -174,6 +174,37 @@ export const createExercise = async(formData) => {
     }
 }
 
+export const createChartEntry = async(formData) =>{
+    const { 
+        iteration, 
+        goalNumOfReps, 
+        goalNumOfSets, 
+        actualNumOfReps, 
+        actualNumOfSets, 
+        weight, 
+        exerciseId
+    } = formData
+    try{
+        let response = await api.post(
+            'chart_data/',
+            {
+                "iteration":iteration,
+                "goal_num_of_reps": goalNumOfReps,
+                "goal_num_of_sets": goalNumOfSets,
+                "actual_num_of_reps": actualNumOfReps,
+                "actual_num_of_sets": actualNumOfSets,
+                "weight": weight,
+                "exercise_id": exerciseId
+            }
+        )
+        if (response.status === 201){
+            return response.data
+        }
+    }catch (error){
+        console.error("Error in the createChartEntry Utility method: ", error.message)
+    }
+}
+
 export const getTrackers = async() => {
     let token = localStorage.getItem('token')
     if(token){
