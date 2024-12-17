@@ -44,12 +44,11 @@ class SingleChartData(APIView):
             chart.goal_num_of_reps = body_data['goal_num_of_reps']
             chart.goal_num_of_sets = body_data['goal_num_of_sets']
             chart.weight = body_data['weight']
-            chart.date = body_data['date']
             
             chart.save()
         else:
             return Response("INVALID NO EXERCISE WAS FOUND", status=HTTP_400_BAD_REQUEST)
-        return Response(status=HTTP_200_OK)
+        return Response(ChartDataSerializer(chart).data, status=HTTP_200_OK)
         
         
     

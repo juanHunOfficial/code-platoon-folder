@@ -37,6 +37,13 @@ class SingleTracker(APIView):
     def get(self, request, tracker_name):
         a_ser_tracker = TrackerSerializer(self.get_tracker(tracker_name))
         return Response(a_ser_tracker.data)
+    
+    def put(self, request, tracker_name):
+        data = request.data.copy()
+        updated_tracker = self.get_tracker(tracker_name)
+        updated_tracker.tracker_name = data['tracker_name']
+        updated_tracker.save()
+        return Response(TrackerSerializer(updated_tracker).data, status=HTTP_200_OK)
 
     def delete(self, request, tracker_name):
         tracker_name = self.get_tracker(tracker_name)

@@ -35,23 +35,11 @@ class SingleExercise(APIView):
         return Response(a_ser_exercise.data)
     
     def put(self, request, exercise):
-        exercise = self.get_exercise(exercise)
-        body_data = request.data.copy()
-        
-        if(exercise):
-            exercise.actual_num_of_reps = body_data['actual_num_of_reps']
-            exercise.actual_num_of_sets = body_data['actual_num_of_sets']
-            exercise.goal_num_of_reps = body_data['goal_num_of_reps']
-            exercise.goal_num_of_sets = body_data['goal_num_of_sets']
-            exercise.weight = body_data['weight']
-            exercise.date = body_data['date']
-            
-            exercise.save()
-        else:
-            return Response("INVALID NO EXERCISE WAS FOUND", status=HTTP_400_BAD_REQUEST)
-        return Response(status=HTTP_200_OK)
-        
-        
+        data = request.data.copy()
+        updated_exercise = self.get_exercise(exercise)
+        updated_exercise.exercise_name = data['exercise_name']
+        updated_exercise.save()
+        return Response(ExerciseSerializer(updated_exercise).data, status=HTTP_200_OK)
     
     def delete(self, request, exercise):
         exercise = self.get_exercise(exercise)

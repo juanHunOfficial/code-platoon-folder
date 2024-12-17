@@ -42,7 +42,7 @@ const WorkoutSelectedPage = () => {
             <div style={{display: "flex", alignItems: "center"}} >
                 {trackerSelected ? displayedTrackers.map((workout, index) => (
                     <div key={index} >
-                        <Card  style={{ width: '18rem', height: '470px', margin: '10px' }}>
+                        <Card  style={{ width: '18rem', height: '525px', margin: '10px' }}>
                             <Card.Body className="d-flex flex-column" >
                                 <Card.Title className="display-7" >{workout.workout_name}</Card.Title>
                                 <Card.Text className="text-truncate" style={{ maxHeight: '284px', overflow: 'hidden', fontWeight: "800"}}>
@@ -60,6 +60,11 @@ const WorkoutSelectedPage = () => {
                                         navigate('/selected_exercise/')
                                         }}} variant="primary" className="w-100">Select</Button>
 
+                                    {/* <Button style={{marginTop:"20px"}} onClick={() => {{
+                                        setWorkoutSelected(workout);
+                                        navigate('/selected_exercise/')
+                                        }}} variant="primary" className="w-100">Update</Button> */}
+
                                     <Button style={{marginTop:"20px"}} onClick={() => {{
                                         setWorkoutSelected(workout);
                                         handleDeletionClick()
@@ -72,7 +77,7 @@ const WorkoutSelectedPage = () => {
             </div>
       {trackerSelected ? 
       <>
-        <div style={{ textAlign: 'center', marginTop: '20px' }}>
+        <div style={{ textAlign: 'center', marginTop: '20px', marginBottom: "50px" }}>
           <Button style={{marginRight: '10px'}} variant="secondary" onClick={prevPage} disabled={currentPage === 0}>              ← Previous
           </Button>
           <Button style={{marginLeft: '10px'}} variant="secondary" onClick={nextPage} disabled={(currentPage + 1) * cardsPerPage >= trackerSelected.length}>
@@ -80,6 +85,9 @@ const WorkoutSelectedPage = () => {
           </Button>
         </div>
       </>: null}
+      <div style={{width: "280px", margin: "20px auto"}}>
+        <NewWorkoutModalForm />
+      </div>
     </>    
     )
 }
