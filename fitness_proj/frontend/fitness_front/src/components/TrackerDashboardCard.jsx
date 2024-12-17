@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import { useOutletContext } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import UpdateTrackerModal from './UpdateTrackerModal.jsx'
+import { deleteTracker } from '../utilities'
 
 function TrackerDashboardCard() {
   const { userTrackers, trackerSelected, setTrackerSelected } = useOutletContext();
@@ -35,8 +36,14 @@ function TrackerDashboardCard() {
     setShowModal(true); 
   };
 
-const closeUpdateModal = () => {
+  const closeUpdateModal = () => {
     setShowModal(false); 
+  };
+
+  const handleDeletionClick = async() => {
+    if(trackerSelected){
+        deleteTracker(trackerSelected.id)
+    } 
   };
 
   return (
@@ -77,6 +84,12 @@ const closeUpdateModal = () => {
                     onClick={() => openUpdateModal(tracker)}   
                     variant="primary" 
                     className="w-100">Update</Button>
+                  <Button style={{marginTop:"20px"}} 
+                    onClick={() => {{
+                      setTrackerSelected(tracker);
+                      handleDeletionClick()
+                    }}} variant="primary" 
+                    className="w-100">Delete</Button>
                 </div>
             </Card.Body>
           </Card>

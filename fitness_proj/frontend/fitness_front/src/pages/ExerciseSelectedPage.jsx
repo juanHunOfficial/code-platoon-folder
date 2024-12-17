@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import { useOutletContext } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import UpdateExerciseModal from '../components/UpdateExerciseModal';
+import { deleteExercise } from '../utilities';
 
 const ExerciseSelectedPage = () => {
     const { workoutSelected, exerciseSelected, setExerciseSelected } = useOutletContext();
@@ -39,6 +40,11 @@ const ExerciseSelectedPage = () => {
         setShowModal(false); 
     };
 
+    const handleDeletionClick = async() => {
+        if(exerciseSelected){
+            deleteExercise(exerciseSelected.id)
+        } 
+    };
     
     return(
         
@@ -59,6 +65,12 @@ const ExerciseSelectedPage = () => {
                                     onClick={() => openUpdateModal(exercise)}   
                                     variant="primary" 
                                     className="w-100">Update</Button>
+
+                                <Button style={{marginTop:"20px"}} onClick={() => {{
+                                    setExerciseSelected(exercise);
+                                    handleDeletionClick()
+                                    }}} variant="primary" 
+                                    className="w-100">Delete</Button>
                                 </div>
                             </Card.Body>
                         </Card>
