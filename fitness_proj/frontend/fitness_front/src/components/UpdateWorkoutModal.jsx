@@ -18,7 +18,6 @@ function UpdateWorkoutModal({ show, onHide, workoutSelected, setWorkoutSelected 
             'workoutName' : workoutName,
             'workoutId': workoutSelected.id
         }
-        console.log(formData)
         const results = await updateWorkout(formData)
         if(results){
             inputRef.current.value = ''

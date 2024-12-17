@@ -33,11 +33,11 @@ function TrackerDashboardCard() {
   const openUpdateModal = (tracker) => {
     setTrackerSelected(tracker);  
     setShowModal(true); 
-};
+  };
 
 const closeUpdateModal = () => {
     setShowModal(false); 
-};
+  };
 
   return (
     <>

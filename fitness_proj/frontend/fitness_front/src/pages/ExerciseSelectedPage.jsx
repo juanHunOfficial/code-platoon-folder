@@ -3,10 +3,12 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useOutletContext } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import UpdateExerciseModal from '../components/UpdateExerciseModal';
 
 const ExerciseSelectedPage = () => {
     const { workoutSelected, exerciseSelected, setExerciseSelected } = useOutletContext();
     const [currentPage, setCurrentPage] = useState(0);
+    const [showModal, setShowModal] = useState(false); 
     const navigate = useNavigate();
     const cardsPerPage = 3;
     let displayedExercises = []
@@ -28,7 +30,15 @@ const ExerciseSelectedPage = () => {
         }
     };
 
-    console.log(exerciseSelected)
+    const openUpdateModal = (exercise) => {
+        setExerciseSelected(exercise);  
+        setShowModal(true); 
+    };
+    
+    const closeUpdateModal = () => {
+        setShowModal(false); 
+    };
+
     
     return(
         
@@ -44,6 +54,11 @@ const ExerciseSelectedPage = () => {
                                     setExerciseSelected(exercise);
                                     navigate('/chart_display/')
                                     }}} variant="primary" className="w-100">Select</Button>
+
+                                <Button style={{marginTop: "20px"}} 
+                                    onClick={() => openUpdateModal(exercise)}   
+                                    variant="primary" 
+                                    className="w-100">Update</Button>
                                 </div>
                             </Card.Body>
                         </Card>
@@ -60,6 +75,12 @@ const ExerciseSelectedPage = () => {
           </Button>
         </div>
       </>: null}
+      <UpdateExerciseModal 
+        show={showModal}
+        onHide={closeUpdateModal}
+        exerciseSelected={exerciseSelected}
+        setExerciseSelected={setExerciseSelected}
+      />
     </>    
     )
 }

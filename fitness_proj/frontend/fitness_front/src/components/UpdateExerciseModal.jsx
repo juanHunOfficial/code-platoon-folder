@@ -2,22 +2,22 @@ import { useState, useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import { updateTracker } from '../utilities';
+import { updateExercise } from '../utilities';
 
-function UpdateTrackerModal({ show, onHide, trackerSelected, setTrackerSelected }) {
+function UpdateExerciseModal({ show, onHide, exerciseSelected, setExerciseSelected }) {
     const inputRef = useRef(null);
-    const [trackerName, setTrackerName] = useState(trackerSelected?.tracker_name || "");
+    const [exerciseName, setExerciseName] = useState(exerciseSelected?.exercise_name || "");
 
     const handleSubmit = async(e) =>{
         e.preventDefault() 
         let formData = {
-            'trackerName' : trackerName,
-            'trackerId': trackerSelected.id
+            'exerciseName' : exerciseName,
+            'exerciseId': exerciseSelected.id
         }
-        const results = await updateTracker(formData)
+        const results = await updateExercise(formData)
         if(results){
             inputRef.current.value = ''
-            setTrackerSelected(results)
+            setExerciseSelected(results)
             onHide(); 
         }
         else{
@@ -30,17 +30,17 @@ function UpdateTrackerModal({ show, onHide, trackerSelected, setTrackerSelected 
         <>
             <Modal show={show} onHide={onHide}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Edit Tracker</Modal.Title>
+                    <Modal.Title>Edit Exercise</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form>
                         <Form.Group className="mb-3" >
-                        <Form.Label>Tracker Name</Form.Label>
+                        <Form.Label>Exercise Name</Form.Label>
                         <Form.Control
                             ref={inputRef}
-                            onChange={(e)=> setTrackerName(e.target.value)}
+                            onChange={(e)=> setExerciseName(e.target.value)}
                             type="text"
-                            placeholder="Enter the new name of your tracker"
+                            placeholder="Enter the new name of your exercise"
                             autoFocus
                         />
                         </Form.Group>
@@ -65,4 +65,4 @@ function UpdateTrackerModal({ show, onHide, trackerSelected, setTrackerSelected 
     );
 }
 
-export default UpdateTrackerModal;
+export default UpdateExerciseModal;
