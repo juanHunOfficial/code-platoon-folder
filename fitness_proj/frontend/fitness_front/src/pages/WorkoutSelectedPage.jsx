@@ -5,10 +5,12 @@ import { useOutletContext } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { deleteWorkout } from '../utilities';
 import NewWorkoutModalForm from '../components/NewWorkoutModalForm'
+import UpdateWorkoutModal from '../components/UpdateWorkoutModal';
 
 const WorkoutSelectedPage = () => {
     const { workoutSelected, setWorkoutSelected, trackerSelected } = useOutletContext();
     const [currentPage, setCurrentPage] = useState(0);
+    const [showModal, setShowModal] = useState(false); 
     const navigate = useNavigate();
     const cardsPerPage = 3;
     let displayedTrackers = []
@@ -35,6 +37,15 @@ const WorkoutSelectedPage = () => {
             deleteWorkout(workoutSelected.id)
         } 
     };
+
+    const openUpdateModal = (workout) => {
+        setWorkoutSelected(workout);  // Set the selected workout for editing
+        setShowModal(true);  // Open the modal
+    };
+
+    const closeUpdateModal = () => {
+        setShowModal(false);  // Close the modal
+    };
     
     return(
         
@@ -45,8 +56,13 @@ const WorkoutSelectedPage = () => {
                         <Card  style={{ width: '18rem', height: '525px', margin: '10px' }}>
                             <Card.Body className="d-flex flex-column" >
                                 <Card.Title className="display-7" >{workout.workout_name}</Card.Title>
-                                <Card.Text className="text-truncate" style={{ maxHeight: '284px', overflow: 'hidden', fontWeight: "800"}}>
-                                Workout Type: {workout.workout_type} <br/>  <br/>
+                                <Card.Text className="text-truncate" style={{ 
+                                                                                maxHeight: '284px', 
+                                                                                overflow: 'hidden', 
+                                                                                fontWeight: "800"
+                                                                            }}>
+                                Workout Type: {workout.type_of_workout} <br/>
+                                Weekly Frequency: {workout.weekly_frequency} <br/> <br/>
                                 Exercises: <br/>
                                 {workout.exercises.map((exercise, index) => (
                                     <li key={index}>
@@ -60,10 +76,13 @@ const WorkoutSelectedPage = () => {
                                         navigate('/selected_exercise/')
                                         }}} variant="primary" className="w-100">Select</Button>
 
-                                    {/* <Button style={{marginTop:"20px"}} onClick={() => {{
-                                        setWorkoutSelected(workout);
-                                        navigate('/selected_exercise/')
-                                        }}} variant="primary" className="w-100">Update</Button> */}
+                                    <div style={{marginTop:"20px"}}>
+                                        <Button  
+                                            variant="primary" 
+                                            className="w-100"
+                                            onClick={() => openUpdateModal(workout)}
+                                      >Update</Button>
+                                    </div>
 
                                     <Button style={{marginTop:"20px"}} onClick={() => {{
                                         setWorkoutSelected(workout);
@@ -87,6 +106,12 @@ const WorkoutSelectedPage = () => {
       </>: null}
       <div style={{width: "280px", margin: "20px auto"}}>
         <NewWorkoutModalForm />
+        <UpdateWorkoutModal 
+                show={showModal}
+                onHide={closeUpdateModal}
+                workoutSelected={workoutSelected}
+                setWorkoutSelected={setWorkoutSelected}
+            />
       </div>
     </>    
     )

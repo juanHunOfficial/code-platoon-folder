@@ -268,6 +268,7 @@ export const updateTracker = async(formData) =>{
                 "tracker_name": trackerName
             }
         )
+        return data
     }catch (error){
         console.error('Error updating tracker name: ', error.message)
     }
@@ -280,9 +281,11 @@ export const updateWorkout = async(formData) =>{
             `workout/${workoutId}/`,
             {
                 "workout_name": workoutName,
-                "type_of_workout": workoutType
+                "type_of_workout": workoutType,
+                'weekly_frequency': weeklyFrequency
             }
         )
+        return data
     }catch (error){
         console.error('Error updating the workout: ', error.message)
     }
@@ -297,6 +300,7 @@ export const updateExercise = async(formData) =>{
                 "exercise_name": exerciseName   
             }
         )
+        return data
     }catch (error){
         console.error('Error updating exercise name: ', error.message)
     }
@@ -323,6 +327,7 @@ export const updateChartData = async(formData) => {
                 "weight": weight
             }
         )
+        return data
     } catch (error){
         console.error('Error updating the chart data: ', error.message)
     }
