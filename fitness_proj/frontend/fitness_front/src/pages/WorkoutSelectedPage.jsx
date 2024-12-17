@@ -13,10 +13,10 @@ const WorkoutSelectedPage = () => {
     const [showModal, setShowModal] = useState(false); 
     const navigate = useNavigate();
     const cardsPerPage = 3;
-    let displayedTrackers = []
+    let displayedWorkouts = []
 
     if(trackerSelected){
-        displayedTrackers = trackerSelected.workouts.slice(currentPage * cardsPerPage, (currentPage + 1) * cardsPerPage);
+        displayedWorkouts = trackerSelected.workouts.slice(currentPage * cardsPerPage, (currentPage + 1) * cardsPerPage);
     } 
 
     const nextPage = () => {
@@ -35,6 +35,11 @@ const WorkoutSelectedPage = () => {
     const handleDeletionClick = async() => {
         if(workoutSelected){
             deleteWorkout(workoutSelected.id)
+            const updatedWorkouts = trackerSelected.workouts.filter(workout => workout.id !== workoutId);
+            setTrackerSelected({
+                ...trackerSelected,
+                workouts: updatedWorkouts,
+            });
         } 
     };
 
@@ -50,8 +55,8 @@ const WorkoutSelectedPage = () => {
     return(
         
         <>
-            <div style={{display: "flex", alignItems: "center"}} >
-                {trackerSelected ? displayedTrackers.map((workout, index) => (
+            <div style={{display: "flex", alignItems: "center", margin: "20px auto", justifyContent: "center"}} >
+                {trackerSelected ? displayedWorkouts.map((workout, index) => (
                     <div key={index} >
                         <Card  style={{ width: '18rem', height: '525px', margin: '10px' }}>
                             <Card.Body className="d-flex flex-column" >
@@ -105,13 +110,15 @@ const WorkoutSelectedPage = () => {
         </div>
       </>: null}
       <div style={{width: "280px", margin: "20px auto"}}>
-        <NewWorkoutModalForm />
+        <NewWorkoutModalForm 
+            trackerSelected={trackerSelected}
+        />
         <UpdateWorkoutModal 
-                show={showModal}
-                onHide={closeUpdateModal}
-                workoutSelected={workoutSelected}
-                setWorkoutSelected={setWorkoutSelected}
-            />
+            show={showModal}
+            onHide={closeUpdateModal}
+            workoutSelected={workoutSelected}
+            setWorkoutSelected={setWorkoutSelected}
+        />
       </div>
     </>    
     )

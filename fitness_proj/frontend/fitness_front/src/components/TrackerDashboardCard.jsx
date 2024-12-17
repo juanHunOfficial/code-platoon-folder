@@ -48,11 +48,9 @@ function TrackerDashboardCard() {
 
   return (
     <>
-    <div>
-    <div style={{display: "flex", alignItems: "center"}} >
+    <div style={{display: "flex", alignItems: "center", margin: "20px auto", justifyContent: "center"}} >
     {userTrackers ? displayedTrackers.map((tracker, index) => (
-      
-        <div key={index} style={{display: "flex", alignItems: "center", margin:"20px auto"}} >
+        <div key={index} >
           <Card  style={{ width: '18rem', height: '400px', margin: '10px' }}>
             <Card.Body className="d-flex flex-column" >
                 <Card.Title className="display-7" >{tracker.tracker_name}</Card.Title>
@@ -66,7 +64,6 @@ function TrackerDashboardCard() {
                   {tracker.workouts.map((workout, index) => (
                     <li key={index}>
                       Name: {workout.workout_name}
-                      Type: {workout.workout_type}
                     </li>
                   ))}
                 </Card.Text>
@@ -115,7 +112,7 @@ function TrackerDashboardCard() {
           </Button>
         </div>
       </>: null}
-      </div>
+    
       <UpdateTrackerModal 
         show={showModal}
         onHide={closeUpdateModal}

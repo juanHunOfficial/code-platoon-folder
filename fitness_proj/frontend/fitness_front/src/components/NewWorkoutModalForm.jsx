@@ -4,11 +4,12 @@ import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import { createWorkout } from '../utilities';
 
-function NewWorkoutModalForm({ workoutName, setWorkoutName, trackerName, setTrackerName }) {
+function NewWorkoutModalForm({ trackerSelected }) {
     const [show, setShow] = useState(false);
     const inputRef = useRef(null);
     const [typeOfWorkout, setTypeOfWorkout] = useState("");
     const [weeklyFrequency, setWeeklyFrequency] = useState("");
+    const [workoutName, setWorkoutName] = useState("")
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
@@ -18,7 +19,7 @@ function NewWorkoutModalForm({ workoutName, setWorkoutName, trackerName, setTrac
             'typeOfWorkout': typeOfWorkout,
             'weeklyFrequency': weeklyFrequency,
             'workoutName' : workoutName,
-            'trackerId' : trackerName.trackerId,
+            'trackerId' : trackerSelected.id,
         }
         const results = await createWorkout(formData)
         if(results){

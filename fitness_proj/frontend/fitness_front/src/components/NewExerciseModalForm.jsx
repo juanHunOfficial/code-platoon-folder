@@ -4,17 +4,17 @@ import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import { createExercise } from '../utilities';
 
-function NewExerciseModalForm({ workoutName, setWorkoutName }) {
+function NewExerciseModalForm({ workoutSelected }) {
     const [show, setShow] = useState(false);
     const inputRef = useRef(null);
-    const [weight, setWeight] = useState("");
-    const [goalNumOfReps, setGoalNumOfReps] = useState("");
-    const [goalNumOfSets, setGoalNumOfSets] = useState("");
-    const [actualNumOfReps, setActualNumOfReps] = useState("");
-    const [actualNumOfSets, setActualNumOfSets] = useState("");
-    const [date, setDate] = useState("");
-    const [type, setType] = useState("");
-    const [iteration, setIteration] = useState("");
+    // const [weight, setWeight] = useState("");
+    // const [goalNumOfReps, setGoalNumOfReps] = useState("");
+    // const [goalNumOfSets, setGoalNumOfSets] = useState("");
+    // const [actualNumOfReps, setActualNumOfReps] = useState("");
+    // const [actualNumOfSets, setActualNumOfSets] = useState("");
+    // const [date, setDate] = useState("");
+    // const [type, setType] = useState("");
+    // const [iteration, setIteration] = useState("");
     const [exerciseName, setExerciseName] = useState("");
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -23,20 +23,19 @@ function NewExerciseModalForm({ workoutName, setWorkoutName }) {
         e.preventDefault() 
         let formData = {
             "exerciseName" : exerciseName,
-            "iteration" : iteration,
-            "type": type,
-            "actualNumOfReps": actualNumOfReps,
-            "actualNumOfSets": actualNumOfSets,
-            "goalNumOfReps": goalNumOfReps,
-            "goalNumOfSets": goalNumOfSets,
-            "weight": weight,
-            "date": date,
-            "workoutId": workoutName.workoutId
+            // "iteration" : iteration,
+            // "type": type,
+            // "actualNumOfReps": actualNumOfReps,
+            // "actualNumOfSets": actualNumOfSets,
+            // "goalNumOfReps": goalNumOfReps,
+            // "goalNumOfSets": goalNumOfSets,
+            // "weight": weight,
+            // "date": date,
+            "workoutId": workoutSelected.id
         }
         const results = await createExercise(formData)
         if(results){
             inputRef.current.value = ''
-            setWorkoutName(results)
         }
         else{
             console.log('something went wrong in the return statement')
@@ -65,7 +64,7 @@ function NewExerciseModalForm({ workoutName, setWorkoutName }) {
                             autoFocus
                         />
                         </Form.Group>
-                        <Form.Group className="mb-3">
+                        {/* <Form.Group className="mb-3">
                             <Form.Label>Iteration</Form.Label>
                             <Form.Control 
                                 ref={inputRef}
@@ -120,7 +119,7 @@ function NewExerciseModalForm({ workoutName, setWorkoutName }) {
                                 ref={inputRef}
                                 onChange={(e)=> setDate(e.target.value)}
                                 type='text' placeholder='Format YYYY-MM-DD'/>
-                        </Form.Group>
+                        </Form.Group> */}
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
