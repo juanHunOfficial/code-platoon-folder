@@ -10,6 +10,7 @@ class ExerciseSerializer(serializers.ModelSerializer):
     def get_charts(self, instance):
         charts = instance.charts.all()
         ser_chart_data = [{
+            'id': chart.id,
             'iteration': chart.iteration, 
             'goal_num_of_reps': chart.goal_num_of_reps,
             'goal_num_of_sets': chart.goal_num_of_sets,

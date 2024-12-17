@@ -260,15 +260,11 @@ export const deleteExercise = async(exerciseId) =>{
 
 export const deleteDataPoint = async(dataPointId) =>{
     try {
-        let token = localStorage.getItem('token');
-        if (token) {
-          api.defaults.headers.common['Authorization'] = `Token ${token}`;
-          const { data } = await api.delete(`chart_data/${dataPointId}/`);
-          return data;
-        }
-      } catch (error) {
+            const { data } = await api.delete(`chart_data/${dataPointId}/`);
+            return data;
+    } catch (error) {
         console.error('Error deleting workout:', error.message);
-      }
+    }
 }
 
 export const updateTracker = async(formData) =>{

@@ -4,6 +4,7 @@ from .serializers import ChartDataSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.status import HTTP_400_BAD_REQUEST, HTTP_200_OK, HTTP_201_CREATED, HTTP_204_NO_CONTENT
+from exercise_app.models import Exercise
 
 # Create your views here.
 class AllChartData(APIView):
@@ -25,10 +26,7 @@ class SingleChartData(APIView):
     
     def get_exercise(self, chart):
         if type(chart) == int:
-            chart = get_object_or_404(ChartData, id=chart)
-        else:
-            chart = get_object_or_404(ChartData, chart=chart)
-        return chart
+            chart = get_object_or_404(Exercise, id=chart)
     
     def get(self, request, chart):
         a_ser_chart = ChartDataSerializer(self.get_exercise(chart))
