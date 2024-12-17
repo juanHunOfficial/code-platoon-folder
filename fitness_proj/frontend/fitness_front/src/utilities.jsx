@@ -258,3 +258,72 @@ export const deleteDataPoint = async(dataPointId) =>{
         console.error('Error deleting workout:', error.message);
       }
 }
+
+export const updateTracker = async(formData) =>{
+    const { trackerId, trackerName } = formData
+    try{
+        const { data } = await api.put(
+            `tracker/${trackerId}/`,
+            {
+                "tracker_name": trackerName
+            }
+        )
+    }catch (error){
+        console.error('Error updating tracker name: ', error.message)
+    }
+}
+
+export const updateWorkout = async(formData) =>{
+    const { workoutId, workoutName, workoutType } = formData
+    try{
+        const { data } = await api.put(
+            `workout/${workoutId}/`,
+            {
+                "workout_name": workoutName,
+                "type_of_workout": workoutType
+            }
+        )
+    }catch (error){
+        console.error('Error updating the workout: ', error.message)
+    }
+}
+
+export const updateExercise = async(formData) =>{
+    const { exerciseId, exerciseName } = formData
+    try{
+        const { data } = await api.put(
+            `user_exercise/${exerciseId}/`,
+            {
+                "exercise_name": exerciseName   
+            }
+        )
+    }catch (error){
+        console.error('Error updating exercise name: ', error.message)
+    }
+}
+
+export const updateChartData = async(formData) => {
+    const { 
+        chartId, 
+        goalNumOfReps, 
+        goalNumOfSets, 
+        actualNumOfReps, 
+        actualNumOfSets, 
+        weight 
+    } = formData
+
+    try{
+        const { data } = await api.put(
+            `chart_data/${chartId}/`,
+            {
+                "goal_num_of_reps": goalNumOfReps,
+                "goal_num_of_sets": goalNumOfSets,
+                "actual_num_of_reps": actualNumOfReps,
+                "actual_num_of_sets": actualNumOfSets,
+                "weight": weight
+            }
+        )
+    } catch (error){
+        console.error('Error updating the chart data: ', error.message)
+    }
+}
