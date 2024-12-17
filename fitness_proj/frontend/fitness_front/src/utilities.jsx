@@ -275,14 +275,14 @@ export const updateTracker = async(formData) =>{
 }
 
 export const updateWorkout = async(formData) =>{
-    const { workoutId, workoutName, workoutType } = formData
+    const { workoutId, workoutName, typeOfWorkout, weeklyFrequency } = formData
     try{
         const { data } = await api.put(
             `workout/${workoutId}/`,
             {
+                "type_of_workout": typeOfWorkout,
                 "workout_name": workoutName,
-                "type_of_workout": workoutType,
-                'weekly_frequency': weeklyFrequency
+                "weekly_frequency": weeklyFrequency,
             }
         )
         return data

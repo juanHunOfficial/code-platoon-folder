@@ -10,16 +10,15 @@ function UpdateWorkoutModal({ show, onHide, workoutSelected, setWorkoutSelected 
     const [weeklyFrequency, setWeeklyFrequency] = useState(workoutSelected?.weekly_frequency || "");
     const [workoutName, setWorkoutName] = useState(workoutSelected?.workout_name || "");
 
-
-    console.log(workoutSelected)
     const handleSubmit = async(e) =>{
         e.preventDefault() 
         let formData = {
             'typeOfWorkout': typeOfWorkout,
             'weeklyFrequency': weeklyFrequency,
             'workoutName' : workoutName,
-            'workoutId': workoutSelected
+            'workoutId': workoutSelected.id
         }
+        console.log(formData)
         const results = await updateWorkout(formData)
         if(results){
             inputRef.current.value = ''

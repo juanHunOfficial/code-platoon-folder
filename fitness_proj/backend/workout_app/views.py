@@ -26,10 +26,11 @@ class SingleWorkout(APIView):
     
     def put(self, request, workout_id):
         data = request.data.copy()
+        print(data)
         updated_workout = get_object_or_404(Workout, id=workout_id)
-        updated_workout.workout_name = data['workout_name']
-        updated_workout.type_of_workout = data['type_of_workout']
+        updated_workout.workout_name = data['workout_name']   
         updated_workout.weekly_frequency = data['weekly_frequency']
+        updated_workout.type_of_workout = data['type_of_workout']
         updated_workout.save()
         return Response(WorkoutSerializer(updated_workout).data, status=HTTP_200_OK)
     
