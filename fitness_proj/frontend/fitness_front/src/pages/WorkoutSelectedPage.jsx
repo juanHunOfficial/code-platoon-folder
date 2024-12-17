@@ -39,12 +39,12 @@ const WorkoutSelectedPage = () => {
     };
 
     const openUpdateModal = (workout) => {
-        setWorkoutSelected(workout);  // Set the selected workout for editing
-        setShowModal(true);  // Open the modal
+        setWorkoutSelected(workout);  
+        setShowModal(true); 
     };
 
     const closeUpdateModal = () => {
-        setShowModal(false);  // Close the modal
+        setShowModal(false); 
     };
     
     return(
@@ -81,7 +81,7 @@ const WorkoutSelectedPage = () => {
                                             variant="primary" 
                                             className="w-100"
                                             onClick={() => openUpdateModal(workout)}
-                                      >Update</Button>
+                                        >Update</Button>
                                     </div>
 
                                     <Button style={{marginTop:"20px"}} onClick={() => {{

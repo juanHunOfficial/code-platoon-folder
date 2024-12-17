@@ -3,10 +3,12 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useOutletContext } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import UpdateTrackerModal from './UpdateTrackerModal.jsx'
 
 function TrackerDashboardCard() {
   const { userTrackers, trackerSelected, setTrackerSelected } = useOutletContext();
   const [currentPage, setCurrentPage] = useState(0);
+  const [showModal, setShowModal] = useState(false); 
   const navigate = useNavigate();
   const cardsPerPage = 3;
   let displayedTrackers = []
@@ -27,6 +29,15 @@ function TrackerDashboardCard() {
       setCurrentPage(prev => prev - 1);
     }
   };
+
+  const openUpdateModal = (tracker) => {
+    setTrackerSelected(tracker);  
+    setShowModal(true); 
+};
+
+const closeUpdateModal = () => {
+    setShowModal(false); 
+};
 
   return (
     <>
@@ -53,10 +64,19 @@ function TrackerDashboardCard() {
                   ))}
                 </Card.Text>
                 <div className="mt-auto">
-                  <Button onClick={() => {{
+                  <Button 
+                    onClick={() => {{
                     setTrackerSelected(tracker);
                     navigate("/workout/")
-                    }}} variant="primary" className="w-100">Select</Button>
+                    }}} 
+                    variant="primary" 
+                    className="w-100">
+                      Select
+                  </Button>
+                  <Button style={{marginTop: "20px"}} 
+                    onClick={() => openUpdateModal(tracker)}   
+                    variant="primary" 
+                    className="w-100">Update</Button>
                 </div>
             </Card.Body>
           </Card>
@@ -67,16 +87,32 @@ function TrackerDashboardCard() {
       {userTrackers ? 
       <>
         <div style={{ textAlign: 'center', marginTop: '20px' }}>
-          <Button style={{marginRight: '10px'}} variant="secondary" onClick={prevPage} disabled={currentPage === 0}>              ← Previous
+          <Button 
+            style={{marginRight: '10px'}} 
+            variant="secondary" onClick={prevPage} 
+            disabled={currentPage === 0}>              
+            ← Previous
           </Button>
-          <Button style={{marginLeft: '10px'}} variant="secondary" onClick={nextPage} disabled={(currentPage + 1) * cardsPerPage >= userTrackers.length}>
+          <Button 
+            style={{marginLeft: '10px'}} 
+            variant="secondary" 
+            onClick={nextPage} 
+            disabled={(currentPage + 1) * cardsPerPage >= userTrackers.length}>
             Next →
           </Button>
         </div>
       </>: null}
       </div>
+      <UpdateTrackerModal 
+        show={showModal}
+        onHide={closeUpdateModal}
+        trackerSelected={trackerSelected}
+        setTrackerSelected={setTrackerSelected}
+      />
     </>
   );
 }
+
+
 
 export default TrackerDashboardCard;
