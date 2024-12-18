@@ -4,7 +4,6 @@ from .serializers import ChartDataSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.status import HTTP_400_BAD_REQUEST, HTTP_200_OK, HTTP_201_CREATED, HTTP_204_NO_CONTENT
-from exercise_app.models import Exercise
 
 # Create your views here.
 class AllChartData(APIView):
@@ -24,16 +23,16 @@ class AllChartData(APIView):
     
 class SingleChartData(APIView):
     
-    def get_exercise(self, chart):
+    def get_chart_data(self, chart):
         if type(chart) == int:
-            chart = get_object_or_404(Exercise, id=chart)
+            chart = get_object_or_404(ChartData, id=chart)
     
     def get(self, request, chart):
-        a_ser_chart = ChartDataSerializer(self.get_exercise(chart))
+        a_ser_chart = ChartDataSerializer(self.get_chart_data(chart))
         return Response(a_ser_chart.data)
     
     def put(self, request, chart):
-        chart = self.get_exercise(chart)
+        chart = self.get_chart_data(chart)
         body_data = request.data.copy()
         
         if(chart):
@@ -45,12 +44,12 @@ class SingleChartData(APIView):
             
             chart.save()
         else:
-            return Response("INVALID NO EXERCISE WAS FOUND", status=HTTP_400_BAD_REQUEST)
+            return Response("INVALID NO CHART DATA WAS FOUND", status=HTTP_400_BAD_REQUEST)
         return Response(ChartDataSerializer(chart).data, status=HTTP_200_OK)
         
         
     
     def delete(self, request, chart):
-        chart = self.get_exercise(chart)
+        chart = self.get_chart_data(chart)
         chart.delete()
         return(Response(status=HTTP_204_NO_CONTENT))

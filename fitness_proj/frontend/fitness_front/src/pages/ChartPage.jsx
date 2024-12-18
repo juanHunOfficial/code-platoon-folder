@@ -1,6 +1,7 @@
 import { useOutletContext } from "react-router-dom";
 import { Line } from 'react-chartjs-2'
 import NewChartEntryModalForm from "../components/NewChartEntryModalForm";
+import DeleteDataPointModal from "../components/DeleteDataPointModal";
 
 import { Chart as ChartJs, 
          CategoryScale, 
@@ -23,8 +24,6 @@ ChartJs.register(
 
 const ChartPage = () => {
     const { exerciseSelected, setExerciseSelected } = useOutletContext();
-    
-    
     
     const lineChartDataReps = {
         labels: exerciseSelected.charts.map(chart => `Workout #${chart.iteration}`), 
@@ -156,8 +155,19 @@ const ChartPage = () => {
                 </div>   
             : null 
         }
-        <div style={{ textAlign: 'center', marginTop: '50px', marginBottom: "100px" }} >
-            <NewChartEntryModalForm exerciseSelected={exerciseSelected} setExerciseSelected={setExerciseSelected}/>
+        <div style={{display: "flex", flexDirection: "column", alignItems:"center", justifyContent: "center"}} >
+          <div style={{ textAlign: 'center', marginTop: '10px', marginBottom: "30px", width: "250px" }} >
+            <NewChartEntryModalForm 
+              exerciseSelected={exerciseSelected} 
+              setExerciseSelected={setExerciseSelected}
+            />
+          </div>
+          <div style={{ textAlign: 'center', marginTop: '10px', marginBottom: "100px", width: "250px" }} >
+            <DeleteDataPointModal 
+              exerciseSelected={exerciseSelected} 
+              setExerciseSelected={setExerciseSelected} 
+            />
+          </div>
         </div>
         </>
     )

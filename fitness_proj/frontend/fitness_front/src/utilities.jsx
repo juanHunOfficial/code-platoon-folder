@@ -184,6 +184,7 @@ export const createChartEntry = async(formData) =>{
         weight, 
         exerciseId
     } = formData
+    console.log(formData)
     try{
         let response = await api.post(
             'chart_data/',
@@ -263,7 +264,7 @@ export const deleteDataPoint = async(dataPointId) =>{
             const { data } = await api.delete(`chart_data/${dataPointId}/`);
             return data;
     } catch (error) {
-        console.error('Error deleting workout:', error.message);
+        console.error('Error deleting data point:', error.message);
     }
 }
 
