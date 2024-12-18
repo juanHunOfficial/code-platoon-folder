@@ -1,12 +1,12 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import { createTracker } from '../utilities';
+import { createTracker, getInfo } from '../utilities';
 import { useOutletContext } from 'react-router-dom';
 import { useState, useRef } from 'react'
 
 const TrackerCreationForm = ({trackerName, setTrackerName}) => {
-    const { user } = useOutletContext();
+    const { user, setUser, setUserTrackers } = useOutletContext();
     const inputRef = useRef(null);
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -23,6 +23,9 @@ const TrackerCreationForm = ({trackerName, setTrackerName}) => {
         if(results){
             inputRef.current.value = ''
             setTrackerName(results)
+            const refreshedUser = await getInfo()
+            setUser(refreshedUser)
+            setUserTrackers(refreshedUser.trackers)
         }
         else{
             console.log('something went wrong in the return statement')

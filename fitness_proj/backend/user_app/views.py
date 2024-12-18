@@ -6,7 +6,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.authtoken.models import Token
 from .models import User
-
+from tracker_app.serializers import TrackerSerializer
 
 # Create your views here.
 class TokenReq(APIView):
@@ -38,7 +38,9 @@ class LogIn(APIView):
 class Info(TokenReq):
     
     def get(self, request):
-        return Response({'firstname':request.user.firstname, 'id': request.user.id})
+        trackers = request.user.users.all()  
+        tracker_data = TrackerSerializer(trackers, many=True).data
+        return Response({'firstname':request.user.firstname, 'id': request.user.id, 'trackers': tracker_data})
     
 class LogOut(TokenReq):
     

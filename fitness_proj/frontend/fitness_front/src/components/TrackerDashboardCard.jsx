@@ -4,16 +4,16 @@ import Card from 'react-bootstrap/Card';
 import { useOutletContext } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import UpdateTrackerModal from './UpdateTrackerModal.jsx'
-import { deleteTracker } from '../utilities'
+import { deleteTracker, getTrackers } from '../utilities'
 
 function TrackerDashboardCard() {
-  const { userTrackers, trackerSelected, setTrackerSelected } = useOutletContext();
+  const { userTrackers, setUserTrackers, trackerSelected, setTrackerSelected } = useOutletContext();
   const [currentPage, setCurrentPage] = useState(0);
   const [showModal, setShowModal] = useState(false); 
   const navigate = useNavigate();
   const cardsPerPage = 3;
   let displayedTrackers = []
-
+  
   if(userTrackers){
     displayedTrackers = userTrackers.slice(currentPage * cardsPerPage, (currentPage + 1) * cardsPerPage);
   } 
@@ -40,10 +40,10 @@ function TrackerDashboardCard() {
     setShowModal(false); 
   };
 
-  const handleDeletionClick = async() => {
-    if(trackerSelected){
-        deleteTracker(trackerSelected.id)
-    } 
+  const handleDeletionClick = async(trackerId) => {
+        await deleteTracker(trackerId)
+        const updatedTrackers = await getTrackers();
+        setUserTrackers(updatedTrackers)
   };
 
   return (
@@ -77,14 +77,15 @@ function TrackerDashboardCard() {
                     className="w-100">
                       Select
                   </Button>
+                  
                   <Button style={{marginTop: "20px"}} 
                     onClick={() => openUpdateModal(tracker)}   
                     variant="primary" 
                     className="w-100">Update</Button>
+
                   <Button style={{marginTop:"20px"}} 
                     onClick={() => {{
-                      setTrackerSelected(tracker);
-                      handleDeletionClick()
+                      handleDeletionClick(tracker.id)
                     }}} variant="primary" 
                     className="w-100">Delete</Button>
                 </div>
@@ -118,6 +119,7 @@ function TrackerDashboardCard() {
         onHide={closeUpdateModal}
         trackerSelected={trackerSelected}
         setTrackerSelected={setTrackerSelected}
+        setUserTrackers={setUserTrackers}
       />
     </>
   );

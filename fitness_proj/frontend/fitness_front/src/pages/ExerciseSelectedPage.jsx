@@ -5,16 +5,17 @@ import { useOutletContext } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import UpdateExerciseModal from '../components/UpdateExerciseModal';
 import NewExerciseModalForm from '../components/NewExerciseModalForm';
-import { deleteExercise } from '../utilities';
+import { deleteExercise, getSingleWorkout } from '../utilities';
 
 const ExerciseSelectedPage = () => {
-    const { workoutSelected, exerciseSelected, setExerciseSelected } = useOutletContext();
+    const { workoutSelected, setWorkoutSelected, exerciseSelected, setExerciseSelected } = useOutletContext();
     const [currentPage, setCurrentPage] = useState(0);
     const [showModal, setShowModal] = useState(false); 
     const navigate = useNavigate();
     const cardsPerPage = 3;
     let displayedExercises = []
-
+  
+    
     if(workoutSelected){
         displayedExercises = workoutSelected.exercises.slice(currentPage * cardsPerPage, (currentPage + 1) * cardsPerPage);
     } 
@@ -37,17 +38,17 @@ const ExerciseSelectedPage = () => {
         setShowModal(true); 
     };
     
-    const closeUpdateModal = () => {
-        setShowModal(false); 
+    const closeUpdateModal = async() => {
+        setShowModal(false);
+        const refreshedWorkout = await getSingleWorkout(workoutSelected.id)
+        setWorkoutSelected(refreshedWorkout)
     };
-
-    const handleDeletionClick = async() => {
-        if(exerciseSelected){
-            deleteExercise(exerciseSelected.id)
-        } 
+    
+    const handleDeletionClick = async(exerciseId) => {
+        await deleteExercise(exerciseId)
+        const refreshedWorkout = await getSingleWorkout(workoutSelected.id)
+        setWorkoutSelected(refreshedWorkout)
     };
-
-    console.log(workoutSelected)
     
     return(
         
@@ -57,24 +58,36 @@ const ExerciseSelectedPage = () => {
                 <div key={index} >
                   <Card  style={{ width: '18rem', height: '400px', margin: '10px' }}>
                     <Card.Body className="d-flex flex-column" >
-                                <Card.Title className="display-7" >{exercise.exercise_name}</Card.Title>
-                                <div className="mt-auto">
-                                <Button onClick={() => {{
-                                    setExerciseSelected(exercise);
-                                    navigate('/chart_display/')
-                                    }}} variant="primary" className="w-100">Select</Button>
+                      <Card.Title className="display-7" >{exercise.exercise_name}</Card.Title>
+                      <div className="mt-auto">
+                        <Button 
+                          onClick={() => {{
+                            setExerciseSelected(exercise);
+                            navigate('/chart_display/')
+                          }}} 
+                          variant="primary" 
+                          className="w-100">
+                          Select
+                        </Button>
 
-                                <Button style={{marginTop: "20px"}} 
-                                    onClick={() => openUpdateModal(exercise)}   
-                                    variant="primary" 
-                                    className="w-100">Update</Button>
+                        <Button 
+                          style={{marginTop: "20px"}} 
+                          onClick={() => openUpdateModal(exercise)}   
+                          variant="primary" 
+                          className="w-100">
+                          Update
+                        </Button>
 
-                                <Button style={{marginTop:"20px"}} onClick={() => {{
-                                    setExerciseSelected(exercise);
-                                    handleDeletionClick()
-                                    }}} variant="primary" 
-                                    className="w-100">Delete</Button>
-                                </div>
+                        <Button 
+                          style={{marginTop:"20px"}} 
+                          onClick={() => {{
+                            handleDeletionClick(exercise.id)
+                          }}} 
+                          variant="primary" 
+                          className="w-100">
+                          Delete
+                        </Button>
+                      </div>
                     </Card.Body>
                   </Card>
                 </div>
@@ -100,6 +113,7 @@ const ExerciseSelectedPage = () => {
       <div style={{width: "280px", margin: "20px auto"}}>
         <NewExerciseModalForm 
             workoutSelected={workoutSelected}
+            setWorkoutSelected={setWorkoutSelected}
         />
       </div>
     </>    

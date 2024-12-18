@@ -3,12 +3,12 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useOutletContext } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { deleteWorkout } from '../utilities';
+import { deleteWorkout, getSingleTracker } from '../utilities';
 import NewWorkoutModalForm from '../components/NewWorkoutModalForm'
 import UpdateWorkoutModal from '../components/UpdateWorkoutModal';
 
 const WorkoutSelectedPage = () => {
-    const { workoutSelected, setWorkoutSelected, trackerSelected } = useOutletContext();
+    const { workoutSelected, setWorkoutSelected, trackerSelected, setTrackerSelected } = useOutletContext();
     const [currentPage, setCurrentPage] = useState(0);
     const [showModal, setShowModal] = useState(false); 
     const navigate = useNavigate();
@@ -32,14 +32,12 @@ const WorkoutSelectedPage = () => {
         }
     };
 
-    const handleDeletionClick = async() => {
-        if(workoutSelected){
-            deleteWorkout(workoutSelected.id)
-            const updatedWorkouts = trackerSelected.workouts.filter(workout => workout.id !== workoutId);
-            setTrackerSelected({
-                ...trackerSelected,
-                workouts: updatedWorkouts,
-            });
+    const handleDeletionClick = async(workoutId) => {
+        console.log(workoutId)
+        if(workoutId){
+            await deleteWorkout(workoutId)
+            const updatedTracker = await getSingleTracker(trackerSelected.id);
+            setTrackerSelected(updatedTracker)
         } 
     };
 
@@ -90,8 +88,7 @@ const WorkoutSelectedPage = () => {
                                     </div>
 
                                     <Button style={{marginTop:"20px"}} onClick={() => {{
-                                        setWorkoutSelected(workout);
-                                        handleDeletionClick()
+                                        handleDeletionClick(workout.id)
                                         }}} variant="primary" className="w-100">Delete</Button>
                                 </div>
                             </Card.Body>
@@ -112,12 +109,15 @@ const WorkoutSelectedPage = () => {
       <div style={{width: "280px", margin: "20px auto"}}>
         <NewWorkoutModalForm 
             trackerSelected={trackerSelected}
+            setTrackerSelected={setTrackerSelected}
         />
         <UpdateWorkoutModal 
             show={showModal}
             onHide={closeUpdateModal}
             workoutSelected={workoutSelected}
             setWorkoutSelected={setWorkoutSelected}
+            trackerSelected={trackerSelected}
+            setTrackerSelected={setTrackerSelected}
         />
       </div>
     </>    

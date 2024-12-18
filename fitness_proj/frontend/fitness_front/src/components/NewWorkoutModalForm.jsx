@@ -2,9 +2,9 @@ import { useState, useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import { createWorkout } from '../utilities';
+import { createWorkout, getSingleTracker } from '../utilities';
 
-function NewWorkoutModalForm({ trackerSelected }) {
+function NewWorkoutModalForm({ trackerSelected, setTrackerSelected }) {
     const [show, setShow] = useState(false);
     const inputRef = useRef(null);
     const [typeOfWorkout, setTypeOfWorkout] = useState("");
@@ -12,7 +12,7 @@ function NewWorkoutModalForm({ trackerSelected }) {
     const [workoutName, setWorkoutName] = useState("")
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
+    
     const handleSubmit = async(e) =>{
         e.preventDefault() 
         let formData = {
@@ -25,6 +25,8 @@ function NewWorkoutModalForm({ trackerSelected }) {
         if(results){
             inputRef.current.value = ''
             setWorkoutName(results)
+            const refreshedWorkouts = await getSingleTracker(trackerSelected.id)
+            setTrackerSelected(refreshedWorkouts)
         }
         else{
             console.log('something went wrong in the return statement')

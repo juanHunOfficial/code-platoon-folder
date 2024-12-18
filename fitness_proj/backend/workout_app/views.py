@@ -33,6 +33,9 @@ class SingleWorkout(APIView):
         updated_workout.save()
         return Response(WorkoutSerializer(updated_workout).data, status=HTTP_200_OK)
     
+    def get(self, request, workout_id):
+        return Response(WorkoutSerializer(Workout.objects.get(id=workout_id)).data, status=HTTP_200_OK)
+    
     def delete(self, request, workout_id):
         workout_id = get_object_or_404(Workout, id=workout_id)
         workout_id.delete()

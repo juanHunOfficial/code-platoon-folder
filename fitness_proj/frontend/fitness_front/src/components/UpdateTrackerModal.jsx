@@ -2,12 +2,12 @@ import { useState, useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import { updateTracker } from '../utilities';
+import { updateTracker, getTrackers } from '../utilities';
 
-function UpdateTrackerModal({ show, onHide, trackerSelected, setTrackerSelected }) {
+function UpdateTrackerModal({ show, onHide, trackerSelected, setTrackerSelected, setUserTrackers}) {
     const inputRef = useRef(null);
     const [trackerName, setTrackerName] = useState(trackerSelected?.tracker_name || "");
-
+    
     const handleSubmit = async(e) =>{
         e.preventDefault() 
         let formData = {
@@ -18,6 +18,8 @@ function UpdateTrackerModal({ show, onHide, trackerSelected, setTrackerSelected 
         if(results){
             inputRef.current.value = ''
             setTrackerSelected(results)
+            const updatedTrackers = await getTrackers();
+            setUserTrackers(updatedTrackers)
             onHide(); 
         }
         else{

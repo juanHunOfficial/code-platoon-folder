@@ -2,40 +2,26 @@ import { useState, useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import { createExercise } from '../utilities';
+import { createExercise, getSingleWorkout } from '../utilities';
 
-function NewExerciseModalForm({ workoutSelected }) {
+function NewExerciseModalForm({ workoutSelected, setWorkoutSelected }) {
     const [show, setShow] = useState(false);
     const inputRef = useRef(null);
-    // const [weight, setWeight] = useState("");
-    // const [goalNumOfReps, setGoalNumOfReps] = useState("");
-    // const [goalNumOfSets, setGoalNumOfSets] = useState("");
-    // const [actualNumOfReps, setActualNumOfReps] = useState("");
-    // const [actualNumOfSets, setActualNumOfSets] = useState("");
-    // const [date, setDate] = useState("");
-    // const [type, setType] = useState("");
-    // const [iteration, setIteration] = useState("");
     const [exerciseName, setExerciseName] = useState("");
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
+    // console.log(workoutSelected)
     const handleSubmit = async(e) =>{
         e.preventDefault() 
         let formData = {
             "exerciseName" : exerciseName,
-            // "iteration" : iteration,
-            // "type": type,
-            // "actualNumOfReps": actualNumOfReps,
-            // "actualNumOfSets": actualNumOfSets,
-            // "goalNumOfReps": goalNumOfReps,
-            // "goalNumOfSets": goalNumOfSets,
-            // "weight": weight,
-            // "date": date,
             "workoutId": workoutSelected.id
         }
         const results = await createExercise(formData)
         if(results){
             inputRef.current.value = ''
+            const refreshedWorkout = await getSingleWorkout(workoutSelected.id)
+            setWorkoutSelected(refreshedWorkout)
         }
         else{
             console.log('something went wrong in the return statement')
@@ -64,62 +50,6 @@ function NewExerciseModalForm({ workoutSelected }) {
                             autoFocus
                         />
                         </Form.Group>
-                        {/* <Form.Group className="mb-3">
-                            <Form.Label>Iteration</Form.Label>
-                            <Form.Control 
-                                ref={inputRef}
-                                onChange={(e)=> setIteration(e.target.value)}
-                                type='text' placeholder='Enter which set your currently on'/>
-                        </Form.Group>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Type of Exercise</Form.Label>
-                            <Form.Control 
-                                ref={inputRef}
-                                onChange={(e)=> setType(e.target.value)}
-                                type='text' placeholder='Enter the type of exercise this will be'/>
-                        </Form.Group>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Goal Rep Count</Form.Label>
-                            <Form.Control 
-                                ref={inputRef}
-                                onChange={(e)=> setGoalNumOfReps(e.target.value)}
-                                type='text' placeholder='Enter the goal amount for your rep count'/>
-                        </Form.Group>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Goal Set Count</Form.Label>
-                            <Form.Control 
-                                ref={inputRef}
-                                onChange={(e)=> setGoalNumOfSets(e.target.value)}
-                                type='text' placeholder='Enter the goal amount for your set count'/>
-                        </Form.Group>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Actual Rep Count</Form.Label>
-                            <Form.Control 
-                                ref={inputRef}
-                                onChange={(e)=> setActualNumOfReps(e.target.value)}
-                                type='text' placeholder='Enter the actual number of reps you accomplished'/>
-                        </Form.Group>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Actual Set Count</Form.Label>
-                            <Form.Control 
-                                ref={inputRef}
-                                onChange={(e)=> setActualNumOfSets(e.target.value)}
-                                type='text' placeholder='Enter the actual number sets you accomplished'/>
-                        </Form.Group>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Weight</Form.Label>
-                            <Form.Control 
-                                ref={inputRef}
-                                onChange={(e)=> setWeight(e.target.value)}
-                                type='text' placeholder='Enter the weight you did on this set'/>
-                        </Form.Group>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Date</Form.Label>
-                            <Form.Control 
-                                ref={inputRef}
-                                onChange={(e)=> setDate(e.target.value)}
-                                type='text' placeholder='Format YYYY-MM-DD'/>
-                        </Form.Group> */}
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>

@@ -61,7 +61,7 @@ export const getInfo = async() => {
         api.defaults.headers.common['Authorization'] = `Token ${token}`
         let response = await api.get('users/info/')
         if (response.status === 200){
-            return {'firstname': response.data.firstname, 'id': response.data.id}
+            return {'firstname': response.data.firstname, 'id': response.data.id, 'trackers': response.data.trackers}
         }
         else{
             return null
@@ -250,7 +250,7 @@ export const deleteExercise = async(exerciseId) =>{
         let token = localStorage.getItem('token');
         if (token) {
           api.defaults.headers.common['Authorization'] = `Token ${token}`;
-          const { data } = await api.delete(`exercise/${exerciseId}/`);
+          const { data } = await api.delete(`user_exercise/${exerciseId}/`);
           return data;
         }
       } catch (error) {
@@ -338,5 +338,32 @@ export const updateChartData = async(formData) => {
         return data
     } catch (error){
         console.error('Error updating the chart data: ', error.message)
+    }
+}
+
+export const getSingleExercise = async(exerciseId) => {
+    try{
+        const { data } = await api.get(`user_exercise/${exerciseId}/`)
+        return data
+    }catch (error) {
+        console.error('Error fetching the chart data: ', error.message)
+    }
+}
+
+export const getSingleTracker = async(trackerId) => {
+    try{
+        const { data } = await api.get(`tracker/${trackerId}/`)
+        return data
+    }catch (error) {
+        console.error('Error fetching the single tracker: ', error.message)
+    }
+}
+
+export const getSingleWorkout = async(workoutId) =>{
+    try{
+        const { data } = await api.get(`workout/${workoutId}/`)
+        return data
+    }catch (error){
+        console.error('Error fetching the single workout: ', error.message)
     }
 }

@@ -22,7 +22,7 @@ ChartJs.register(
 )
 
 const ChartPage = () => {
-    const { exerciseSelected } = useOutletContext();
+    const { exerciseSelected, setExerciseSelected } = useOutletContext();
     
     
     
@@ -59,7 +59,12 @@ const ChartPage = () => {
           },
         },
         responsive: true,        
-        maintainAspectRatio: false, 
+        maintainAspectRatio: false,
+        scales: {
+            y: {
+              beginAtZero: true 
+            }
+        }   
       };
 
     const lineChartDataSets ={
@@ -90,7 +95,44 @@ const ChartPage = () => {
           },
         },
         responsive: true,        
-        maintainAspectRatio: false, 
+        maintainAspectRatio: false,
+        scales: {
+            y: {
+              beginAtZero: true 
+            }
+        }   
+      };
+
+      const lineChartDataWeight ={
+        labels: exerciseSelected.charts.map(chart => `Workout #${chart.iteration}`), 
+        datasets: [
+            { 
+                label : "Exercise Weight",
+                data: exerciseSelected.charts.map(chart => chart.weight),
+                borderColor: 'blue',
+            }
+        ]
+    }
+
+    const lineChartOptionsWeight = {
+        plugins: {
+          title: {
+            display: true,          
+            text: 'Exercise Weight Over Time', 
+            font: {
+              size: 18,            
+              weight: 'bold',      
+            },
+            padding: { top: 10, bottom: 30 }, 
+          },
+        },
+        responsive: true,        
+        maintainAspectRatio: false,
+        scales: {
+            y: {
+              beginAtZero: true 
+            }
+        }       
       };
     return(
         <>
@@ -103,16 +145,19 @@ const ChartPage = () => {
                             alignItems:"center"
                         }} >
                     <div style={{height: "300px", width: "80%", position: "relative", marginBottom: "50px"}}>
+                        <Line options={lineChartOptionsWeight} data={lineChartDataWeight} />
+                    </div>
+                    <div style={{height: "300px", width: "80%", position: "relative", marginBottom: "50px"}}>
                         <Line options={lineChartOptionsReps} data={lineChartDataReps} />
                     </div>
-                    <div style={{height: "300px", width: "80%", position: "relative"}}>
+                    <div style={{height: "300px", width: "80%", position: "relative", marginBottom: "50px"}}>
                         <Line options={lineChartOptionsSets} data={lineChartDataSets} />
-                    </div>
+                    </div>   
                 </div>   
             : null 
         }
-        <div style={{ textAlign: 'center', marginTop: '20px' }} >
-            <NewChartEntryModalForm exerciseSelected={exerciseSelected} />
+        <div style={{ textAlign: 'center', marginTop: '50px', marginBottom: "100px" }} >
+            <NewChartEntryModalForm exerciseSelected={exerciseSelected} setExerciseSelected={setExerciseSelected}/>
         </div>
         </>
     )

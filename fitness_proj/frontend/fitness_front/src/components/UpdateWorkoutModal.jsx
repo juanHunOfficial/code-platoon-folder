@@ -2,9 +2,9 @@ import { useState, useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import { updateWorkout } from '../utilities';
+import { updateWorkout, getSingleTracker } from '../utilities';
 
-function UpdateWorkoutModal({ show, onHide, workoutSelected, setWorkoutSelected }) {
+function UpdateWorkoutModal({ show, onHide, workoutSelected, setWorkoutSelected, trackerSelected, setTrackerSelected }) {
     const inputRef = useRef(null);
     const [typeOfWorkout, setTypeOfWorkout] = useState(workoutSelected?.type_of_workout || "");
     const [weeklyFrequency, setWeeklyFrequency] = useState(workoutSelected?.weekly_frequency || "");
@@ -22,6 +22,8 @@ function UpdateWorkoutModal({ show, onHide, workoutSelected, setWorkoutSelected 
         if(results){
             inputRef.current.value = ''
             setWorkoutSelected(results)
+            const updatedTracker = await getSingleTracker(trackerSelected.id);
+            setTrackerSelected(updatedTracker)
             onHide(); 
         }
         else{

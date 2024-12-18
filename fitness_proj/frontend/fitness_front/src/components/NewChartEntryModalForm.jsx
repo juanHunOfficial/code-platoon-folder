@@ -2,9 +2,9 @@ import { useState, useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import { createChartEntry } from '../utilities';
+import { createChartEntry, getSingleExercise } from '../utilities';
 
-function NewChartEntryModalForm({ exerciseSelected }) {
+function NewChartEntryModalForm({ exerciseSelected, setExerciseSelected }) {
     const [show, setShow] = useState(false);
     const inputRef = useRef(null);
     const [weight, setWeight] = useState("");
@@ -30,12 +30,13 @@ function NewChartEntryModalForm({ exerciseSelected }) {
         const results = await createChartEntry(formData)
         if(results){
             inputRef.current.value = ''
+            const refreshedExercise = await getSingleExercise(exerciseSelected.id)
+            setExerciseSelected(refreshedExercise)
         }
         else{
             console.log('something went wrong in the return statement')
         }
     }
-
 
     return (
         <>
