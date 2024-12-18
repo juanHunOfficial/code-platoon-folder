@@ -36,7 +36,7 @@ const HomePage = () => {
                     <h1>Dashboard</h1>
                     <h2>Your Workouts</h2>
                 </div>
-                <div className='workout_cards' style={{display : 'flex', justifyContent: "space-around"}} >
+                <div className='workout_cards' >
                     <TrackerDashboardCard />
                 </div>
             </div>

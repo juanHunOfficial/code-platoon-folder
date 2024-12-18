@@ -23,16 +23,12 @@ class AllChartData(APIView):
     
 class SingleChartData(APIView):
     
-    def get_chart_data(self, chart):
-        if type(chart) == int:
-            chart = get_object_or_404(ChartData, id=chart)
-    
     def get(self, request, chart):
-        a_ser_chart = ChartDataSerializer(self.get_chart_data(chart))
+        a_ser_chart = ChartDataSerializer(ChartData.objects.get(id=chart))
         return Response(a_ser_chart.data)
     
     def put(self, request, chart):
-        chart = self.get_chart_data(chart)
+        chart = ChartData.objects.get(id=chart)
         body_data = request.data.copy()
         
         if(chart):
@@ -45,11 +41,9 @@ class SingleChartData(APIView):
             chart.save()
         else:
             return Response("INVALID NO CHART DATA WAS FOUND", status=HTTP_400_BAD_REQUEST)
-        return Response(ChartDataSerializer(chart).data, status=HTTP_200_OK)
-        
-        
+        return Response(ChartDataSerializer(chart).data, status=HTTP_200_OK)     
     
     def delete(self, request, chart):
-        chart = self.get_chart_data(chart)
+        chart = ChartData.objects.get(id=chart)
         chart.delete()
         return(Response(status=HTTP_204_NO_CONTENT))

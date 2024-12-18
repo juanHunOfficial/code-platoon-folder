@@ -48,7 +48,7 @@ function TrackerDashboardCard() {
 
   return (
     <>
-    <div style={{display: "flex", alignItems: "center", margin: "20px auto", justifyContent: "center"}} >
+    <div style={{display: "flex", alignItems: "center", margin: "20px auto", justifyContent: "center",  width: "100%"}} >
     {userTrackers ? displayedTrackers.map((tracker, index) => (
         <div key={index} >
           <Card  style={{ width: '18rem', height: '400px', margin: '10px' }}>

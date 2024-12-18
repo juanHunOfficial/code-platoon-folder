@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import { deleteDataPoint } from '../utilities';
+import { deleteDataPoint, getSingleExercise } from '../utilities';
 
 function DeleteDataPointModal({ exerciseSelected, setExerciseSelected }) {
     const inputRef = useRef(null);
@@ -14,18 +14,10 @@ function DeleteDataPointModal({ exerciseSelected, setExerciseSelected }) {
     const handleSubmit = async(e) =>{
         e.preventDefault()
         const results = await deleteDataPoint(dataPointId)
-        if(results){
-            inputRef.current.value = ''
-            const refreshedExercise = await getSingleExercise(exerciseSelected.id)
-            setExerciseSelected(refreshedExercise)
-            
-        }
-        else{
-            console.log('something went wrong in the return statement')
-        }
+        inputRef.current.value = ''
+        const refreshedExercise = await getSingleExercise(exerciseSelected.id)
+        setExerciseSelected(refreshedExercise)
     }
-
-
     return (
         <>
             <Button variant="primary" className="w-100" onClick={handleShow}>
@@ -58,7 +50,8 @@ function DeleteDataPointModal({ exerciseSelected, setExerciseSelected }) {
                     <Button 
                         variant="primary" 
                         onClick={(e) =>{  
-                            handleSubmit(e); 
+                            handleSubmit(e);
+                            handleClose()
                         }} >
                         Save
                     </Button>

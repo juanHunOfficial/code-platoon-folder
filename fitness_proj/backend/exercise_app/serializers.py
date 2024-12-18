@@ -11,7 +11,6 @@ class ExerciseSerializer(serializers.ModelSerializer):
         charts = instance.charts.all()
         ser_chart_data = [{
             'id': chart.id,
-            'iteration': chart.iteration, 
             'goal_num_of_reps': chart.goal_num_of_reps,
             'goal_num_of_sets': chart.goal_num_of_sets,
             'actual_num_of_reps': chart.actual_num_of_reps,
@@ -20,8 +19,3 @@ class ExerciseSerializer(serializers.ModelSerializer):
             'exercise_id': chart.exercise_id.id
         } for chart in charts]
         return ser_chart_data
-    
-    def format_date(self, date_obj):
-        if date_obj:
-            return date_obj.strftime('%m/%d/%Y')
-        return None

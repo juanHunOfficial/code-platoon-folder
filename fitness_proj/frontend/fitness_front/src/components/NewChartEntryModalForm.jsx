@@ -12,14 +12,12 @@ function NewChartEntryModalForm({ exerciseSelected, setExerciseSelected }) {
     const [goalNumOfSets, setGoalNumOfSets] = useState("");
     const [actualNumOfReps, setActualNumOfReps] = useState("");
     const [actualNumOfSets, setActualNumOfSets] = useState("");
-    const [iteration, setIteration] = useState("");
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
     const handleSubmit = async(e) =>{
         e.preventDefault() 
         let formData = {
-            "iteration" : iteration,
             "actualNumOfReps": actualNumOfReps,
             "actualNumOfSets": actualNumOfSets,
             "goalNumOfReps": goalNumOfReps,
@@ -49,16 +47,6 @@ function NewChartEntryModalForm({ exerciseSelected, setExerciseSelected }) {
                 </Modal.Header>
                 <Modal.Body>
                     <Form>
-                        <Form.Group className="mb-3" >
-                        <Form.Label>Workout Number</Form.Label>
-                        <Form.Control
-                            ref={inputRef}
-                            onChange={(e)=> setIteration(e.target.value)}
-                            type="text"
-                            placeholder="Workout number must be unique"
-                            autoFocus
-                        />
-                        </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Label>Goal Rep Count</Form.Label>
                             <Form.Control 

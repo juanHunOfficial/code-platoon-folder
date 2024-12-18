@@ -176,7 +176,6 @@ export const createExercise = async(formData) => {
 
 export const createChartEntry = async(formData) =>{
     const { 
-        iteration, 
         goalNumOfReps, 
         goalNumOfSets, 
         actualNumOfReps, 
@@ -189,7 +188,6 @@ export const createChartEntry = async(formData) =>{
         let response = await api.post(
             'chart_data/',
             {
-                "iteration":iteration,
                 "goal_num_of_reps": goalNumOfReps,
                 "goal_num_of_sets": goalNumOfSets,
                 "actual_num_of_reps": actualNumOfReps,

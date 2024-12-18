@@ -6,7 +6,8 @@ class WorkoutSerializer(serializers.ModelSerializer):
     exercises = serializers.SerializerMethodField()
     class Meta:
         model =  Workout
-        fields = ['id', 
+        fields = [
+                  'id', 
                   'tracker_id', 
                   'workout_name', 
                   'type_of_workout', 

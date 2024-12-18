@@ -5,7 +5,7 @@ class ChartDataSerializer(serializers.ModelSerializer):
     class Meta:
         model =  ChartData
         fields = [
-            "iteration",
+            "id",
             "goal_num_of_reps",
             "goal_num_of_sets",
             "actual_num_of_reps",
