@@ -183,7 +183,7 @@ export const createChartEntry = async(formData) =>{
         weight, 
         exerciseId
     } = formData
-    console.log(formData)
+
     try{
         let response = await api.post(
             'chart_data/',

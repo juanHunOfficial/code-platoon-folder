@@ -2,6 +2,7 @@ import { useOutletContext } from "react-router-dom";
 import { Line } from 'react-chartjs-2'
 import NewChartEntryModalForm from "../components/NewChartEntryModalForm";
 import DeleteDataPointModal from "../components/DeleteDataPointModal";
+import UpdateChartEntryModalForm from "../components/UpdateDataPoint";
 
 import { Chart as ChartJs, 
          CategoryScale, 
@@ -160,6 +161,12 @@ const ChartPage = () => {
             <NewChartEntryModalForm 
               exerciseSelected={exerciseSelected} 
               setExerciseSelected={setExerciseSelected}
+            />
+          </div>
+          <div style={{ textAlign: 'center', marginTop: '10px', marginBottom: "30px", width: "250px" }} >
+            <UpdateChartEntryModalForm 
+              exerciseSelected={exerciseSelected} 
+              setExerciseSelected={setExerciseSelected} 
             />
           </div>
           <div style={{ textAlign: 'center', marginTop: '10px', marginBottom: "100px", width: "250px" }} >
