@@ -27,7 +27,7 @@ const ChartPage = () => {
     const { exerciseSelected, setExerciseSelected } = useOutletContext();
     
     const lineChartDataReps = {
-        labels: exerciseSelected.charts.map((chart, index) => `Workout #${index}`), 
+        labels: exerciseSelected.charts.map((chart, index) => `Workout #${index+1}`), 
         datasets: [
             { 
                 label : "Actual Rep Count",
@@ -68,7 +68,7 @@ const ChartPage = () => {
       };
 
     const lineChartDataSets ={
-        labels: exerciseSelected.charts.map((chart, index) => `Workout #${index}`), 
+        labels: exerciseSelected.charts.map((chart, index) => `Workout #${index+1}`), 
         datasets: [
             { 
                 label : "Actual Set Count",
@@ -104,7 +104,7 @@ const ChartPage = () => {
       };
 
       const lineChartDataWeight ={
-        labels: exerciseSelected.charts.map((chart, index) => `Workout #${index}`), 
+        labels: exerciseSelected.charts.map((chart, index) => `Workout #${index+1}`), 
         datasets: [
             { 
                 label : "Exercise Weight",

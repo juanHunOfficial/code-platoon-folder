@@ -8,7 +8,7 @@ class ExerciseSerializer(serializers.ModelSerializer):
         fields = ['id', 'exercise_name', 'workout_id', 'charts']
         
     def get_charts(self, instance):
-        charts = instance.charts.all()
+        charts = instance.charts.all().order_by('id')
         ser_chart_data = [{
             'id': chart.id,
             'goal_num_of_reps': chart.goal_num_of_reps,

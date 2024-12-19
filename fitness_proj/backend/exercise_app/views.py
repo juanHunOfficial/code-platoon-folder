@@ -23,25 +23,18 @@ class AllExercises(APIView):
     
 class SingleExercise(APIView):
     
-    def get_exercise(self, exercise):
-        if type(exercise) == int:
-            exercise = get_object_or_404(Exercise, id=exercise)
-        else:
-            exercise = get_object_or_404(Exercise, exercise=exercise)
-        return exercise
-    
     def get(self, request, exercise):
-        a_ser_exercise = ExerciseSerializer(self.get_exercise(exercise))
+        a_ser_exercise = ExerciseSerializer(Exercise.objects.get(id=exercise).order_by('id'))
         return Response(a_ser_exercise.data)
     
     def put(self, request, exercise):
         data = request.data.copy()
-        updated_exercise = self.get_exercise(exercise)
+        updated_exercise = Exercise.objects.get(id=exercise).order_by('id')
         updated_exercise.exercise_name = data['exercise_name']
         updated_exercise.save()
         return Response(ExerciseSerializer(updated_exercise).data, status=HTTP_200_OK)
     
     def delete(self, request, exercise):
-        exercise = self.get_exercise(exercise)
+        exercise = Exercise.objects.get(id=exercise)
         exercise.delete()
         return(Response(status=HTTP_204_NO_CONTENT))
