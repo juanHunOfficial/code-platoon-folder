@@ -16,6 +16,6 @@ class WorkoutSerializer(serializers.ModelSerializer):
                 ]
         
     def get_exercises(self, instance):
-        exercises = instance.exercises.all().order_by('id')
+        exercises = instance.exercises.all().order_by('exercise_name')
         ser_exercises = ExerciseSerializer(exercises, many=True)
         return ser_exercises.data

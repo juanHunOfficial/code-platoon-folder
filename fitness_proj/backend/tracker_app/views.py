@@ -12,7 +12,7 @@ class AllTrackers(APIView):
     
     def get(self, request):
         current_user = request.user
-        ser_all_trackers = TrackerSerializer(Tracker.objects.filter(user=current_user).order_by('id'), many=True)
+        ser_all_trackers = TrackerSerializer(Tracker.objects.filter(user=current_user).order_by('tracker_name'), many=True)
         return Response(ser_all_trackers.data)
     
     def post(self, request):

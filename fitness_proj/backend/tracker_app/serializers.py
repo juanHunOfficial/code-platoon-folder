@@ -10,7 +10,7 @@ class TrackerSerializer(serializers.ModelSerializer):
         fields = ['id', 'user_id', 'user', 'tracker_name', 'workouts']
         
     def get_workouts(self, instance):
-        workouts = instance.workouts.all().order_by('id')
+        workouts = instance.workouts.all().order_by('workout_name')
         ser_workouts = WorkoutSerializer(workouts, many=True)
         return ser_workouts.data
     
