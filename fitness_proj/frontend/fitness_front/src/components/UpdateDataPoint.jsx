@@ -39,7 +39,10 @@ function UpdateChartEntryModalForm({ exerciseSelected, setExerciseSelected }) {
 
     return (
         <>
-            <Button variant="primary" className="w-100" onClick={handleShow}>
+            <Button 
+                className="w-100 react_btns" 
+                variant="secondary" 
+                onClick={handleShow}>
                 Update an existing data point
             </Button>
             <Modal show={show} onHide={handleClose}>
@@ -63,45 +66,55 @@ function UpdateChartEntryModalForm({ exerciseSelected, setExerciseSelected }) {
                             <Form.Control 
                                 ref={inputRef}
                                 onChange={(e)=> setGoalNumOfReps(e.target.value)}
-                                type='text' placeholder='Enter the goal amount for your rep count'/>
+                                type='text' 
+                                placeholder='Enter the goal amount for your rep count'/>
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Label>Goal Set Count</Form.Label>
                             <Form.Control 
                                 ref={inputRef}
                                 onChange={(e)=> setGoalNumOfSets(e.target.value)}
-                                type='text' placeholder='Enter the goal amount for your set count'/>
+                                type='text' 
+                                placeholder='Enter the goal amount for your set count'/>
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Label>Actual Rep Count</Form.Label>
                             <Form.Control 
                                 ref={inputRef}
                                 onChange={(e)=> setActualNumOfReps(e.target.value)}
-                                type='text' placeholder='Enter the actual number of reps you accomplished'/>
+                                type='text' 
+                                placeholder='Enter the actual number of reps you accomplished'/>
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Label>Actual Set Count</Form.Label>
                             <Form.Control 
                                 ref={inputRef}
                                 onChange={(e)=> setActualNumOfSets(e.target.value)}
-                                type='text' placeholder='Enter the actual number sets you accomplished'/>
+                                type='text' 
+                                placeholder='Enter the actual number sets you accomplished'/>
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Label>Weight</Form.Label>
                             <Form.Control 
                                 ref={inputRef}
                                 onChange={(e)=> setWeight(e.target.value)}
-                                type='text' placeholder='Enter the weight you did on this set'/>
+                                type='text' 
+                                placeholder='Enter the weight you did on this set'/>
                         </Form.Group>
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
+                    <Button 
+                        variant="secondary" 
+                        onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={(e) =>{ handleClose(); 
-                                                               handleSubmit(e); 
-                                                             }} >
+                    <Button 
+                        variant="secondary" 
+                        onClick={(e) =>{ 
+                            handleClose(); 
+                            handleSubmit(e); 
+                        }} >
                         Save Changes
                     </Button>
                 </Modal.Footer>

@@ -32,12 +32,12 @@ const ChartPage = () => {
             { 
                 label : "Actual Rep Count",
                 data: exerciseSelected.charts.map(chart => chart.actual_num_of_reps),
-                borderColor: 'blue',
+                borderColor: '#d90429',
             },
             { 
                 label : "Goal Rep Count",
                 data: exerciseSelected.charts.map(chart => chart.goal_num_of_reps),
-                borderColor: 'gold',
+                borderColor: '#2b2d42',
             }
         ],
         options: {
@@ -73,12 +73,12 @@ const ChartPage = () => {
             { 
                 label : "Actual Set Count",
                 data: exerciseSelected.charts.map(chart => chart.actual_num_of_sets),
-                borderColor: 'blue',
+                borderColor: '#d90429',
             },
             { 
                 label : "Goal Set Count",
                 data: exerciseSelected.charts.map(chart => chart.goal_num_of_sets),
-                borderColor: 'gold',
+                borderColor: '#2b2d42',
             }
         ]
     }
@@ -109,7 +109,7 @@ const ChartPage = () => {
             { 
                 label : "Exercise Weight",
                 data: exerciseSelected.charts.map(chart => chart.weight),
-                borderColor: 'blue',
+                borderColor: '#d90429',
             }
         ]
     }
@@ -135,48 +135,44 @@ const ChartPage = () => {
         }       
       };
     return(
-        <>
-        {exerciseSelected ? 
-                <div style={{
-                            display: 'flex', 
-                            flexDirection: "column", 
-                            margin: "60px auto", 
-                            justifyContent:"center", 
-                            alignItems:"center"
-                        }} >
-                    <div style={{height: "300px", width: "80%", position: "relative", marginBottom: "50px"}}>
-                        <Line options={lineChartOptionsWeight} data={lineChartDataWeight} />
-                    </div>
-                    <div style={{height: "300px", width: "80%", position: "relative", marginBottom: "50px"}}>
-                        <Line options={lineChartOptionsReps} data={lineChartDataReps} />
-                    </div>
-                    <div style={{height: "300px", width: "80%", position: "relative", marginBottom: "50px"}}>
-                        <Line options={lineChartOptionsSets} data={lineChartDataSets} />
-                    </div>   
-                </div>   
-            : null 
-        }
-        <div style={{display: "flex", flexDirection: "column", alignItems:"center", justifyContent: "center"}} >
-          <div style={{ textAlign: 'center', marginTop: '10px', marginBottom: "30px", width: "250px" }} >
-            <NewChartEntryModalForm 
-              exerciseSelected={exerciseSelected} 
-              setExerciseSelected={setExerciseSelected}
-            />
+        <div className='page_div '>
+          <div className="charts_page_div">
+          {exerciseSelected ? 
+                  <div className="charts_container_div" >
+                      <div className="single_chart" >
+                          <Line options={lineChartOptionsWeight} data={lineChartDataWeight} />
+                      </div>
+                      <div className="single_chart">
+                          <Line options={lineChartOptionsReps} data={lineChartDataReps} />
+                      </div>
+                      <div className="single_chart">
+                          <Line options={lineChartOptionsSets} data={lineChartDataSets} />
+                      </div>   
+                  </div>   
+              : null 
+          }
+          <div className="charts_page_div charts_page_btns_div" >
+            <div className="charts_page_modals" >
+              <NewChartEntryModalForm 
+                exerciseSelected={exerciseSelected} 
+                setExerciseSelected={setExerciseSelected}
+              />
+            </div>
+            <div className="charts_page_modals" >
+              <UpdateChartEntryModalForm 
+                exerciseSelected={exerciseSelected} 
+                setExerciseSelected={setExerciseSelected} 
+              />
+            </div>
+            <div className="charts_page_modals" >
+              <DeleteDataPointModal 
+                exerciseSelected={exerciseSelected} 
+                setExerciseSelected={setExerciseSelected} 
+              />
+            </div>
           </div>
-          <div style={{ textAlign: 'center', marginTop: '10px', marginBottom: "30px", width: "250px" }} >
-            <UpdateChartEntryModalForm 
-              exerciseSelected={exerciseSelected} 
-              setExerciseSelected={setExerciseSelected} 
-            />
-          </div>
-          <div style={{ textAlign: 'center', marginTop: '10px', marginBottom: "100px", width: "250px" }} >
-            <DeleteDataPointModal 
-              exerciseSelected={exerciseSelected} 
-              setExerciseSelected={setExerciseSelected} 
-            />
           </div>
         </div>
-        </>
     )
 }
 

@@ -20,7 +20,10 @@ function DeleteDataPointModal({ exerciseSelected, setExerciseSelected }) {
     }
     return (
         <>
-            <Button variant="primary" className="w-100" onClick={handleShow}>
+            <Button 
+                className="w-100 react_btns" 
+                variant="secondary"  
+                onClick={handleShow}>
                 Delete A Data Point
             </Button>
             <Modal show={show} onHide={handleClose}>
@@ -48,7 +51,7 @@ function DeleteDataPointModal({ exerciseSelected, setExerciseSelected }) {
                         Close
                     </Button>
                     <Button 
-                        variant="primary" 
+                        variant="secondary" 
                         onClick={(e) =>{  
                             handleSubmit(e);
                             handleClose()

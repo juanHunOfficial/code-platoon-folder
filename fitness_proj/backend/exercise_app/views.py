@@ -24,12 +24,12 @@ class AllExercises(APIView):
 class SingleExercise(APIView):
     
     def get(self, request, exercise):
-        a_ser_exercise = ExerciseSerializer(Exercise.objects.get(id=exercise).order_by('id'))
+        a_ser_exercise = ExerciseSerializer(Exercise.objects.get(id=exercise))
         return Response(a_ser_exercise.data)
     
     def put(self, request, exercise):
         data = request.data.copy()
-        updated_exercise = Exercise.objects.get(id=exercise).order_by('id')
+        updated_exercise = Exercise.objects.get(id=exercise)
         updated_exercise.exercise_name = data['exercise_name']
         updated_exercise.save()
         return Response(ExerciseSerializer(updated_exercise).data, status=HTTP_200_OK)

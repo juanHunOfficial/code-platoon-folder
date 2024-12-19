@@ -72,11 +72,6 @@ body {
     font-weight: 800
 }
 
-.tracker_page{
-    background : #8d99ae;
-    height: 100vh
-}
-
 .navbar{
     background: #d90429;
 }
@@ -135,9 +130,11 @@ body {
     width: 100px
 }
 
-.workout_page_div{
+.page_div{
+    display: flex;
     background : #8d99ae;
-    height: 100vh
+    height: auto; 
+    justify-content: center;
 }
 
 .workout_selected_div{
@@ -192,3 +189,88 @@ body {
     margin: 10px 
 }
 
+.charts_page_div{
+    background: #edf2f4;
+    width: 80%;
+}
+
+.charts_page_btns_div{
+    display: flex;
+    flex-direction: column; 
+    align-items:center; 
+    justify-content: center;
+    width: auto;
+    padding-top: 50px;
+}
+
+.charts_container_div{
+    display: flex; 
+    flex-direction: column; 
+    padding-top:60px;
+    justify-content:center; 
+    align-items:center
+}
+
+.single_chart{
+    height: 300px;
+    width: 80%; 
+    position: relative; 
+    margin-bottom: 50px
+}
+
+.charts_page_modals{
+    text-align: center; 
+    margin-top: 10px; 
+    margin-bottom: 30px; 
+    width: 250px
+}
+
+.search_result_card{
+    display: flex; 
+    margin: 100px auto; 
+    justify-content: center
+}
+
+.search_and_info_button{
+    display: flex;
+    justify-content:center ; 
+    text-align: center; 
+    margin-top: 20px
+}
+
+.search_btns{
+    margin-right: 20px; 
+    width: 100px
+}
+
+.result_cards{
+    padding: 20px; 
+    display: flex; 
+    flex-wrap:wrap; 
+    margin: 100px auto;  
+    gap: 20px; 
+    overflow: auto; 
+    justify-content:center;
+}
+
+.search_result_card_body{
+    background: #d90429;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between 
+}
+
+.search_result_card_title{
+    margin-bottom: 25px; 
+    text-align: center
+}
+
+.search_result_card_sub_title{
+    margin-bottom: 10px; 
+    text-align: center
+}
+
+.exercise_result_card_instruction_btn{
+    align-items:center;
+    margin: 20px auto
+}

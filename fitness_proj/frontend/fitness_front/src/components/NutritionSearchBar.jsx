@@ -6,7 +6,7 @@ import { getFood } from '../utilities';
 import { useOutletContext } from 'react-router-dom';
 
 const NutritionSearchBar = () => {
-    const { searchResults, setSearchResults } = useOutletContext()
+    const { setSearchResults } = useOutletContext()
     const [food, setFood] = useState("")
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -30,21 +30,33 @@ const NutritionSearchBar = () => {
     }
     
     return(
-        <>
-            <div className='search_result_card' style={{display: 'flex', margin: '100px auto', justifyContent: 'center'}}>
+        <div className='page_div'>
+            <div className='search_result_card' >
                 <Form onSubmit={(e) => handleSubmit(e)}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Control 
-                        value={food}
-                        onChange={(e)=> setFood(e.target.value)}
-                        type="text" placeholder="Enter a food" />
+                            value={food}
+                            onChange={(e)=> setFood(e.target.value)}
+                            type="text" 
+                            placeholder="Enter a food" />
                         <Form.Text className="text-muted">
                             Enter a particular food your craving. (ex: brisket, fries, hamburger)
                         </Form.Text>
                     </Form.Group>
-                    <div className='search_and_info_button' style={{ textAlign: 'center', marginTop: '20px' }}>
-                        <Button style={{marginRight: '20px', width: '100px'}} variant="primary" type="submit">Search</Button>
-                        <Button style={{width: '100px'}} variant="primary" type="submit" onClick={handleShow}>Info</Button>
+                    <div className='search_and_info_button'>
+                        <Button 
+                            className='react_btns search_btns' 
+                            variant="secondary" 
+                            type="submit">
+                            Search
+                        </Button>
+                        <Button 
+                            className='react_btns search_btns'  
+                            variant="secondary" 
+                            type="submit" 
+                            onClick={handleShow}>
+                            Info
+                        </Button>
                     </div> 
                     <Modal show={show} onHide={handleClose}>
                         <Modal.Header closeButton>
@@ -62,7 +74,7 @@ const NutritionSearchBar = () => {
                     </Modal>                    
                 </Form>
             </div>
-        </>
+        </div>
     )
 }
 

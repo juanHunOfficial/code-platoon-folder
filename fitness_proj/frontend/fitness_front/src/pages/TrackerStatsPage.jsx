@@ -8,7 +8,7 @@ const TrackerStatsPage = () => {
     const [trackerName, setTrackerName] = useState("");
 
     return(
-        <div className='tracker_page'>
+        <div className='page_div'>
             <TrackerDashboardCard />
             <TrackerCreationForm 
                 trackerName={trackerName} 

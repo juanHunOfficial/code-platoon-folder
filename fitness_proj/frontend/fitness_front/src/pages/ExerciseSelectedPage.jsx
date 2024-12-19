@@ -52,7 +52,7 @@ const ExerciseSelectedPage = () => {
     
     return(
         
-        <>
+        <div className='page_div'>
             <div className='exercise_cards_div' >
               {workoutSelected ? displayedExercises.map((exercise, index) => (
                 <div key={index} >
@@ -120,7 +120,7 @@ const ExerciseSelectedPage = () => {
           setWorkoutSelected={setWorkoutSelected}
         />
       </div>
-    </>    
+    </div>    
     )
 }
 
