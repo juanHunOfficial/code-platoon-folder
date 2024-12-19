@@ -1,3 +1,9 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+  }
+
 .dashboard_container {
     background : #8d99ae;
     padding: 50px 0
@@ -44,4 +50,41 @@
 
 .react-btns{
     background: #d90429
+}
+
+.dashboard_card_div{
+    display: flex; 
+    align-items: center; 
+    justify-content: center;  
+    width: 100%
+}
+
+.tracker_card{
+    width: 18rem; 
+    height: 400px; 
+    margin: 50px 10px;
+    background: #edf2f4 
+}
+
+.tracker_card_text{
+    max-height: 280px; 
+    overflow: hidden; 
+    font-weight: 800
+}
+
+.tracker_page{
+    background : #8d99ae;
+    height: 100vh
+}
+
+.navbar{
+    background: #d90429;
+}
+
+.navbar_text{
+    color: #edf2f4
+}
+
+.navbar_brand{
+    color: #edf2f4
 }

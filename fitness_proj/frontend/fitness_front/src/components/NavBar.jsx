@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import { logOut } from '../utilities';
 import { getTrackers } from '../utilities';
+import '../styles.css'
 
 const NavBar = ({user, setUser, needsToSignup, setNeedsToSignup, setUserTrackers}) => {
 
@@ -27,40 +28,40 @@ const NavBar = ({user, setUser, needsToSignup, setNeedsToSignup, setUserTrackers
 
     return(
         <>
-            <Navbar style={{background: "#d90429"}} data-bs-theme="dark">
+            <Navbar className='navbar' data-bs-theme="dark">
                 <Container style={{display : "flex"}}>
                     <Navbar.Brand 
+                    className='navbar_brand'
                         as={Link} 
-                        to='/' 
-                        style={{color: '#edf2f4'}} >
+                        to='/' >
                         Progressive Overload Tracker
                     </Navbar.Brand>
                     <Nav className="ms-auto">
                         <div style={{display :"flex", alignItems:"center"}} >
                             <Nav.Link 
+                                className='navbar_text'
                                 as={ Link } 
-                                to='/' 
-                                style={{color: '#edf2f4'}} >
+                                to='/' >
                                 Home
                             </Nav.Link>
                             <Nav.Link 
+                                className='navbar_text'
                                 as={ Link } 
-                                to='/exercise/' 
-                                style={{color: '#edf2f4'}} >
+                                to='/exercise/'>
                                 Exercises
                             </Nav.Link>
                             <Nav.Link 
+                                className='navbar_text'
                                 as={ Link } 
-                                to='/nutrition/' 
-                                style={{color: '#edf2f4'}} >
+                                to='/nutrition/'>
                                 Nutrition
                             </Nav.Link>
                             {user ? <>
                                 <Nav.Link 
+                                    className='navbar_text'
                                     as={ Link } 
                                     to='/trackers/' 
-                                    onClick={handleClick} 
-                                    style={{color: '#edf2f4'}} >
+                                    onClick={handleClick}>
                                     Your Fitness
                                 </Nav.Link>
                             </>: null}

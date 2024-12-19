@@ -5,6 +5,7 @@ import { useOutletContext } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import UpdateTrackerModal from './UpdateTrackerModal.jsx'
 import { deleteTracker, getTrackers } from '../utilities'
+import '../styles.css'
 
 function TrackerDashboardCard() {
   const { userTrackers, setUserTrackers, trackerSelected, setTrackerSelected } = useOutletContext();
@@ -48,30 +49,13 @@ function TrackerDashboardCard() {
 
   return (
     <>
-    <div style={{
-          display: "flex", 
-          alignItems: "center", 
-          margin: "20px auto", 
-          justifyContent: "center",  
-          width: "100%"
-        }} >
+    <div className='dashboard_card_div' >
     {userTrackers ? displayedTrackers.map((tracker, index) => (
         <div key={index} >
-          <Card  style={{ 
-                  width: '18rem', 
-                  height: '400px', 
-                  margin: '10px', 
-                  background: "#edf2f4" 
-                }}>
+          <Card className='tracker_card'>
             <Card.Body className="d-flex flex-column" >
-                <Card.Title className="display-7" >{tracker.tracker_name}</Card.Title>
-                <Card.Text 
-                  className="text-truncate" 
-                  style={{ 
-                    maxHeight: '280px', 
-                    overflow: 'hidden', 
-                    fontWeight: "800"
-                  }}>
+                <Card.Title className="display-7" > { tracker.tracker_name } </Card.Title>
+                <Card.Text className="text-truncate tracker_card_text" >
                   Workouts:<br/>
                   {tracker.workouts.map((workout, index) => (
                     <li key={index}>
@@ -81,26 +65,25 @@ function TrackerDashboardCard() {
                 </Card.Text>
                 <div className="mt-auto">
                   <Button 
-                    style={{ background: "#d90429"}} 
                     onClick={() => {{
                     setTrackerSelected(tracker);
                     navigate("/workout/")
                     }}} 
                     variant="secondary" 
-                    className="w-100">
+                    className="w-100 react-btns">
                       Select
                   </Button>
                   
-                  <Button style={{marginTop: "20px", background: "#d90429"}} 
+                  <Button 
+                    style={{marginTop: "20px"}} 
                     onClick={() => openUpdateModal(tracker)}   
                     variant="secondary" 
-                    className="w-100">Update</Button>
+                    className="w-100 react-btns">Update</Button>
 
-                  <Button style={{marginTop:"20px", background: "#d90429"}} 
-                    onClick={() => {{
-                      handleDeletionClick(tracker.id)
-                    }}} variant="secondary" 
-                    className="w-100">Delete</Button>
+                  <Button 
+                    style={{marginTop:"20px"}} 
+                    onClick={() => handleDeletionClick(tracker.id)} variant="secondary" 
+                    className="w-100 react-btns">Delete</Button>
                 </div>
             </Card.Body>
           </Card>
