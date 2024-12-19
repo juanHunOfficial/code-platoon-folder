@@ -52,7 +52,7 @@ const WorkoutSelectedPage = () => {
     
     return(
         
-        <div className='page_div'>
+        <div className='page_div tracker_pages'>
             <div className='workout_selected_div' >
                 {trackerSelected ? displayedWorkouts.map((workout, index) => (
                     <div key={index} >

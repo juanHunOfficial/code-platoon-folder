@@ -131,9 +131,16 @@ body {
 }
 
 .page_div{
-    display: flex;
     background : #8d99ae;
     height: auto; 
+}
+
+.tracker_pages{
+    height: 100vh;
+}
+
+.chart_page{
+    display: flex;
     justify-content: center;
 }
 
@@ -227,7 +234,7 @@ body {
 
 .search_result_card{
     display: flex; 
-    margin: 100px auto; 
+    padding: 100px; 
     justify-content: center
 }
 

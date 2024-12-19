@@ -135,7 +135,7 @@ const ChartPage = () => {
         }       
       };
     return(
-        <div className='page_div '>
+        <div className='page_div chart_page'>
           <div className="charts_page_div">
           {exerciseSelected ? 
                   <div className="charts_container_div" >
