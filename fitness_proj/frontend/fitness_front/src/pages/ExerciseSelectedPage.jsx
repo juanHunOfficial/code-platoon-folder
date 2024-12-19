@@ -53,38 +53,34 @@ const ExerciseSelectedPage = () => {
     return(
         
         <>
-            <div style={{display: "flex", alignItems: "center", margin: "20px auto", justifyContent: "center"}} >
+            <div className='exercise_cards_div' >
               {workoutSelected ? displayedExercises.map((exercise, index) => (
                 <div key={index} >
-                  <Card  style={{ width: '18rem', height: '400px', margin: '10px' }}>
+                  <Card className='exercise_card' >
                     <Card.Body className="d-flex flex-column" >
                       <Card.Title className="display-7" >{exercise.exercise_name}</Card.Title>
                       <div className="mt-auto">
                         <Button 
+                          className="w-100 react_btns"
                           onClick={() => {{
                             setExerciseSelected(exercise);
                             navigate('/chart_display/')
                           }}} 
-                          variant="primary" 
-                          className="w-100">
+                          variant="secondary">
                           Select
                         </Button>
-
                         <Button 
-                          style={{marginTop: "20px"}} 
+                          className="w-100 react_btns btn_spacer_top_20"
                           onClick={() => openUpdateModal(exercise)}   
-                          variant="primary" 
-                          className="w-100">
+                          variant="secondary">
                           Update
                         </Button>
-
                         <Button 
-                          style={{marginTop:"20px"}} 
+                          className="w-100 react_btns btn_spacer_top_20"
                           onClick={() => {{
                             handleDeletionClick(exercise.id)
                           }}} 
-                          variant="primary" 
-                          className="w-100">
+                          variant="secondary">
                           Delete
                         </Button>
                       </div>
@@ -94,26 +90,34 @@ const ExerciseSelectedPage = () => {
                 )):null}
             </div>
       {workoutSelected && workoutSelected['exercises'].length > 0 ? 
-      <>
-        <div style={{ textAlign: 'center', marginTop: '20px' }}>
-          <Button style={{marginRight: '10px'}} variant="secondary" onClick={prevPage} disabled={currentPage === 0}>              
-            ← Previous
-          </Button>
-          <Button style={{marginLeft: '10px'}} variant="secondary" onClick={nextPage} disabled={(currentPage + 1) * cardsPerPage >= workoutSelected.length}>
-            Next →
-          </Button>
-        </div>
-      </>: null}
+        <>
+          <div className='prev_and_next_btns_div'>
+            <Button 
+              className='react_btns btn_spacer_right_10' 
+              variant="secondary" 
+              onClick={prevPage} 
+              disabled={currentPage === 0}>              
+              ← Previous
+            </Button>
+            <Button 
+              className='react_btns btn_spacer_left_10' 
+              variant="secondary" 
+              onClick={nextPage} 
+              disabled={(currentPage + 1) * cardsPerPage >= workoutSelected.length}>
+              Next →
+            </Button>
+          </div>
+        </>: null}
       <UpdateExerciseModal 
         show={showModal}
         onHide={closeUpdateModal}
         exerciseSelected={exerciseSelected}
         setExerciseSelected={setExerciseSelected}
       />
-      <div style={{width: "280px", margin: "20px auto"}}>
+      <div className='create_entry_button_div'>
         <NewExerciseModalForm 
-            workoutSelected={workoutSelected}
-            setWorkoutSelected={setWorkoutSelected}
+          workoutSelected={workoutSelected}
+          setWorkoutSelected={setWorkoutSelected}
         />
       </div>
     </>    

@@ -171,7 +171,24 @@ body {
     margin-left: 10px
 }
 
-.create_workout_button_div{
+.create_entry_button_div{
+    display: flex;
     width: 280px;
-    margin: 40px auto
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto;
 }
+
+.exercise_cards_div{
+    display: flex; 
+    align-items: center; 
+    padding-top:40px; 
+    justify-content: center
+}
+
+.exercise_card{
+    width: 18rem; 
+    height: 400px; 
+    margin: 10px 
+}
+

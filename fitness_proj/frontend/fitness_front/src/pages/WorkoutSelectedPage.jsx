@@ -118,7 +118,7 @@ const WorkoutSelectedPage = () => {
           </Button>
         </div>
       </>: null}
-      <div className='create_workout_button_div' >
+      <div className='create_entry_button_div' >
         <NewWorkoutModalForm 
             trackerSelected={trackerSelected}
             setTrackerSelected={setTrackerSelected}

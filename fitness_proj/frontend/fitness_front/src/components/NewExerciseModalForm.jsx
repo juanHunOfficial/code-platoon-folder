@@ -31,7 +31,7 @@ function NewExerciseModalForm({ workoutSelected, setWorkoutSelected }) {
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow}>
+            <Button className='react_btns' variant="secondary" onClick={handleShow}>
                 Create a new exercise entry
             </Button>
             <Modal show={show} onHide={handleClose}>
@@ -53,12 +53,17 @@ function NewExerciseModalForm({ workoutSelected, setWorkoutSelected }) {
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
+                    <Button 
+                        variant="secondary" 
+                        onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={(e) =>{ handleClose(); 
-                                                               handleSubmit(e); 
-                                                             }} >
+                    <Button 
+                        variant="secondary" 
+                        onClick={(e) =>{ 
+                            handleClose(); 
+                            handleSubmit(e); 
+                        }} >
                         Save Changes
                     </Button>
                 </Modal.Footer>

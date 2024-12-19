@@ -63,24 +63,31 @@ function NewWorkoutModalForm({ trackerSelected, setTrackerSelected }) {
                             <Form.Control 
                                 ref={inputRef}
                                 onChange={(e)=> setWeeklyFrequency(e.target.value)}
-                                type='text' placeholder='Enter a number'/>
+                                type='text' 
+                                placeholder='Enter a number'/>
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Label>Type of Workout</Form.Label>
                             <Form.Control 
                                 ref={inputRef}
                                 onChange={(e)=> setTypeOfWorkout(e.target.value)}
-                                type='text' placeholder='Enter the type of workout this will be'/>
+                                type='text' 
+                                placeholder='Enter the type of workout this will be'/>
                         </Form.Group>
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
+                    <Button 
+                        variant="secondary" 
+                        onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="secondary" onClick={(e) =>{ handleClose(); 
-                                                                handleSubmit(e); 
-                                                                }} >
+                    <Button 
+                        variant="secondary" 
+                        onClick={(e) =>{ 
+                            handleClose(); 
+                            handleSubmit(e); 
+                        }} >
                         Save
                     </Button>
                 </Modal.Footer>
