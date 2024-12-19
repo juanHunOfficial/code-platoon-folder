@@ -27,26 +27,74 @@ const NavBar = ({user, setUser, needsToSignup, setNeedsToSignup, setUserTrackers
 
     return(
         <>
-            <Navbar bg="primary" data-bs-theme="dark">
+            <Navbar style={{background: "#d90429"}} data-bs-theme="dark">
                 <Container style={{display : "flex"}}>
-                    <Navbar.Brand as={Link} to='/' >Progressive Overload Tracker</Navbar.Brand>
+                    <Navbar.Brand 
+                        as={Link} 
+                        to='/' 
+                        style={{color: '#edf2f4'}} >
+                        Progressive Overload Tracker
+                    </Navbar.Brand>
                     <Nav className="ms-auto">
                         <div style={{display :"flex", alignItems:"center"}} >
-                            <Nav.Link as={ Link } to='/'>Home</Nav.Link>
-                            <Nav.Link as={ Link } to='/exercise/'>Exercises</Nav.Link>
-                            <Nav.Link as={ Link } to='/nutrition/'>Nutrition</Nav.Link>
+                            <Nav.Link 
+                                as={ Link } 
+                                to='/' 
+                                style={{color: '#edf2f4'}} >
+                                Home
+                            </Nav.Link>
+                            <Nav.Link 
+                                as={ Link } 
+                                to='/exercise/' 
+                                style={{color: '#edf2f4'}} >
+                                Exercises
+                            </Nav.Link>
+                            <Nav.Link 
+                                as={ Link } 
+                                to='/nutrition/' 
+                                style={{color: '#edf2f4'}} >
+                                Nutrition
+                            </Nav.Link>
                             {user ? <>
-                                <Nav.Link as={ Link } to='/trackers/' onClick={handleClick}>Your Fitness</Nav.Link>
+                                <Nav.Link 
+                                    as={ Link } 
+                                    to='/trackers/' 
+                                    onClick={handleClick} 
+                                    style={{color: '#edf2f4'}} >
+                                    Your Fitness
+                                </Nav.Link>
                             </>: null}
                         </div>
                         {user ? 
                             <>
-                                <Button variant='outline-light' onClick={loggedOut} >Log Out</Button>
+                                <Button 
+                                    variant='outline-light' 
+                                    onClick={loggedOut} >
+                                    Log Out
+                                </Button>
                             </> 
                             : 
                             <>
-                                <Button size='sm' onClick={clickOnSignup} disabled={needsToSignup ? true : false} ><Nav.Link as={Link} to='/signup/'>Register</Nav.Link></Button>
-                                <Button size='sm' onClick={clickOnLogin} disabled={needsToSignup ? false : true}><Nav.Link as={Link} to='/signup/'>Login</Nav.Link></Button>
+                                <Button 
+                                    size='sm' 
+                                    onClick={clickOnSignup} 
+                                    disabled={needsToSignup ? true : false} >
+                                        <Nav.Link 
+                                            as={Link} 
+                                            to='/signup/'>
+                                            Register
+                                        </Nav.Link>
+                                </Button>
+                                <Button 
+                                    size='sm' 
+                                    onClick={clickOnLogin} 
+                                    disabled={needsToSignup ? false : true}>
+                                        <Nav.Link 
+                                            as={Link} 
+                                            to='/signup/'>
+                                            Login
+                                        </Nav.Link>
+                                </Button>
                             </>
                         }
                     </Nav>

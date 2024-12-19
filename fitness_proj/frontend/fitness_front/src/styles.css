@@ -1,0 +1,47 @@
+.dashboard_container {
+    background : #8d99ae;
+    padding: 50px 0
+}
+
+.dashboard_title_container{
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    margin: 20px auto 
+}
+
+.site_text{
+    color: #ef233c
+}
+
+.food_section_container{
+    background:#edf2f4; 
+    display: flex; 
+    justify-content: space-between; 
+    padding-top: 30px; 
+    padding-bottom: 30px
+}
+
+.food_stock_img{
+    height: 250px; 
+    width: 250px;
+    margin-left: 50px; 
+    margin-right: 25px; 
+    border-radius: 6px
+}
+
+.exercise_search_section_container{
+    background:#8d99ae; 
+    display: flex; 
+    justify-content: space-between;  
+    padding-top: 30px; 
+    padding-bottom: 30px
+}
+
+.food_section_text_container{
+    margin-right: 50px
+}
+
+.react-btns{
+    background: #d90429
+}

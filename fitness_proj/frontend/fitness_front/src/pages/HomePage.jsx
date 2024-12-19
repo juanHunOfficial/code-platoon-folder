@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import nutritionStockPic from '../assets/nutrition_pic.jpeg'
 import exerciseStockPic from '../assets/exercise_pic.jpg'
 import { getTrackers } from '../utilities'
+import '../styles.css'
 
 const HomePage = () => {
     const { user, setUserTrackers } = useOutletContext();
@@ -30,31 +31,30 @@ const HomePage = () => {
 
     return (
         <>
-            {/* class names have been added so you can transfer all the inline styling into a css file later */}
-            <div className='dashboard_container' style={{background : 'grey', padding: '50px 0'}} >
-                <div className='dashboard_title_container' style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '20px auto' }}>
-                    <h1>Dashboard</h1>
-                    <h2>Your Workouts</h2>
+            <div className='dashboard_container' >
+                <div className='dashboard_title_container' >
+                    <h1 className='site_text' >Welcome {user ? user.firstname : null}</h1>
+                    <h2 className='site_text' >Your Workouts</h2>
                 </div>
                 <div >
                     <TrackerDashboardCard />
                 </div>
             </div>
-            <div className='food_section_container' style={{background:'lightgreen' ,display: 'flex', justifyContent: "space-between", paddingTop: '30px', paddingBottom: "30px"}}>
-                <img className='food_stock_img' style={{background: 'blue', height: '250px', width: '250px', marginLeft: '50px', marginRight: '25px', borderRadius: '6px'}} src={nutritionStockPic}/>
-                <div className='food_section_text_container' style={{marginRight: '50px'}} >
-                    <h3>Satisfy your craving without ruining your diet</h3>
-                    <p>Choose from a large selection of nutritious meals to meet your individual fitness goals</p>
-                    <Button as={ Link } to='/nutrition/' >Start Browsing</Button> 
+            <div className='food_section_container'>
+                <img className='food_stock_img' src={nutritionStockPic}/>
+                <div className='food_section_text_container' >
+                    <h3 className='site_text'  >Satisfy your craving without ruining your diet</h3>
+                    <p className='site_text'  >Choose from a large selection of nutritious meals to meet your individual fitness goals</p>
+                    <Button className='react-btns' variant='secondary' as={ Link } to='/nutrition/' >Start Browsing</Button> 
                 </div>
             </div>
-            <div className='exercise_search_section_container' style={{background:'lightgrey', display: 'flex', justifyContent: "space-between",  paddingTop: '30px', paddingBottom: "30px"}} >
-                <div className='food_section_text_container' style={{marginLeft: "50px"}} >
-                    <h3>Satisfy your craving without ruining your diet</h3>
-                    <p>Choose from a large selection of nutritious meals to meet your individual fitness goals</p>
-                    <Button as={ Link } to='/exercise/'>Start Browsing</Button> 
+            <div className='exercise_search_section_container' >
+                <div className='food_section_text_container' >
+                    <h3 className='site_text'  >Satisfy your craving without ruining your diet</h3>
+                    <p className='site_text'  >Choose from a large selection of nutritious meals to meet your individual fitness goals</p>
+                    <Button className='react-btns' variant='secondary' as={ Link } to='/exercise/'>Start Browsing</Button> 
                 </div>
-                <img className='food_stock_img' style={{background: 'blue', height: '250px', width: '250px', marginRight : "50px", marginLeft: '25px', borderRadius: '6px'}} src={exerciseStockPic}/>
+                <img className='food_stock_img' src={exerciseStockPic}/>
             </div>
         </>
     )

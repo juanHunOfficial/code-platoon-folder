@@ -48,19 +48,31 @@ function TrackerDashboardCard() {
 
   return (
     <>
-    <div style={{display: "flex", alignItems: "center", margin: "20px auto", justifyContent: "center",  width: "100%"}} >
+    <div style={{
+          display: "flex", 
+          alignItems: "center", 
+          margin: "20px auto", 
+          justifyContent: "center",  
+          width: "100%"
+        }} >
     {userTrackers ? displayedTrackers.map((tracker, index) => (
         <div key={index} >
-          <Card  style={{ width: '18rem', height: '400px', margin: '10px' }}>
+          <Card  style={{ 
+                  width: '18rem', 
+                  height: '400px', 
+                  margin: '10px', 
+                  background: "#edf2f4" 
+                }}>
             <Card.Body className="d-flex flex-column" >
                 <Card.Title className="display-7" >{tracker.tracker_name}</Card.Title>
-                <Card.Text className="text-truncate" style={{ 
-                                                              maxHeight: '280px', 
-                                                              overflow: 'hidden', 
-                                                              fontWeight: "800"
-                                                            }}>
-                  Workouts:
-                  <br/>
+                <Card.Text 
+                  className="text-truncate" 
+                  style={{ 
+                    maxHeight: '280px', 
+                    overflow: 'hidden', 
+                    fontWeight: "800"
+                  }}>
+                  Workouts:<br/>
                   {tracker.workouts.map((workout, index) => (
                     <li key={index}>
                       Name: {workout.workout_name}
@@ -69,24 +81,25 @@ function TrackerDashboardCard() {
                 </Card.Text>
                 <div className="mt-auto">
                   <Button 
+                    style={{ background: "#d90429"}} 
                     onClick={() => {{
                     setTrackerSelected(tracker);
                     navigate("/workout/")
                     }}} 
-                    variant="primary" 
+                    variant="secondary" 
                     className="w-100">
                       Select
                   </Button>
                   
-                  <Button style={{marginTop: "20px"}} 
+                  <Button style={{marginTop: "20px", background: "#d90429"}} 
                     onClick={() => openUpdateModal(tracker)}   
-                    variant="primary" 
+                    variant="secondary" 
                     className="w-100">Update</Button>
 
-                  <Button style={{marginTop:"20px"}} 
+                  <Button style={{marginTop:"20px", background: "#d90429"}} 
                     onClick={() => {{
                       handleDeletionClick(tracker.id)
-                    }}} variant="primary" 
+                    }}} variant="secondary" 
                     className="w-100">Delete</Button>
                 </div>
             </Card.Body>
@@ -99,13 +112,13 @@ function TrackerDashboardCard() {
       <>
         <div style={{ textAlign: 'center', marginTop: '20px' }}>
           <Button 
-            style={{marginRight: '10px'}} 
+            style={{marginRight: '10px', background: "#d90429"}} 
             variant="secondary" onClick={prevPage} 
             disabled={currentPage === 0}>              
             ← Previous
           </Button>
           <Button 
-            style={{marginLeft: '10px'}} 
+            style={{marginLeft: '10px', background: "#d90429"}} 
             variant="secondary" 
             onClick={nextPage} 
             disabled={(currentPage + 1) * cardsPerPage >= userTrackers.length}>

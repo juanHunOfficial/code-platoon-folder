@@ -13,7 +13,6 @@ function App() {
   
   return (
     <>
-      <h1>Welcome {user ? user.firstname : null}</h1>
       <NavBar 
         user={user} 
         setUser={setUser} 
@@ -21,7 +20,8 @@ function App() {
         setNeedsToSignup={setNeedsToSignup} 
         setUserTrackers={setUserTrackers}
       />
-      <Outlet context={{user, 
+      <Outlet context={{
+                        user, 
                         setUser, 
                         needsToSignup, 
                         setNeedsToSignup, 
@@ -29,10 +29,10 @@ function App() {
                         setSearchResults,
                         userTrackers,
                         setUserTrackers,
-                        workoutSelected,
-                        setWorkoutSelected,
                         trackerSelected,
                         setTrackerSelected,
+                        workoutSelected,
+                        setWorkoutSelected,
                         exerciseSelected,
                         setExerciseSelected
                       }}/>
