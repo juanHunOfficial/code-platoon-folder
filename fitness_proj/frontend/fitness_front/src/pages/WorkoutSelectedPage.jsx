@@ -52,44 +52,47 @@ const WorkoutSelectedPage = () => {
     
     return(
         
-        <>
-            <div style={{display: "flex", alignItems: "center", margin: "20px auto", justifyContent: "center"}} >
+        <div className='workout_page_div'>
+            <div className='workout_selected_div' >
                 {trackerSelected ? displayedWorkouts.map((workout, index) => (
                     <div key={index} >
-                        <Card  style={{ width: '18rem', height: '525px', margin: '10px' }}>
+                        <Card className='workout_card' >
                             <Card.Body className="d-flex flex-column" >
                                 <Card.Title className="display-7" >{workout.workout_name}</Card.Title>
-                                <Card.Text className="text-truncate" style={{ 
-                                                                                maxHeight: '284px', 
-                                                                                overflow: 'hidden', 
-                                                                                fontWeight: "800"
-                                                                            }}>
-                                Workout Type: {workout.type_of_workout} <br/>
-                                Weekly Frequency: {workout.weekly_frequency} <br/> <br/>
-                                Exercises: <br/>
-                                {workout.exercises.map((exercise, index) => (
-                                    <li key={index}>
-                                        {exercise.exercise_name}
-                                    </li>
-                                ))}
+                                <Card.Text className="workout_card_text text-truncate" >
+                                    Workout Type: {workout.type_of_workout} <br/>
+                                    Weekly Frequency: {workout.weekly_frequency} <br/> <br/>
+                                    Exercises: <br/>
+                                    {workout.exercises.map((exercise, index) => (
+                                        <li key={index}>
+                                            {exercise.exercise_name}
+                                        </li>
+                                    ))}
                                 </Card.Text>
                                 <div className="mt-auto">
-                                    <Button onClick={() => {{
-                                        setWorkoutSelected(workout);
-                                        navigate('/selected_exercise/')
-                                        }}} variant="primary" className="w-100">Select</Button>
-
-                                    <div style={{marginTop:"20px"}}>
-                                        <Button  
-                                            variant="primary" 
-                                            className="w-100"
-                                            onClick={() => openUpdateModal(workout)}
-                                        >Update</Button>
-                                    </div>
-
-                                    <Button style={{marginTop:"20px"}} onClick={() => {{
-                                        handleDeletionClick(workout.id)
-                                        }}} variant="primary" className="w-100">Delete</Button>
+                                    <Button 
+                                        className="w-100 react_btns"
+                                        onClick={() => {{
+                                            setWorkoutSelected(workout);
+                                            navigate('/selected_exercise/')
+                                        }}} 
+                                        variant="secondary">
+                                        Select
+                                    </Button>                       
+                                    <Button  
+                                        className="w-100 react_btns btn_spacer_top_20"
+                                        variant="secondary" 
+                                        onClick={() => openUpdateModal(workout)}>
+                                        Update
+                                    </Button>
+                                    <Button 
+                                        className="w-100 react_btns btn_spacer_top_20"
+                                        onClick={() => {{
+                                            handleDeletionClick(workout.id)
+                                        }}} 
+                                        variant="secondary">
+                                        Delete
+                                    </Button>
                                 </div>
                             </Card.Body>
                         </Card>
@@ -98,15 +101,24 @@ const WorkoutSelectedPage = () => {
             </div>
       {trackerSelected ? 
       <>
-        <div style={{ textAlign: 'center', marginTop: '20px', marginBottom: "50px" }}>
-          <Button style={{marginRight: '10px'}} variant="secondary" onClick={prevPage} disabled={currentPage === 0}>              ← Previous
+        <div className='prev_and_next_btns_div' >
+          <Button 
+            className='react_btns btn_spacer_right_10' 
+            variant="secondary" 
+            onClick={prevPage} 
+            disabled={currentPage === 0}>
+            ← Previous
           </Button>
-          <Button style={{marginLeft: '10px'}} variant="secondary" onClick={nextPage} disabled={(currentPage + 1) * cardsPerPage >= trackerSelected.length}>
+          <Button 
+            className='react_btns btn_spacer_left_10' 
+            variant="secondary" 
+            onClick={nextPage} 
+            disabled={(currentPage + 1) * cardsPerPage >= trackerSelected.length}>
             Next →
           </Button>
         </div>
       </>: null}
-      <div style={{width: "280px", margin: "20px auto"}}>
+      <div className='create_workout_button_div' >
         <NewWorkoutModalForm 
             trackerSelected={trackerSelected}
             setTrackerSelected={setTrackerSelected}
@@ -120,7 +132,7 @@ const WorkoutSelectedPage = () => {
             setTrackerSelected={setTrackerSelected}
         />
       </div>
-    </>    
+    </div>    
     )
 }
 

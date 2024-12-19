@@ -50,7 +50,7 @@ const HomePage = () => {
                         Choose from a large selection of nutritious meals to meet your individual fitness goals
                     </p>
                     <Button 
-                        className='react-btns' 
+                        className='react_btns' 
                         variant='secondary' 
                         as={ Link } 
                         to='/nutrition/' >
@@ -67,7 +67,7 @@ const HomePage = () => {
                         Choose from a large selection of nutritious meals to meet your individual fitness goals
                     </p>
                     <Button 
-                        className='react-btns' 
+                        className='react_btns' 
                         variant='secondary' 
                         as={ Link } 
                         to='/exercise/'>

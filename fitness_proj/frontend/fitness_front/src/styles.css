@@ -1,4 +1,4 @@
-html, body {
+body {
     margin: 0;
     padding: 0;
     height: 100%; 
@@ -48,7 +48,7 @@ html, body {
     margin-right: 50px
 }
 
-.react-btns{
+.react_btns{
     background: #d90429
 }
 
@@ -87,4 +87,91 @@ html, body {
 
 .navbar_brand{
     color: #edf2f4
+}
+
+.prev_and_next_btns_div{
+    text-align: center;
+    margin-top: 20px
+}
+
+.prev_btn{
+    margin-right: 10px; 
+    background: #d90429
+}
+
+.next_btn{
+    margin-left: 10px; 
+    background: #d90429
+}
+.react_btns:hover {
+    background-color: #ef233c; 
+    border-color: #ef233c;     
+    color: #edf2f4;              
+  }
+
+ .search_result_card_div{
+    display: flex;
+    margin: 100px auto;
+    justify-content: center;
+    align-items: center
+ }
+
+ .tracker_creation_form_ctrl{
+    width: 450px
+ }
+
+ .tracker_add_and_info_div{
+    display: flex; 
+    align-items:center
+ }
+
+ .search_and_info_button{
+    display: flex; 
+    margin: 20px auto
+ }
+
+.tracker_add_and_info_btn{
+    margin-right: 20px;
+    width: 100px
+}
+
+.workout_page_div{
+    background : #8d99ae;
+    height: 100vh
+}
+
+.workout_selected_div{
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    padding-top: 30px; 
+}
+
+.workout_card{
+    width: 18rem; 
+    height: 525px; 
+    margin: 10px
+}
+
+.workout_card_text{
+    max-height: 284px; 
+    overflow: hidden; 
+    font-weight: 800
+}
+
+.btn_spacer_top_20{
+    margin-top: 20px 
+}
+
+.btn_spacer_right_10{
+    margin-right: 10px
+}
+
+.btn_spacer_left_10{
+    margin-left: 10px
+}
+
+.create_workout_button_div{
+    width: 280px;
+    margin: 40px auto
 }

@@ -70,7 +70,7 @@ function TrackerDashboardCard() {
                     navigate("/workout/")
                     }}} 
                     variant="secondary" 
-                    className="w-100 react-btns">
+                    className="w-100 react_btns">
                       Select
                   </Button>
                   
@@ -78,12 +78,12 @@ function TrackerDashboardCard() {
                     style={{marginTop: "20px"}} 
                     onClick={() => openUpdateModal(tracker)}   
                     variant="secondary" 
-                    className="w-100 react-btns">Update</Button>
+                    className="w-100 react_btns">Update</Button>
 
                   <Button 
                     style={{marginTop:"20px"}} 
                     onClick={() => handleDeletionClick(tracker.id)} variant="secondary" 
-                    className="w-100 react-btns">Delete</Button>
+                    className="w-100 react_btns">Delete</Button>
                 </div>
             </Card.Body>
           </Card>
@@ -93,15 +93,15 @@ function TrackerDashboardCard() {
       </div>
       {userTrackers ? 
       <>
-        <div style={{ textAlign: 'center', marginTop: '20px' }}>
+        <div className='prev_and_next_btns_div' >
           <Button 
-            style={{marginRight: '10px', background: "#d90429"}} 
+            className='prev_btn react_btns'
             variant="secondary" onClick={prevPage} 
             disabled={currentPage === 0}>              
             ← Previous
           </Button>
           <Button 
-            style={{marginLeft: '10px', background: "#d90429"}} 
+            className='next_btn  react_btns'
             variant="secondary" 
             onClick={nextPage} 
             disabled={(currentPage + 1) * cardsPerPage >= userTrackers.length}>

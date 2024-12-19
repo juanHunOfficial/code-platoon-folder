@@ -34,18 +34,32 @@ const TrackerCreationForm = ({trackerName, setTrackerName}) => {
         
     }
     return(
-        <div className='search_result_card' style={{display: 'flex', margin: '100px auto', justifyContent: 'center', alignItems: "center"}}>
+        <div className='search_result_card_div' >
             <Form onSubmit={(e) => handleSubmit(e)}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Control
-                    ref={inputRef} 
-                    onChange={(e)=> setTrackerName(e.target.value)}
-                    type="text" placeholder="Enter the name of your new tracker" style={{width: '450px'}}/>
+                        className='tracker_creation_form_ctrl'
+                        ref={inputRef} 
+                        onChange={(e)=> setTrackerName(e.target.value)}
+                        type="text" 
+                        placeholder="Enter the name of your new tracker" 
+                    />
                 </Form.Group>
-                <div style={{display: "flex", alignItems:"center"}}>
-                    <div className='search_and_info_button' style={{display: 'flex', margin: "20px auto"}}>
-                        <Button style={{marginRight: '20px', width: '100px'}} variant="primary" type="submit">Add</Button>
-                        <Button style={{width: '100px'}} variant="primary" type="submit" onClick={handleShow}>Info</Button>
+                <div className='tracker_add_and_info_div' >
+                    <div className='search_and_info_button' >
+                        <Button 
+                            className='react_btns tracker_add_and_info_btn' 
+                            variant="secondary" 
+                            type="submit">
+                            Add
+                        </Button>
+                        <Button 
+                            className='react_btns tracker_add_and_info_btn' 
+                            variant="secondary" 
+                            type="submit" 
+                            onClick={handleShow}>
+                            Info
+                        </Button>
                     </div>
                 </div>
                 <Modal show={show} onHide={handleClose}>

@@ -36,7 +36,10 @@ function NewWorkoutModalForm({ trackerSelected, setTrackerSelected }) {
 
     return (
         <>
-            <Button variant="primary" className="w-100" onClick={handleShow}>
+            <Button 
+                className="w-100 react_btns"
+                variant="secondary"  
+                onClick={handleShow}>
                 Create a new workout
             </Button>
             <Modal show={show} onHide={handleClose}>
@@ -75,7 +78,7 @@ function NewWorkoutModalForm({ trackerSelected, setTrackerSelected }) {
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={(e) =>{ handleClose(); 
+                    <Button variant="secondary" onClick={(e) =>{ handleClose(); 
                                                                 handleSubmit(e); 
                                                                 }} >
                         Save
