@@ -22,8 +22,8 @@ const SigninForm = () => {
     }
 
     return(
-        <div style={{background: "grey",display: "flex", justifyContent: "center", margin: "20px auto"}}>
-            <div style={{ height: "400px", width: "500px", padding: "30px"}}>
+        <div className='displayed_sign_in_and_up_forms'>
+            <div className='sign_in_form_container' >
                 <Form onSubmit={(e)=> handleSubmit(e)}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
@@ -43,8 +43,13 @@ const SigninForm = () => {
                         onChange={(e)=>setPassword(e.target.value)}
                         type="password" placeholder="Password" />
                     </Form.Group>
-                    <div style={{margin:"40px auto", display: "flex", justifyContent: "center"}}>
-                    <Button variant="primary" type="submit">Login</Button>
+                    <div className='sign_up_and_in_buttons'>
+                    <Button 
+                        className='react_btns'
+                        variant="secondary" 
+                        type="submit">
+                        Login
+                    </Button>
                     </div>
                 </Form>
             </div>

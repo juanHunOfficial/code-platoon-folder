@@ -9,27 +9,25 @@ import { deleteExercise, getSingleWorkout } from '../utilities';
 
 const ExerciseSelectedPage = () => {
     const { workoutSelected, setWorkoutSelected, exerciseSelected, setExerciseSelected } = useOutletContext();
-    const [currentPage, setCurrentPage] = useState(0);
+    const [currentSetDisplayed, setCurrentSetDisplayed] = useState(0);
     const [showModal, setShowModal] = useState(false); 
     const navigate = useNavigate();
-    const cardsPerPage = 3;
+    const MAX_DISPLAYED_PER_PAGE = 3;
     let displayedExercises = []
-  
-    
+
     if(workoutSelected){
-        displayedExercises = workoutSelected.exercises.slice(currentPage * cardsPerPage, (currentPage + 1) * cardsPerPage);
+        displayedExercises = workoutSelected.exercises.slice(currentSetDisplayed * MAX_DISPLAYED_PER_PAGE, (currentSetDisplayed + 1) * MAX_DISPLAYED_PER_PAGE);
     } 
 
     const nextPage = () => {
-        if ((currentPage + 1) * cardsPerPage < workoutSelected.exercises.length) {
-        setCurrentPage(prev => prev + 1);
+        if ((currentSetDisplayed + 1) * MAX_DISPLAYED_PER_PAGE < workoutSelected.exercises.length) {
+        setCurrentSetDisplayed(prev => prev + 1);
         }
     };
-
     
     const prevPage = () => {
-        if (currentPage > 0) {
-        setCurrentPage(prev => prev - 1);
+        if (currentSetDisplayed > 0) {
+        setCurrentSetDisplayed(prev => prev - 1);
         }
     };
 
@@ -96,14 +94,14 @@ const ExerciseSelectedPage = () => {
               className='react_btns btn_spacer_right_10' 
               variant="secondary" 
               onClick={prevPage} 
-              disabled={currentPage === 0}>              
+              disabled={currentSetDisplayed === 0}>              
               ← Previous
             </Button>
             <Button 
               className='react_btns btn_spacer_left_10' 
               variant="secondary" 
               onClick={nextPage} 
-              disabled={(currentPage + 1) * cardsPerPage >= workoutSelected.length}>
+              disabled={(currentSetDisplayed + 1) * MAX_DISPLAYED_PER_PAGE >= workoutSelected.length}>
               Next →
             </Button>
           </div>

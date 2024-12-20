@@ -1,6 +1,5 @@
 import SignupForm from "../components/SignupForm";
 import SigninForm from "../components/SigninForm";
-import { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom'
 
 const LoginPage = () => {
@@ -8,20 +7,20 @@ const LoginPage = () => {
     const { needsToSignup } = useOutletContext()
 
     return (
-        <>
+        <div className='page_div tracker_pages'>
             {
                 needsToSignup ?
-                <>
-                    <SignupForm/>
-                </>
+                    <>
+                        <SignupForm/>
+                    </>
                 :
-                <>
-                    <SigninForm/>
-                </>
+                    <>
+                        <SigninForm/>
+                    </>
 
             }
             
-        </>
+        </div>
     );
 };
 

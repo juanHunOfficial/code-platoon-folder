@@ -5,9 +5,11 @@ import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import { logOut } from '../utilities';
 import { getTrackers } from '../utilities';
+import { useNavigate } from 'react-router-dom'
 import '../styles.css'
 
 const NavBar = ({user, setUser, needsToSignup, setNeedsToSignup, setUserTrackers}) => {
+    const navigate = useNavigate();
 
     const clickOnLogin = () => {
         setNeedsToSignup(false)
@@ -70,14 +72,18 @@ const NavBar = ({user, setUser, needsToSignup, setNeedsToSignup, setUserTrackers
                             <>
                                 <Button 
                                     variant='outline-light' 
-                                    onClick={loggedOut} >
+                                    onClick={loggedOut}
+                                    as={ Link }
+                                    to='/signup/' >
                                     Log Out
                                 </Button>
                             </> 
                             : 
                             <>
                                 <Button 
+                                    className='react_btns register_btn'
                                     size='sm' 
+                                    variant='secondary'
                                     onClick={clickOnSignup} 
                                     disabled={needsToSignup ? true : false} >
                                         <Nav.Link 
@@ -87,7 +93,9 @@ const NavBar = ({user, setUser, needsToSignup, setNeedsToSignup, setUserTrackers
                                         </Nav.Link>
                                 </Button>
                                 <Button 
-                                    size='sm' 
+                                    className='react_btns login_btn'
+                                    size='sm'
+                                    variant='secondary' 
                                     onClick={clickOnLogin} 
                                     disabled={needsToSignup ? false : true}>
                                         <Nav.Link 

@@ -59,7 +59,7 @@ const HomePage = () => {
                 </div>
             </div>
             <div className='exercise_search_section_container' >
-                <div className='food_section_text_container' >
+                <div className='workout_section_text_container' >
                     <h3 className='site_text' >
                         Satisfy your craving without ruining your diet
                     </h3>
@@ -74,7 +74,7 @@ const HomePage = () => {
                         Start Browsing
                     </Button> 
                 </div>
-                <img className='food_stock_img' src={exerciseStockPic}/>
+                <img className='workout_stock_img' src={exerciseStockPic}/>
             </div>
         </>
     )

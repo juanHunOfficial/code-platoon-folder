@@ -36,6 +36,14 @@ body {
     border-radius: 6px
 }
 
+.workout_stock_img{
+    height: 250px; 
+    width: 250px;
+    margin-left: 25px; 
+    margin-right: 50px; 
+    border-radius: 6px
+}
+
 .exercise_search_section_container{
     background:#8d99ae; 
     display: flex; 
@@ -45,7 +53,10 @@ body {
 }
 
 .food_section_text_container{
-    margin-right: 50px
+    margin-right: 70px
+}
+.workout_section_text_container{
+    margin-left: 70px
 }
 
 .react_btns{
@@ -67,7 +78,7 @@ body {
 }
 
 .tracker_card_text{
-    max-height: 280px; 
+    height: 145px; 
     overflow: hidden; 
     font-weight: 800
 }
@@ -280,4 +291,37 @@ body {
 .exercise_result_card_instruction_btn{
     align-items:center;
     margin: 20px auto
+}
+
+.displayed_sign_in_and_up_forms{
+    display: flex; 
+    justify-content: center; 
+    padding: 20px
+}
+
+.sign_up_form_container{
+    height: 600px; 
+    width: 500px; 
+    padding: 30px
+}
+
+.sign_up_and_in_buttons{
+    margin:40px auto; 
+    display: flex; 
+    justify-content: center
+}
+
+.sign_in_form_container{
+    height: 400px; 
+    width: 500px; 
+    padding: 30px
+}
+
+.register_btn{
+    width: 100px;
+    margin-right: 10px;
+}
+
+.login_btn{
+    width: 100px;
 }

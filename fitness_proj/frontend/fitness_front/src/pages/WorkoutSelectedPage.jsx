@@ -9,26 +9,26 @@ import UpdateWorkoutModal from '../components/UpdateWorkoutModal';
 
 const WorkoutSelectedPage = () => {
     const { workoutSelected, setWorkoutSelected, trackerSelected, setTrackerSelected } = useOutletContext();
-    const [currentPage, setCurrentPage] = useState(0);
+    const [currentSetDisplayed, setCurrentSetDisplayed] = useState(0);
     const [showModal, setShowModal] = useState(false); 
     const navigate = useNavigate();
-    const cardsPerPage = 3;
+    const MAX_DISPLAYED_PER_PAGE = 3;
     let displayedWorkouts = []
 
     if(trackerSelected){
-        displayedWorkouts = trackerSelected.workouts.slice(currentPage * cardsPerPage, (currentPage + 1) * cardsPerPage);
+        displayedWorkouts = trackerSelected.workouts.slice(currentSetDisplayed * MAX_DISPLAYED_PER_PAGE, (currentSetDisplayed + 1) * MAX_DISPLAYED_PER_PAGE);
     } 
 
     const nextPage = () => {
-        if ((currentPage + 1) * cardsPerPage < trackerSelected.workouts.length) {
-        setCurrentPage(prev => prev + 1);
+        if ((currentSetDisplayed + 1) * MAX_DISPLAYED_PER_PAGE < trackerSelected.workouts.length) {
+        setCurrentSetDisplayed(prev => prev + 1);
         }
     };
 
     
     const prevPage = () => {
-        if (currentPage > 0) {
-        setCurrentPage(prev => prev - 1);
+        if (currentSetDisplayed > 0) {
+        setCurrentSetDisplayed(prev => prev - 1);
         }
     };
 
@@ -106,14 +106,14 @@ const WorkoutSelectedPage = () => {
             className='react_btns btn_spacer_right_10' 
             variant="secondary" 
             onClick={prevPage} 
-            disabled={currentPage === 0}>
+            disabled={currentSetDisplayed === 0}>
             ← Previous
           </Button>
           <Button 
             className='react_btns btn_spacer_left_10' 
             variant="secondary" 
             onClick={nextPage} 
-            disabled={(currentPage + 1) * cardsPerPage >= trackerSelected.length}>
+            disabled={(currentSetDisplayed + 1) * MAX_DISPLAYED_PER_PAGE >= trackerSelected.length}>
             Next →
           </Button>
         </div>

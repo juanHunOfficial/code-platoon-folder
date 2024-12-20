@@ -5,30 +5,31 @@ import { useOutletContext } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import UpdateTrackerModal from './UpdateTrackerModal.jsx'
 import { deleteTracker, getTrackers } from '../utilities'
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import '../styles.css'
 
 function TrackerDashboardCard() {
   const { userTrackers, setUserTrackers, trackerSelected, setTrackerSelected } = useOutletContext();
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentSetDisplayed, setCurrentSetDisplayed] = useState(0);
   const [showModal, setShowModal] = useState(false); 
   const navigate = useNavigate();
-  const cardsPerPage = 3;
+  const MAX_DISPLAYED_PER_PAGE = 3;
   let displayedTrackers = []
   
   if(userTrackers){
-    displayedTrackers = userTrackers.slice(currentPage * cardsPerPage, (currentPage + 1) * cardsPerPage);
+    displayedTrackers = userTrackers.slice(currentSetDisplayed * MAX_DISPLAYED_PER_PAGE, (currentSetDisplayed + 1) * MAX_DISPLAYED_PER_PAGE);
   } 
 
   const nextPage = () => {
-    if ((currentPage + 1) * cardsPerPage < userTrackers.length) {
-      setCurrentPage(prev => prev + 1);
+    if ((currentSetDisplayed + 1) * MAX_DISPLAYED_PER_PAGE < userTrackers.length) {
+      setCurrentSetDisplayed(prev => prev + 1);
     }
   };
 
   
   const prevPage = () => {
-    if (currentPage > 0) {
-      setCurrentPage(prev => prev - 1);
+    if (currentSetDisplayed > 0) {
+      setCurrentSetDisplayed(prev => prev - 1);
     }
   };
 
@@ -97,14 +98,14 @@ function TrackerDashboardCard() {
           <Button 
             className='prev_btn react_btns'
             variant="secondary" onClick={prevPage} 
-            disabled={currentPage === 0}>              
+            disabled={currentSetDisplayed === 0}>              
             ← Previous
           </Button>
           <Button 
             className='next_btn  react_btns'
             variant="secondary" 
             onClick={nextPage} 
-            disabled={(currentPage + 1) * cardsPerPage >= userTrackers.length}>
+            disabled={(currentSetDisplayed + 1) * MAX_DISPLAYED_PER_PAGE >= userTrackers.length}>
             Next →
           </Button>
         </div>
