@@ -12,18 +12,16 @@ const NutritionInfoCard = () => {
     };
     return(
         <>
-            <div className='search_result_card' style={{padding: '20px', display: 'flex', flexWrap:'wrap', 
-                                                        margin: '100px auto',  gap: '20px', overflow: 'auto', 
-                                                        justifyContent:'center'}}>
+            <div className='search_result_card ' >
             {searchResults && Array.isArray(searchResults['foods'])> 0 ? (
                 searchResults['foods'].map((food, index) =>(                    
-                    <Card key={index} bg='primary' text='white' style={{ width: '18rem' }}>
-                        <Card.Body  >
-                            <Card.Title className="fs-1" style={{marginBottom: '25px'}} >{capitalizeFirstLetter(food.name)}</Card.Title>
-                                <Card.Subtitle style={{marginBottom: '10px'}} >MARCOS</Card.Subtitle>
-                                <Card.Subtitle style={{marginBottom: '10px'}} >Sugar: {food.sugar_g}</Card.Subtitle>
-                                <Card.Subtitle style={{marginBottom: '10px'}} >Fat: {food.fat_total_g}</Card.Subtitle>
-                                <Card.Subtitle style={{marginBottom: '10px'}} >Carbs: {food.carbohydrates_total_g}</Card.Subtitle>
+                    <Card className='search_result_card_body' key={index} bg='secondary' text='white'>
+                        <Card.Body className='nutrition_work_results'  >
+                            <Card.Title className='fs-1 search_result_card_title' >{capitalizeFirstLetter(food.name)}</Card.Title>
+                                <Card.Subtitle className='search_result_card_sub_title'>MARCOS</Card.Subtitle>
+                                <Card.Subtitle className='search_result_card_sub_title'>Sugar: {food.sugar_g}</Card.Subtitle>
+                                <Card.Subtitle className='search_result_card_sub_title'>Fat: {food.fat_total_g}</Card.Subtitle>
+                                <Card.Subtitle className='search_result_card_sub_title'>Carbs: {food.carbohydrates_total_g}</Card.Subtitle>
                         </Card.Body>
                     </Card>
                     

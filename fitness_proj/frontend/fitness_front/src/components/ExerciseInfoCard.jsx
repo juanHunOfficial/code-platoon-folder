@@ -16,12 +16,7 @@ const ExerciseInfoCard = () => {
             {searchResults && Array.isArray(searchResults['exercises']) ? (
                 searchResults['exercises'].map((exercise, index) =>(                    
                     <>
-                    <Card key={index} bg='secondary' text='white' style={{ 
-                        height: '300px', 
-                        overflow: 'hidden', 
-                        fontWeight: "800",
-                        width: "18rem"
-                    }}>
+                    <Card className='muscle_search_results' key={index} bg='secondary' text='white'>
                         <Card.Body className='search_result_card_body' >
                             <Card.Title 
                                 className='search_result_card_title' >

@@ -325,3 +325,15 @@ body {
 .login_btn{
     width: 100px;
 }
+
+.muscle_search_results{
+    height: 300px; 
+    overflow: hidden; 
+    font-weight: 800;
+    width: 18rem
+}
+
+.nutrition_work_results{
+    background: #d90429 ;
+    width: 18rem;
+}
